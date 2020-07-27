@@ -1,11 +1,20 @@
-import axios from 'axios'
-
-
-
-
+import axios from 'axios';
+import {GET_ABOUTUS} from "./types";
 
 
 export const getAboutUs = () => (dispatch,getState) => {
-    return axios.get('/api/aboutus/');
+    axios.get('/api/aboutus/')
+        .then(
+            res => {
+                dispatch({
+                    type: GET_ABOUTUS,
+                    payload: res.data
+                });
+            }
+        )
+        .catch(
+        err => console.log(err)
+    );
+    
 
 };
