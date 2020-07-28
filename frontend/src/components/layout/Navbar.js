@@ -46,7 +46,7 @@ class Navbar extends Component {
         console.log(this.props.aboutus[0]);
         return (
             <Fragment>
-                <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+                <nav className="navbar navbar-expand-md navbar-c">
                     <div className="container-fluid">
                         <a className="navbar-brand" href="#">
                             <img className="logo horizontal-logo"

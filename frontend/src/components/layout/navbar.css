@@ -1,5 +1,5 @@
 body {
-    background: white;
+    background: black;
 }
 
 .navbar .nav-item:not(:last-child) {
@@ -16,4 +16,9 @@ body {
 
 .dropdown-menu {
     margin-top: 0;
+}
+
+.navbar-c {
+    background-color: antiquewhite;
+    color: red;
 }
