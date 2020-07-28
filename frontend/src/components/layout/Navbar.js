@@ -20,7 +20,8 @@ class Navbar extends Component {
 
     state = {
         current: 'mail',
-        dropdown: ''
+        dropdown: '',
+        burger: false
     };
 
     _onMouseEnter = (event) => {
@@ -38,15 +39,55 @@ class Navbar extends Component {
     _onMouseLeave = (event) => {
         this.setState({dropdown:''});
     };
+    
 
+    
+    navSlide = (event) => {
+        const navLinks = document.querySelectorAll(".nav-links li");
+        this.setState(
+            { burger:!this.state.burger }
+        );
+        navLinks.forEach((link,index) => {
 
+            if (link.style.animation){
+                link.style.animation = ""
+            }else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.4}s`;
+                }
+            }
+
+        )
+    }
+    ;
 
     render() {
         const {current} = this.state;
         console.log(this.props.aboutus[0]);
         return (
             <Fragment>
-                <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+                {/*<nav>*/}
+                {/*    <div className="logo">*/}
+                {/*        <h4>The Nav</h4>*/}
+                {/*    </div>*/}
+                {/*    <ul className={`nav-links ${this.state.burger ? "nav-active": ""}`}>*/}
+                {/*        <li><a href="#">Home</a></li>*/}
+                {/*        <li><a href="#">About</a></li>*/}
+                {/*        <li><a href="#">Work</a></li>*/}
+                {/*        <li><a href="#">Project</a></li>*/}
+                {/*    </ul>*/}
+
+                {/*    <div className={`burger ${this.state.burger ? "toggle" : ""}`}*/}
+                {/*         onClick={this.navSlide}>*/}
+                {/*        <div className="line1"></div>*/}
+                {/*        <div className="line2"></div>*/}
+                {/*        <div className="line3"></div>*/}
+                {/*    </div>*/}
+                {/*</nav>*/}
+
+
+
+
+                <nav className="navbar navbar-expand-md">
                     <div className="container-fluid">
                         <a className="navbar-brand" href="#">
                             <img className="logo horizontal-logo"
@@ -59,7 +100,9 @@ class Navbar extends Component {
                         <button className="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
+                                    <div className="line1"></div>
+                                    <div className="line2"></div>
+                                    <div className="line3"></div>
                         </button>
 
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -116,6 +159,9 @@ class Navbar extends Component {
                         </div>
                     </div>
                 </nav>
+
+
+
             </Fragment>
         );
     }
