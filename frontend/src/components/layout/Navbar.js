@@ -18,7 +18,7 @@ class Navbar extends Component {
     }
 
     state = {
-        current: 'mail',
+        current: 'aboutus',
         dropdown: '',
         burger: false
     };
@@ -58,6 +58,10 @@ class Navbar extends Component {
         )
     }
     ;
+
+    setActiveTab = (event,tab) => {
+        console.log(tab);
+    }
 
     render() {
         const {current} = this.state;
@@ -106,7 +110,9 @@ class Navbar extends Component {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav ml-auto">
 
-                                <li className={`nav-item dropdown ${this.state.dropdown.includes('dropdown1') ? 'show' : '' }`}
+                                <li className={`nav-item dropdown ${this.state.dropdown.includes('dropdown1') ? 'show' : '' }
+                                                ${this.state.current === "aboutus" ? 'active-tab' : ""}
+                                                `}
                                     onMouseEnter={this._onMouseEnter}
                                     onMouseLeave={this._onMouseLeave}
                                     ref="dropdown1"
@@ -128,11 +134,6 @@ class Navbar extends Component {
                                         {/*<a className="dropdown-item" href="#">Something else here</a>*/}
                                     </div>
                                 </li>
-
-                                <li className="nav-item active-tab">
-                                    <a className="nav-link" href="#">Link</a>
-                                </li>
-
                                 {/*<li className={`nav-item dropdown ${this.state.dropdown.includes('dropdown2') ? 'show' : '' }`}*/}
                                 {/*    onMouseEnter={this._onMouseEnter}*/}
                                 {/*    onMouseLeave={this._onMouseLeave}*/}
@@ -150,8 +151,22 @@ class Navbar extends Component {
                                 {/*        <a className="dropdown-item" href="#">Something else here</a>*/}
                                 {/*    </div>*/}
                                 {/*</li>*/}
+                                <li className={`nav-item ${this.state.current === "service" ? 'active-tab' : ""}`}
+                                    onClick={this.setActiveTab.bind('service')}
+                                >
+                                    <a className="nav-link" href="#">Service</a>
+                                </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Link</a>
+                                    <a className="nav-link" href="#">IN-Hub</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">IN-Sights</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">i-CARE</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">Contact</a>
                                 </li>
                             </ul>
                         </div>

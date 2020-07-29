@@ -5,13 +5,15 @@
     box-sizing: border-box;
 }
 .navbar{
-    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
 }
 
 .nav-link{
     font-weight: bold;
     color: whitesmoke;
-    font-size: large;
+    font-size: small;
 }
 
 .navbar .nav-item:not(:last-child) {
