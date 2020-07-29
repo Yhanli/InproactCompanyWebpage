@@ -14,6 +14,12 @@ module.exports = {
                     'style-loader',
                     'css-loader'
                 ]
+            },
+            {
+                loader: 'css-loader',
+                options: {
+                    url: false
+                }
             }
         ]
     }
