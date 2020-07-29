@@ -19,7 +19,7 @@ class Navbar extends Component {
 
     state = {
         current: 'aboutus',
-        dropdown: '',
+        dropdown: false,
         burger: false
     };
 
@@ -29,14 +29,14 @@ class Navbar extends Component {
         // console.log(event.target.drops)
         // this.refs.dropdown_first.classList
         const dropdown_name = event.target.name;
-        this.setState({dropdown:event.target.name});
+        this.setState({dropdown:true});
         console.log(event.target.name);
 
 
     };
     
     _onMouseLeave = (event) => {
-        this.setState({dropdown:''});
+        this.setState({dropdown:false});
     };
     
 
@@ -61,7 +61,7 @@ class Navbar extends Component {
 
     setActiveTab = (event,tab) => {
         console.log(tab);
-    }
+    };
 
     render() {
         const {current} = this.state;
@@ -81,8 +81,8 @@ class Navbar extends Component {
                 {/*        <li><a href="#">Project</a></li>*/}
                 {/*    </ul>*/}
 
-                {/*    <div className={`burger ${this.state.burger ? "toggle" : ""}`}*/}
-                {/*         onClick={this.navSlide}>*/}
+                    {/*<div className={`navbar-toggler ${this.state.burger ? "toggle" : ""}`}*/}
+                    {/*     onClick={this.navSlide}>*/}
                 {/*        <div className="line1"></div>*/}
                 {/*        <div className="line2"></div>*/}
                 {/*        <div className="line3"></div>*/}
@@ -99,7 +99,9 @@ class Navbar extends Component {
                                  ))}
                                  alt="forecastr logo"/>
                         </a>
-                        <button className="navbar-toggler" type="button" data-toggle="collapse"
+                        <button className={`navbar-toggler ${this.state.burger ? "toggle" : ""}`}
+                                type="button" data-toggle="collapse"
+                                onClick={this.navSlide}
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
                                     <div className="line1"></div>
@@ -110,7 +112,7 @@ class Navbar extends Component {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav ml-auto">
 
-                                <li className={`nav-item dropdown ${this.state.dropdown.includes('dropdown1') ? 'show' : '' }
+                                <li className={`nav-item dropdown ${this.state.dropdown ? 'show' : '' }
                                                 ${this.state.current === "aboutus" ? 'active-tab' : ""}
                                                 `}
                                     onMouseEnter={this._onMouseEnter}
@@ -119,10 +121,10 @@ class Navbar extends Component {
                                 >
                                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
                                        data-toggle="dropdown" aria-haspopup="true" name="dropdown1"
-                                       aria-expanded={`${this.state.dropdown.includes('dropdown1') ? 'true' : 'false' }`}>
+                                       aria-expanded={`${this.state.dropdown ? 'true' : 'false' }`}>
                                         About Us
                                     </a>
-                                    <div className={`dropdown-menu ${this.state.dropdown.includes('dropdown1') ? 'show' : '' }`}
+                                    <div className={`dropdown-menu ${this.state.dropdown ? 'show' : '' }`}
                                          aria-labelledby="navbarDropdown2" id="dropitems1">
                                         <a className="dropdown-item" href="#">INPG</a>
                                         <div className="dropdown-divider"></div>
