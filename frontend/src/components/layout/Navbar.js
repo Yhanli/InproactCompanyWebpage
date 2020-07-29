@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {getAboutUs} from "../../actions/aboutus";
+import {getAboutUs} from "../../actions/frontend";
 
 
 import './navbar.css';
@@ -12,7 +12,6 @@ class Navbar extends Component {
     static  propTypes = {
         aboutus: PropTypes.array.isRequired
     };
-
 
     componentDidMount() {
         this.props.getAboutUs();
@@ -62,6 +61,8 @@ class Navbar extends Component {
 
     render() {
         const {current} = this.state;
+
+
         console.log(this.props.aboutus[0]);
         return (
             <Fragment>
@@ -84,14 +85,11 @@ class Navbar extends Component {
                 {/*    </div>*/}
                 {/*</nav>*/}
 
-
-
-
                 <nav className="navbar navbar-expand-md">
                     <div className="container-fluid">
                         <a className="navbar-brand" href="#">
                             <img className="logo horizontal-logo"
-                                 width="80" height="80"
+                                 width="70" height="70"
                                  src={this.props.aboutus.map(aboutus => (
                                      aboutus.logo
                                  ))}
@@ -131,7 +129,7 @@ class Navbar extends Component {
                                     </div>
                                 </li>
 
-                                <li className="nav-item">
+                                <li className="nav-item active-tab">
                                     <a className="nav-link" href="#">Link</a>
                                 </li>
 
