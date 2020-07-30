@@ -1,0 +1,29 @@
+.section1{
+    background-color: #88c540;
+    width: 100vw;
+    height: 100vh;
+}
+
+.section2{
+    background-color: #5125c5;
+    width: 100vw;
+    height: 100vh;
+}
+@media screen and (max-width: 768px) {
+    .section1{
+        height: 768px;
+    }
+
+}
+
+.test {
+    margin-top: 200px;
+}
+
+.carousel{
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 75px;
+    margin-left: -20px;
+    z-index: 3;
+}

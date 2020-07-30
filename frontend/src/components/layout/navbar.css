@@ -8,6 +8,8 @@
     position: fixed;
     background-color: rgba(67, 111, 88, 1);
     width: 100%;
+    /*height: 75px;*/
+    z-index: 5;
 }
 
 .nav-link{
@@ -65,7 +67,7 @@
 }
 @media screen and (max-width: 768px){
     .nav-item{
-        width: 170px;
+        width: 160px;
         height: 35px;
     }
 
@@ -79,7 +81,8 @@
 
     .logo {
         padding: 0px;
-        margin: 0px;
+        margin-top: -10px;
+        height: 70px;
     }
 }
 

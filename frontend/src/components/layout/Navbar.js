@@ -18,7 +18,7 @@ class Navbar extends Component {
     }
 
     state = {
-        current: 'aboutus',
+        current: '',
         dropdown: false,
         burger: false
     };

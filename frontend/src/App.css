@@ -3,7 +3,20 @@
     padding: 0px;
     box-sizing: border-box;
 }
+.container{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+}
 
 body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
     /*background-image: url("https://nuwallpaperhd.info/wp-content/uploads/2018/01/Green-Background-Wallpaper.-Solid-Green-Background.jpg");*/
+}
+
+html {
+    scroll-behavior: smooth;
 }
