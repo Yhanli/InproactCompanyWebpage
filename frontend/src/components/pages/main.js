@@ -7,7 +7,9 @@ import "./pages.css";
 
 
 class Main extends Component {
-
+    componentDidMount(){
+        document.title = "Home - Inproact";
+    }
 
     nextSlide = (event) => {
         const height = document.getElementById("section2").offsetHeight;
@@ -17,8 +19,8 @@ class Main extends Component {
     render() {
         return (
             <Fragment>
+                <title>Home - Inproact</title>
                 <div>
-
                     <div className="container-fluid section1">
                         <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
                             <div className="carousel-inner">

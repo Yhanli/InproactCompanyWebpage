@@ -1,0 +1,215 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.footer{
+    width: 100vw;
+    display: grid;
+    overflow: hidden;
+    padding-top: 20px;
+    box-sizing: border-box;
+    background-color: rgb(241, 241, 241);
+    grid-template-rows: 2fr 0.2fr;
+}
+
+.inner_footer{
+    display: grid;
+    margin: 0 auto;
+    width: 95%;
+    height: 100%;
+    grid-template-columns: 20% 25% 17% 38%;
+    grid-template-areas:
+            "logo aboutus columnbreaker ourfeed";
+}
+
+@media screen and (max-width: 1424px) {
+    .inner_footer {
+        background-color: rgba(241, 241, 241,0.3);
+        grid-template-columns: 15% 40% 5% 40%;
+
+    }
+
+}
+@media screen and (max-width: 910px) {
+    .inner_footer {
+        background-color: rgba(241, 241, 241,0.3);
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 20% 30% 20% ;
+        grid-template-areas:
+            "ourfeed"
+            "columnbreaker"
+            "logo"
+            "aboutus";
+        width: 70vw;
+
+    }
+    .footer_third{
+        text-align: center;
+    }
+    .footer_third .border-brline{
+        width: 10em;
+        background-color: #8bc540;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.inner_footer .logo_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /*background-color: ghostwhite;*/
+    grid-area: logo;
+
+}
+
+.inner_footer .logo_container img{
+    width: 200px;
+    height: auto;
+    /*margin-left: 40%;*/
+}
+
+.inner_footer .footer_third{
+    padding-left: 1rem;
+    width: 100%;
+    margin-right: 10px;
+    float: left;
+    height: 100%;
+    /*background-color: lightcyan;*/
+    grid-area: aboutus;
+    padding-bottom: 10px;
+}
+.inner_footer .footer_third h2{
+    text-shadow: 2px 2px 20px grey;
+    padding: 10px 0;
+}
+.inner_footer .footer_third p{
+    padding: 8px 0;
+    text-shadow: 2px 2px 5px lightgrey;
+}
+.border-brline{
+    width: 200px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: #8bc540;
+}
+
+.copy_info{
+    paddind-top: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 5px #cdcdcd;
+    margin-top: 20px;
+}
+.contactus_btn {
+    margin-left: 1em;
+    font-weight: bold;
+    border: 1px solid #436f59;
+    border-radius: 10px;
+    padding: 3px;
+    cursor: pointer;
+    text-shadow:none;
+}
+a:link{
+    color:inherit;
+}
+.contactus_btn:hover{
+    text-decoration: underline;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 1px 1px 3px #8bc540;
+    background-color: #436f59;
+    transition: .3s linear;
+}
+
+.inner_footer .our-news{
+    padding-left: 1rem;
+    width: 100%;
+    margin-right: 10px;
+    float: left;
+    height: 100%;
+    /*background-color: lightcyan;*/
+    grid-area: aboutus;
+    padding-bottom: 10px;
+    grid-area: ourfeed;
+}
+
+.inner_footer .our-news h3{
+    text-shadow: 2px 2px 20px lightgray;
+    padding: 10px 0;
+}
+.inner_footer .our-news p{
+    padding: 8px 0;
+    text-shadow: 2px 2px 5px lightgrey;
+}
+
+.column_breaker{
+    grid-area: columnbreaker;
+}
+
+.dont-wait{
+    color: #436f59;
+    font-weight: bold;
+    text-shadow: none;
+}
+
+.social-media{
+    margin: 5px 0;
+}
+.social-media a{
+    color: #001a21;
+    margin-right: 25px;
+    font-size: 22px;
+    text-decoration: none;
+    transition: .3s linear;
+}
+.newsletter-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.txtb{
+    flex: 1;
+    padding: 10px 40px;
+    font-size: 16px;
+    color: #293043;
+    background: #ddd;
+    border: none;
+    font-weight: 500;
+    outline: none;
+    border-radius: 30px;
+    min-width: 100px;
+}
+.btn{
+    padding: 10px 40px;
+    font-size: 16px;
+    color: black;
+    /*background: #8bc541;*/
+    border: 1px solid black;
+    font-weight: 700;
+    outline: none;
+    border-radius: 30px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: opacity .3s linear;
+}
+.btn:hover{
+    text-decoration: underline;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 1px 1px 3px #8bc540;
+    background-color: #8bc541;
+    transition: .3s linear;
+}
+.social-media a:hover{
+    color: #8bc541;
+}
+@media screen and (max-width:700px){
+    .btn{
+        margin: 0;
+        width: 100%;
+        margin-top: 20px;
+    }
+}

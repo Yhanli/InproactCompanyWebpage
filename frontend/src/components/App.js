@@ -4,6 +4,7 @@ import { HashRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import Main from "./pages/Main"
 
 import Navbar from "./layout/Navbar";
+import Footer from './layout/Footer'
 import "../App.css"
 
 import {Provider} from 'react-redux';
@@ -15,12 +16,14 @@ class App extends Component {
         <Provider store={store}>
             <Router>
                 <Fragment>
+
                     <Navbar/>
                     <div className='container'>
                         <Switch>
                             <Route exact path={'/'} component={Main}/>
                         </Switch>
                     </div>
+                    <Footer />
                 </Fragment>
             </Router>
         </Provider>

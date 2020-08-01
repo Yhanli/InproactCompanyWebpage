@@ -15,6 +15,8 @@ class Navbar extends Component {
 
     componentDidMount() {
         this.props.getAboutUs();
+        const favicon = document.getElementById("favicon");
+        favicon.href = "http://inproact.theia.nz/wp-content/uploads/2018/03/favicon.ico";
     }
 
     state = {
@@ -97,7 +99,7 @@ class Navbar extends Component {
                                  src={this.props.aboutus.map(aboutus => (
                                      aboutus.logo
                                  ))}
-                                 alt="forecastr logo"/>
+                                 alt="logo"/>
                         </a>
                         <button className={`navbar-toggler ${this.state.burger ? "toggle" : ""}`}
                                 type="button" data-toggle="collapse"
