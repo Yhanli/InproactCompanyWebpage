@@ -1,42 +1,37 @@
 import React, { Component, Fragment } from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {getAboutUs} from "../../actions/frontend";
+import {Redirect} from 'react-router-dom';
 
 import './footer.css';
 
 class Footer extends Component {
 
     static  propTypes = {
-        aboutus: PropTypes.array.isRequired
-    };
-
-    componentDidMount() {
-        this.props.getAboutUs();
-    }
-
-    state = {
+        maincontent: PropTypes.array.isRequired
     };
 
     render() {
+        console.log(this.props.maincontent.slice(0,1));
         return (
             <Fragment>
-                <div className={`footer`}>
+                {this.props.maincontent.slice(0).map(data=> {
+                    return(
+                <div className={`footer`} key={data.id}>
                     <div className={`inner_footer`}>
                         <div className={`logo_container`}>
-                            <img src={this.props.aboutus.map(aboutus => (
-                                aboutus.logo
-                            ))} alt={`footer_logo`}/>
+                            <img
+                                src={data.logo} alt={`footer_logo`}/>
                         </div>
 
                         <div className={`footer_third`}>
-                            <h2>Initiatives Navigator</h2>
+                            <h2>{data.footer_title}</h2>
                             <div className="border-brline"></div>
-                            <p>With a small tweak of your mindset, you can see the unseen and make a huge difference!
+                            <p>{data.footer_phrase}
                                 <br/>
                                 <br/>
                                 <span className="dont-wait">Why wait? Let’s start now!</span>
-                                <a className={`contactus_btn`} href="/test">Contact us</a></p>
+                                <a className={`contactus_btn`} href="/contact">Contact us</a></p>
                         </div>
 
                         <div className="column_breaker"></div>
@@ -44,11 +39,11 @@ class Footer extends Component {
                         <div className="our-news">
                             <h3>Follow Us !</h3>
                             <div className="social-media">
-                                <a href="#"><i className="fab fa-facebook-f"></i></a>
-                                <a href="#"><i className="fab fa-twitter"></i></a>
-                                <a href="#"><i className="fab fa-instagram"></i></a>
-                                <a href="#"><i className="fab fa-youtube"></i></a>
-                                <a href="#"><i className="fab fa-linkedin-in"></i></a>
+                                {data.facebook ? <a href={`${data.facebook}`}><i className="fab fa-facebook-f"></i></a> : ""}
+                                {data.twitter ? <a href={`${data.twitter}`}><i className="fab fa-twitter"></i></a> : ""}
+                                {data.instagram ? <a href={`${data.instagram}`}><i className="fab fa-instagram"></i></a> : ""}
+                                {data.youtube ? <a href={`${data.youtube}`}><i className="fab fa-youtube"></i></a> : ""}
+                                {data.linkedin ? <a href={`${data.linkedin}`}><i className="fab fa-linkedin-in"></i></a> : ""}
                             </div>
                             <p>Subscribe Your Email to get our news and updates.</p>
                             <form action="" className="newsletter-form">
@@ -58,16 +53,20 @@ class Footer extends Component {
                         </div>
                     </div>
                     <div className={`copy_info`}>
-                        <p> &copy;2018 - 2020 Inproact - All Rights Reserved. Powered by Yhanl.</p>
+                        <p> &copy;2020 {data.site_name} - All Rights Reserved. Powered by Yhanl.</p>
                     </div>
                 </div>
+                    )
+                })}
             </Fragment>
         );
     }
 }
 
 const mapStateToProps = state=> ({
-    aboutus:state.aboutus.aboutus
+    maincontent:state.maincontent.maincontent
 });
 
-export default connect(mapStateToProps,{getAboutUs})(Footer);
+export default connect(mapStateToProps)(Footer);
+
+// export default Footer;

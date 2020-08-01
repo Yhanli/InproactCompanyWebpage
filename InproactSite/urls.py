@@ -18,11 +18,15 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls import url, re_path
 from django.conf.urls.static import static, serve
+from frontend import views
 
 urlpatterns = [
+
     path('admin/', admin.site.urls),
     path('', include('frontend.urls')),
     path('', include('aboutus.urls')),
     path('', include('website.urls')),
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+
+    url(r'^.*$', views.index),
 ]

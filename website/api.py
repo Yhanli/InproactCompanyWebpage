@@ -9,3 +9,6 @@ class WebsiteMainViewSet(viewsets.ModelViewSet):
     ]
     serializer_class = WebsiteMainSerializer
     queryset = WebsiteMain.objects.all()
+
+    # serializer_class = LandingPicturesSerializer
+    # queryset = LandingPicturesSerializer.objects.all()

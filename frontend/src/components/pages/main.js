@@ -2,21 +2,28 @@ import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
+import {getAboutUs, getLandingContent} from "../../actions/frontend";
+
 import "./pages.css";
 
 
 
 class Main extends Component {
-    componentDidMount(){
-        document.title = "Home - Inproact";
-    }
 
+    static propTypes = {
+        // maincontent:PropTypes.array.isRequired
+    };
+
+    componentDidMount(){
+        // this.props.getLandingContent();
+        document.title = "Home - Inproact";
+    };
     nextSlide = (event) => {
         const height = document.getElementById("section2").offsetHeight;
         document.querySelector('html').scrollTo(0, height - 75);
     };
-
     render() {
+        // console.log(this.props.maincontent);
         return (
             <Fragment>
                 <title>Home - Inproact</title>
@@ -61,6 +68,10 @@ class Main extends Component {
     }
 }
 
+// const mapStateToProps = state=> ({
+//     maincontent:state.maincontent.maincontent
+// });
 
+// export default connect(mapStateToProps,{getLandingContent})(Main);
 
 export default Main;

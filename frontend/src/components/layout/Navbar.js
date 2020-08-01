@@ -2,19 +2,19 @@ import React, {Component, Fragment} from 'react';
 
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {getAboutUs} from "../../actions/frontend";
+import {getAboutUs, getLandingContent} from "../../actions/frontend";
 
 
 import './navbar.css';
 
 class Navbar extends Component {
 
-    static  propTypes = {
-        aboutus: PropTypes.array.isRequired
+    static propTypes = {
+        maincontent: PropTypes.array.isRequired
     };
 
     componentDidMount() {
-        this.props.getAboutUs();
+        this.props.getLandingContent();
         const favicon = document.getElementById("favicon");
         favicon.href = "http://inproact.theia.nz/wp-content/uploads/2018/03/favicon.ico";
     }
@@ -69,7 +69,7 @@ class Navbar extends Component {
         const {current} = this.state;
 
 
-        console.log(this.props.aboutus[0]);
+        // console.log(this.props.maincontent[0]);
         return (
             <Fragment>
                 {/*<nav>*/}
@@ -96,8 +96,8 @@ class Navbar extends Component {
                         <a className="navbar-brand" href="#">
                             <img className="logo horizontal-logo"
                                  width="70" height="70"
-                                 src={this.props.aboutus.map(aboutus => (
-                                     aboutus.logo
+                                 src={this.props.maincontent.map(maincontent => (
+                                     maincontent.logo
                                  ))}
                                  alt="logo"/>
                         </a>
@@ -185,7 +185,7 @@ class Navbar extends Component {
 }
 
 const mapStateToProps = state=> ({
-   aboutus:state.aboutus.aboutus
+    maincontent:state.maincontent.maincontent
 });
 
-export default connect(mapStateToProps,{getAboutUs})(Navbar);
+export default connect(mapStateToProps,{getLandingContent})(Navbar);

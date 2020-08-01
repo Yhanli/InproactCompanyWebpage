@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     
     'frontend',
     'aboutus',
-    'website'
+    'website',
 
 ]
 

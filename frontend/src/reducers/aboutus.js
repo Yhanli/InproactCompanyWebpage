@@ -2,7 +2,7 @@ import {GET_ABOUTUS} from '../actions/types';
 
 const initialState = {
     aboutus:[]
-}
+};
 
 export default function(state = initialState, action) {
     switch (action.type) {
@@ -11,7 +11,7 @@ export default function(state = initialState, action) {
                 ...state,
                 aboutus:action.payload
             };
-            default:
+        default:
             return state;
     }
 }
