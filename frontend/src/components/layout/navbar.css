@@ -51,6 +51,7 @@
 .nav-item {
     margin-left: 5px;
 }
+
 .nav-item:hover{
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 3px;
@@ -60,6 +61,7 @@
     padding: -20px;
     margin: -10px;
 }
+
 @media screen and (max-width: 768px){
     .nav-item{
         width: 160px;
@@ -86,9 +88,6 @@
     text-decoration: underline;
     transition: all 0.3s ease-in;
 }
-
-
-
 
 .active-tab {
     background-color: rgba(255, 255, 255, 0.1);

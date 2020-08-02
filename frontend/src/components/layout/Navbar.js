@@ -26,13 +26,10 @@ class Navbar extends Component {
     };
 
     _onMouseEnter = (event) => {
-        // const width = this.refs.dropdown_first.clientWidth;
-        // const height = this.refs.dropdown_first.clientHeight;
-        // console.log(event.target.drops)
-        // this.refs.dropdown_first.classList
+
         const dropdown_name = event.target.name;
         this.setState({dropdown:true});
-        console.log(event.target.name);
+        // console.log(event.target.name);
 
 
     };
@@ -40,10 +37,8 @@ class Navbar extends Component {
     _onMouseLeave = (event) => {
         this.setState({dropdown:false});
     };
-    
 
-    
-    navSlide = (event) => {
+    navSlide = () => {
         const navLinks = document.querySelectorAll(".nav-links li");
         this.setState(
             { burger:!this.state.burger }
@@ -58,8 +53,7 @@ class Navbar extends Component {
             }
 
         )
-    }
-    ;
+    };
 
     setActiveTab = (event,tab) => {
         console.log(tab);
@@ -67,8 +61,6 @@ class Navbar extends Component {
 
     render() {
         const {current} = this.state;
-
-
         // console.log(this.props.maincontent[0]);
         return (
             <Fragment>
@@ -82,7 +74,6 @@ class Navbar extends Component {
                 {/*        <li><a href="#">Work</a></li>*/}
                 {/*        <li><a href="#">Project</a></li>*/}
                 {/*    </ul>*/}
-
                     {/*<div className={`navbar-toggler ${this.state.burger ? "toggle" : ""}`}*/}
                     {/*     onClick={this.navSlide}>*/}
                 {/*        <div className="line1"></div>*/}
@@ -90,7 +81,6 @@ class Navbar extends Component {
                 {/*        <div className="line3"></div>*/}
                 {/*    </div>*/}
                 {/*</nav>*/}
-
                 <nav className="navbar navbar-expand-md">
                     <div className="container-fluid">
                         <a className="navbar-brand" href="#">
@@ -113,7 +103,6 @@ class Navbar extends Component {
 
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav ml-auto">
-
                                 <li className={`nav-item dropdown ${this.state.dropdown ? 'show' : '' }
                                                 ${this.state.current === "aboutus" ? 'active-tab' : ""}
                                                 `}
@@ -133,7 +122,6 @@ class Navbar extends Component {
                                         <a className="dropdown-item" href="#">INPG Story</a>
                                         <a className="dropdown-item" href="#">INPG Team</a>
                                         <a className="dropdown-item" href="#">INPG Why Us</a>
-
                                         {/*<div className="dropdown-divider"></div>*/}
                                         {/*<a className="dropdown-item" href="#">Something else here</a>*/}
                                     </div>
@@ -176,9 +164,6 @@ class Navbar extends Component {
                         </div>
                     </div>
                 </nav>
-
-
-
             </Fragment>
         );
     }

@@ -11,8 +11,8 @@
     overflow: hidden;
     padding-top: 20px;
     box-sizing: border-box;
-    background-color: rgb(241, 241, 241);
-    grid-template-rows: 2fr 0.2fr;
+    background-color: rgb(236, 236, 236);
+    grid-template-rows: 2fr 0.1fr;
 }
 
 .inner_footer{
@@ -23,6 +23,7 @@
     grid-template-columns: 20% 25% 17% 38%;
     grid-template-areas:
             "logo aboutus columnbreaker ourfeed";
+    padding-bottom: 20px;
 }
 
 @media screen and (max-width: 1424px) {
@@ -86,6 +87,7 @@
 .inner_footer .footer_third h2{
     text-shadow: 2px 2px 20px grey;
     padding: 10px 0;
+    white-space: nowrap;
 }
 .inner_footer .footer_third p{
     padding: 8px 0;
@@ -104,6 +106,7 @@
     text-shadow: 2px 2px 5px #cdcdcd;
     margin-top: 20px;
 }
+
 .contactus_btn {
     margin-left: 1em;
     font-weight: bold;
@@ -112,6 +115,7 @@
     padding: 3px;
     cursor: pointer;
     text-shadow:none;
+    white-space: nowrap;
 }
 a:link{
     color:inherit;
@@ -213,3 +217,4 @@ a:link{
         margin-top: 20px;
     }
 }
+

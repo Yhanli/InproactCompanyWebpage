@@ -11,67 +11,69 @@ import "./pages.css";
 class Main extends Component {
 
     static propTypes = {
-        // maincontent:PropTypes.array.isRequired
+        maincontent:PropTypes.array.isRequired
     };
-
-    componentDidMount(){
-        // this.props.getLandingContent();
-        document.title = "Home - Inproact";
-    };
-    nextSlide = (event) => {
+    nextSlide = () => {
         const height = document.getElementById("section2").offsetHeight;
         document.querySelector('html').scrollTo(0, height - 75);
     };
     render() {
-        // console.log(this.props.maincontent);
         return (
             <Fragment>
-                <title>Home - Inproact</title>
-                <div>
-                    <div className="container-fluid section1">
-                        <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
-                            <div className="carousel-inner">
-                                <div className="carousel-item active">
-                                    <img src="http://inproact.theia.nz/wp-content/uploads/2020/07/Inproact-website-re-21.jpg" className="corousel-img d-block w-100" alt="..."/>
+                {this.props.maincontent[0]? document.title = `Home - ${this.props.maincontent[0].site_name}` : ''}
+                {this.props.maincontent.slice(0).map(data=>{
+                    return(
+                        <Fragment key={data.id}>
+                            <div >
+                                <div className="container-fluid section1">
+                                    <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+                                        <div className="carousel-inner">
+                                            {data.landing_images.map(imgs=>{
+                                                return(
+                                                    <div className={`carousel-item ${imgs.id===data.landing_images[0].id?'active':""}`} key={imgs.id}>
+                                                        <img src={imgs.picture} className="corousel-img d-block w-100" alt="..."/>
+                                                    </div>
+                                                )
+                                            })}
+                                        </div>
+                                        <a className="carousel-control-prev" href="#carouselExampleControls" role="button"
+                                           data-slide="prev">
+                                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span className="sr-only">Previous</span>
+                                        </a>
+                                        <a className="carousel-control-next" href="#carouselExampleControls" role="button"
+                                           data-slide="next">
+                                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span className="sr-only">Next</span>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div className="carousel-item">
-                                    <img src="http://inproact.theia.nz/wp-content/uploads/2020/07/Inproact-website-re-22.jpg" className="corousel-img d-block w-100" alt="..."/>
-                                </div>
-                                <div className="carousel-item">
-                                    <img src="http://inproact.theia.nz/wp-content/uploads/2020/07/Inproact-website-re-22.jpg" className="corousel-img d-block w-100" alt="..."/>
+
+                                <div className="container-fluid section2" id="section2">
+                                    <div id={`subsection1`}>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <span className={"subsection-heading"}>What we do...</span>
+                                    </div>
+                                    <div id={`subsection2`}>
+                                        <p>testing</p>
+                                    </div>
+                                    <div id={`subsections3`}>
+                                        <p>testing</p>
+                                    </div>
                                 </div>
                             </div>
-                            <a className="carousel-control-prev" href="#carouselExampleControls" role="button"
-                               data-slide="prev">
-                                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span className="sr-only">Previous</span>
-                            </a>
-                            <a className="carousel-control-next" href="#carouselExampleControls" role="button"
-                               data-slide="next">
-                                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span className="sr-only">Next</span>
-                            </a>
-                        </div>
-                        {/*<button className="btn btn-primary test"*/}
-                        {/*onClick={this.nextSlide}*/}
-                        {/*> that do you mean </button>*/}
-                    </div>
-
-                    <div className="container-fluid section2" id="section2">
-
-                    </div>
-
-                </div>
-
+                        </Fragment>
+                    )
+                })}
             </Fragment>
         )
     }
 }
 
-// const mapStateToProps = state=> ({
-//     maincontent:state.maincontent.maincontent
-// });
+const mapStateToProps = state=> ({
+    maincontent:state.maincontent.maincontent
+});
 
-// export default connect(mapStateToProps,{getLandingContent})(Main);
-
-export default Main;
+export default connect(mapStateToProps,{getLandingContent})(Main);

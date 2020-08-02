@@ -12,7 +12,7 @@ class Footer extends Component {
     };
 
     render() {
-        console.log(this.props.maincontent.slice(0,1));
+        // console.log(this.props.maincontent.slice(0,1));
         return (
             <Fragment>
                 {this.props.maincontent.slice(0).map(data=> {
@@ -35,7 +35,6 @@ class Footer extends Component {
                         </div>
 
                         <div className="column_breaker"></div>
-
                         <div className="our-news">
                             <h3>Follow Us !</h3>
                             <div className="social-media">
