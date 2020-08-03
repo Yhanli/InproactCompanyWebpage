@@ -1,7 +1,7 @@
 import React, {Component, Fragment, useState} from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route, Switch, BrowserRouter} from 'react-router-dom';
-import Main from "./pages/Main"
+import Main from "./pages/main"
 
 import Navbar from "./layout/Navbar";
 import Footer from './layout/Footer'
