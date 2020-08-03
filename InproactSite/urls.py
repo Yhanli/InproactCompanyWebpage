@@ -28,5 +28,4 @@ urlpatterns = [
     path('', include('website.urls')),
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 
-    url(r'^.*$', views.index),
-]
+]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + [url(r'^.*$', views.index)]
