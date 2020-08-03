@@ -16,14 +16,13 @@ class App extends Component {
         <Provider store={store}>
             <BrowserRouter>
                 <Fragment>
-
-                    <Navbar/>
                     <div className='container'>
+                        <Navbar/>
                         <Switch>
                             <Route exact path={'/'} component={Main}/>
                         </Switch>
+                        <Footer />
                     </div>
-                    <Footer />
                 </Fragment>
             </BrowserRouter>
         </Provider>

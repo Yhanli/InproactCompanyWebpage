@@ -83,6 +83,7 @@
     /*background-color: lightcyan;*/
     grid-area: aboutus;
     padding-bottom: 10px;
+    text-align: center;
 }
 .inner_footer .footer_third h2{
     text-shadow: 2px 2px 20px grey;

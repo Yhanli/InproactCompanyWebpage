@@ -24,7 +24,7 @@ class Main extends Component {
                 {this.props.maincontent.slice(0).map(data=>{
                     return(
                         <Fragment key={data.id}>
-                            <div >
+                            <div className="main-container">
                                 <div className="container-fluid section1">
                                     <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
                                         <div className="carousel-inner">
@@ -48,12 +48,11 @@ class Main extends Component {
                                         </a>
                                     </div>
                                 </div>
-
                                 <div className="container-fluid section2" id="section2">
-                                    <div id={`subsection1`}>
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
+                                    <div id={`subsection1`} className="subsection1">
+                                        <div><p>testing sub</p></div>
+                                        <div><p>testing sub</p></div>
+                                        <div><p>testing sub</p></div>
                                         <span className={"subsection-heading"}>What we do...</span>
                                     </div>
                                     <div id={`subsection2`}>

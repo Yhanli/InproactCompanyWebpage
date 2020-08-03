@@ -1,23 +1,46 @@
-
+.main-container{
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 50px;
+}
 .section1{
     background-color: #88c540;
     width: 100%;
-    display: inline-block;
-    position: relative;
-    padding-top: 50px;
+    height: 100%;
+    /*display: inline-block;*/
+    /*position: relative;*/
+    /*padding-top: 50px;*/
 
 
+}
+@media screen and (max-width: 380px) {
+    .section2 {
+        /*display: inline-block;*/
+        /*position: relative;*/
+        padding-top: -50px;
+    }
 }
 
 .section2{
-    background-color: white;
-    width: 100vw;
-    height: 100vh;
-    padding-top: 2rem;
-    display: grid;
-    grid-template-rows: 30% 30% 30%;
+    /*position: relative;*/
+    /*display: inline-block;*/
+    float: right;
+    background-color: green;
+    width: 80%;
+    height: 100%;
+    /*margin-top: 5rem;*/
 
 }
+
+
+@media screen and (max-width: 1000px) {
+    .section2{
+        width: 100%;
+    }
+
+}
+
 .test {
     margin-top: 200px;
 }
@@ -32,6 +55,4 @@
 
 .subsection-heading{
     font-size: 1em;
-}
-#subsection1{
 }
