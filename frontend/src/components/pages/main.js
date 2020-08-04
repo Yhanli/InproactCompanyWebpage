@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import {getAboutUs, getLandingContent} from "../../actions/frontend";
 
-import "./pages.css";
+import "./main.css";
 
 
 

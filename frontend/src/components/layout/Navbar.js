@@ -90,14 +90,14 @@ class Navbar extends Component {
                                     onMouseLeave={this._onMouseLeave}
                                     ref="dropdown1"
                                 >
-                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                                    <a className="nav-link dropdown-toggle" href="/aboutus" id="navbarDropdown2" role="button"
                                        data-toggle="dropdown" aria-haspopup="true" name="dropdown1"
                                        aria-expanded={`${this.state.dropdown ? 'true' : 'false' }`}>
                                         About Us
                                     </a>
                                     <div className={`dropdown-menu ${this.state.dropdown ? 'show' : '' }`}
                                          aria-labelledby="navbarDropdown2" id="dropitems1">
-                                        <a className="dropdown-item" href="#">INPG</a>
+                                        <a className="dropdown-item" href="/aboutus">INPG</a>
                                         <div className="dropdown-divider"></div>
                                         <a className="dropdown-item" href="#">INPG Story</a>
                                         <a className="dropdown-item" href="#">INPG Team</a>

@@ -23,7 +23,6 @@
     grid-template-columns: 20% 25% 17% 38%;
     grid-template-areas:
             "logo aboutus columnbreaker ourfeed";
-    padding-bottom: 20px;
     text-align: left;
 }
 
@@ -103,10 +102,8 @@
 }
 
 .copy_info{
-    paddind-top: 20px;
     text-align: center;
     text-shadow: 2px 2px 5px #cdcdcd;
-    margin-top: 20px;
 }
 
 .contactus_btn {
