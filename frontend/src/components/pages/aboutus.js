@@ -54,8 +54,14 @@ class AboutUs extends Component {
                         <Fragment key={data.id}>
                             <div className="main-container">
                                 <div className="section1">
-                                    <div className="front-image">
-                                        <img src={data.cover_image}/>
+                                    <div className="front-image" style={{
+                                        backgroundImage: `url(${data.cover_image})`,
+                                        backgroundSize: 'cover',
+                                        maxWidth:"100%",
+                                        maxHeight: "auto"
+                                    }}>
+                                        {/*<img src={data.cover_image}/>*/}
+                                        <div className="front-image-name"><span>ABOUT US</span></div>
                                     </div>
                                 </div>
                                 <div className="content-section" style={{

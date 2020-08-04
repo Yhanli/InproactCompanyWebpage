@@ -12,8 +12,8 @@
     background-color: #88c540;
     width: 100%;
 }
-.section1 img{
-    max-width: 100%;
+.section1 .front-image{
+    /*padding: 50% 50%;*/
 }
 
 .content-section{
@@ -41,4 +41,12 @@
 
     }
 
+}
+
+.front-image-name{
+    position: relative;
+    border: 10px solid black;
+    border-radius: 10px;
+    width: 40vw;
+    height: 240px;
 }
