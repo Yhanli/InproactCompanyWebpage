@@ -59,33 +59,40 @@ class Main extends Component {
                                                  className="inspire-photo" alt="inspire"/>
                                         </div>
                                     </div>
+                                    <div className="subsection-divider"><span>{data.section_1_2_divider}</span></div>
+                                    <div className="subsection-divider-line"></div>
                                     <div id={`subsection2`} className="subsection2">
-                                        <div className="subsection-text">
-                                            <h2>{data.section_2_text_1_title}</h2>
-                                            <p>{data.section_2_text_1_paragraph}</p>
+                                        <div className="subsection-row">
+                                            <div className="subsection-text">
+                                                <h2>{data.section_2_text_1_title}</h2>
+                                                <p>{data.section_2_text_1_paragraph}</p>
+                                            </div>
+                                            <div className="subsection-text">
+                                                <h2>{data.section_2_text_2_title}</h2>
+                                                <p>{data.section_2_text_2_paragraph}</p>
+                                            </div>
                                         </div>
-                                        <div className="subsection-img">
-                                            <img src={data.section_2_picture}
-                                                 className="inspire-photo" alt="inspire"/>
-                                        </div>
-                                        <div className="subsection-text">
-                                            <h2>{data.section_2_text_2_title}</h2>
-                                            <p>{data.section_2_text_2_paragraph}</p>
-                                        </div>
-                                        <div className="subsection-text">
-                                            <h2>{data.section_2_text_3_title}</h2>
-                                            <p>{data.section_2_text_3_paragraph}</p>
-                                        </div>
-                                        <div className="subsection-text">
-                                            <h2>{data.section_2_text_4_title}</h2>
-                                            <p>{data.section_2_text_4_paragraph}</p>
-                                        </div>
+                                        <div className="subsection-row">
+                                            <div className="subsection-last_row ">
 
+                                                <div className="subsection-text">
+                                                    <h2>{data.section_2_text_4_title}</h2>
+                                                    <p>{data.section_2_text_4_paragraph}</p>
+                                                </div>
+                                                <div className="subsection-text">
+                                                    <h2>{data.section_2_text_3_title}</h2>
+                                                    <p>{data.section_2_text_3_paragraph}</p>
+                                                </div>
+                                            </div>
 
-
+                                            <div className="subsection-img">
+                                                <img src={data.section_2_picture}
+                                                     className="inspire-photo" alt="inspire"/>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div id={`subsections3`}>
-                                        <p>testing</p>
+                                        {/*<p>testing</p>*/}
                                     </div>
                                 </div>
                             </div>

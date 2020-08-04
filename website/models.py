@@ -22,6 +22,8 @@ class WebsiteMain(models.Model):
     section_1_words = models.TextField(blank=True)
     section_1_picture = models.ImageField(upload_to="website_main/", blank=True)
 
+    section_1_2_divider = models.CharField(max_length=1000, blank=True)
+
     section_2_picture = models.ImageField(upload_to="website_main/", blank=True)
 
     section_2_text_1_title = models.CharField(max_length=1000, blank=True)

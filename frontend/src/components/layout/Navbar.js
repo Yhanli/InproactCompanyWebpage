@@ -15,8 +15,9 @@ class Navbar extends Component {
 
     componentDidMount() {
         this.props.getLandingContent();
-        const favicon = document.getElementById("favicon");
-        favicon.href = "http://inproact.theia.nz/wp-content/uploads/2018/03/favicon.ico";
+        // const favicon = document.getElementById("favicon");
+        // favicon.href = "http://inproact.theia.nz/wp-content/uploads/2018/03/favicon.ico";
+        // console.log(this.props.maincontent)
     }
 
     state = {
@@ -26,12 +27,8 @@ class Navbar extends Component {
     };
 
     _onMouseEnter = (event) => {
-
         const dropdown_name = event.target.name;
         this.setState({dropdown:true});
-        // console.log(event.target.name);
-
-
     };
     
     _onMouseLeave = (event) => {
@@ -64,26 +61,9 @@ class Navbar extends Component {
         // console.log(this.props.maincontent[0]);
         return (
             <Fragment>
-                {/*<nav>*/}
-                {/*    <div className="logo">*/}
-                {/*        <h4>The Nav</h4>*/}
-                {/*    </div>*/}
-                {/*    <ul className={`nav-links ${this.state.burger ? "nav-active": ""}`}>*/}
-                {/*        <li><a href="#">Home</a></li>*/}
-                {/*        <li><a href="#">About</a></li>*/}
-                {/*        <li><a href="#">Work</a></li>*/}
-                {/*        <li><a href="#">Project</a></li>*/}
-                {/*    </ul>*/}
-                    {/*<div className={`navbar-toggler ${this.state.burger ? "toggle" : ""}`}*/}
-                    {/*     onClick={this.navSlide}>*/}
-                {/*        <div className="line1"></div>*/}
-                {/*        <div className="line2"></div>*/}
-                {/*        <div className="line3"></div>*/}
-                {/*    </div>*/}
-                {/*</nav>*/}
                 <nav className="navbar navbar-expand-md">
                     <div className="container-fluid">
-                        <a className="navbar-brand" href="#">
+                        <a className="navbar-brand" href="/">
                             <img className="logo horizontal-logo"
                                  width="70" height="70"
                                  src={this.props.maincontent.map(maincontent => (
@@ -122,27 +102,8 @@ class Navbar extends Component {
                                         <a className="dropdown-item" href="#">INPG Story</a>
                                         <a className="dropdown-item" href="#">INPG Team</a>
                                         <a className="dropdown-item" href="#">INPG Why Us</a>
-                                        {/*<div className="dropdown-divider"></div>*/}
-                                        {/*<a className="dropdown-item" href="#">Something else here</a>*/}
                                     </div>
                                 </li>
-                                {/*<li className={`nav-item dropdown ${this.state.dropdown.includes('dropdown2') ? 'show' : '' }`}*/}
-                                {/*    onMouseEnter={this._onMouseEnter}*/}
-                                {/*    onMouseLeave={this._onMouseLeave}*/}
-                                {/*>*/}
-                                {/*    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"*/}
-                                {/*       data-toggle="dropdown" aria-haspopup="true" name="dropdown2"*/}
-                                {/*       aria-expanded={`${this.state.dropdown.includes('dropdown2') ? 'true' : 'false' }`}>*/}
-                                {/*        Dropdown*/}
-                                {/*    </a>*/}
-                                {/*    <div className={`dropdown-menu ${this.state.dropdown.includes('dropdown2') ? 'show' : '' }`}*/}
-                                {/*         aria-labelledby="navbarDropdown3">*/}
-                                {/*        <a className="dropdown-item" href="#">Action</a>*/}
-                                {/*        <a className="dropdown-item" href="#">Another action</a>*/}
-                                {/*        <div className="dropdown-divider"></div>*/}
-                                {/*        <a className="dropdown-item" href="#">Something else here</a>*/}
-                                {/*    </div>*/}
-                                {/*</li>*/}
                                 <li className={`nav-item ${this.state.current === "service" ? 'active-tab' : ""}`}
                                     onClick={this.setActiveTab.bind('service')}
                                 >
