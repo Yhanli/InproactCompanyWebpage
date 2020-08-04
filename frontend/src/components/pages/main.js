@@ -25,7 +25,7 @@ class Main extends Component {
                     return(
                         <Fragment key={data.id}>
                             <div className="main-container">
-                                <div className="container-fluid section1">
+                                <div className="section1">
                                     <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
                                         <div className="carousel-inner">
                                             {data.landing_images.map(imgs=>{
@@ -50,13 +50,39 @@ class Main extends Component {
                                 </div>
                                 <div className="container-fluid section2" id="section2">
                                     <div id={`subsection1`} className="subsection1">
-                                        <div><p>testing sub</p></div>
-                                        <div><p>testing sub</p></div>
-                                        <div><p>testing sub</p></div>
-                                        <span className={"subsection-heading"}>What we do...</span>
+                                        <div className="subsection-text">
+                                            <h2>{data.section_1_title}</h2>
+                                            <p>{data.section_1_words}</p>
+                                        </div>
+                                        <div className="subsection-img">
+                                            <img src={data.section_1_picture} 
+                                                 className="inspire-photo" alt="inspire"/>
+                                        </div>
                                     </div>
-                                    <div id={`subsection2`}>
-                                        <p>testing</p>
+                                    <div id={`subsection2`} className="subsection2">
+                                        <div className="subsection-text">
+                                            <h2>{data.section_2_text_1_title}</h2>
+                                            <p>{data.section_2_text_1_paragraph}</p>
+                                        </div>
+                                        <div className="subsection-img">
+                                            <img src={data.section_2_picture}
+                                                 className="inspire-photo" alt="inspire"/>
+                                        </div>
+                                        <div className="subsection-text">
+                                            <h2>{data.section_2_text_2_title}</h2>
+                                            <p>{data.section_2_text_2_paragraph}</p>
+                                        </div>
+                                        <div className="subsection-text">
+                                            <h2>{data.section_2_text_3_title}</h2>
+                                            <p>{data.section_2_text_3_paragraph}</p>
+                                        </div>
+                                        <div className="subsection-text">
+                                            <h2>{data.section_2_text_4_title}</h2>
+                                            <p>{data.section_2_text_4_paragraph}</p>
+                                        </div>
+
+
+
                                     </div>
                                     <div id={`subsections3`}>
                                         <p>testing</p>

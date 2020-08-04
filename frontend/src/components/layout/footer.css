@@ -24,6 +24,7 @@
     grid-template-areas:
             "logo aboutus columnbreaker ourfeed";
     padding-bottom: 20px;
+    text-align: left;
 }
 
 @media screen and (max-width: 1424px) {
@@ -47,7 +48,7 @@
         width: 70vw;
 
     }
-    .footer_third{
+    .inner_footer .footer_third{
         text-align: center;
     }
     .footer_third .border-brline{
@@ -83,7 +84,7 @@
     /*background-color: lightcyan;*/
     grid-area: aboutus;
     padding-bottom: 10px;
-    text-align: center;
+
 }
 .inner_footer .footer_third h2{
     text-shadow: 2px 2px 20px grey;
