@@ -41,8 +41,8 @@
     transition: all 0.3s ease;
 }
 
-.nav-item{
-    color: #87be40;
+.nav-item a{
+    color: #87be40!important;
     font-weight: bold;
     font-family: Arial, sans-serif;
     font-size: 1.2rem;
