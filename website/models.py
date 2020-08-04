@@ -19,6 +19,7 @@ class WebsiteMain(models.Model):
     # landing_images = models.ForeignKey("LandingPictures", on_delete=models.CASCADE, blank=True)
 
 
+
 class LandingPictures(models.Model):
     picture = models.ImageField(upload_to="website_main/landing_corousel/", blank=True)
     pageId = models.ForeignKey('WebsiteMain', on_delete=models.CASCADE, related_name="landing_images")
