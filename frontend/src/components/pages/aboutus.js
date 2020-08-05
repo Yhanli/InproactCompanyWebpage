@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
 import {getAboutUs,getLandingContent} from "../../actions/frontend";
-
+import smoothscroll from 'smoothscroll-polyfill'
 import "./aboutus.css";
 
 class AboutUs extends Component {
@@ -20,7 +20,11 @@ class AboutUs extends Component {
 
     nextSlide = () => {
         const element = document.getElementById("content-section");
-        element.scrollIntoView({behavior: "smooth", inline:"start"});
+        smoothscroll.polyfill();
+        window.scroll({
+            top:element.offsetTop - 50,
+            behavior: "smooth"
+        })
     };
 
     render() {
@@ -50,9 +54,9 @@ class AboutUs extends Component {
                                         backgroundPosition: 'center',
                                         backgroundRepeat: 'no-repeat',
                                         backgroundSize: 'cover',
-                                        paddingTop: "3em"
+                                        // paddingTop: "3em"
                                     }}>
-                                        <div><br/><br/></div>
+                                        {/*<div><br/></div>*/}
                                         <div id={`subsection1`} className="subsection">
 
                                             <div className="subsection-text">
@@ -60,8 +64,6 @@ class AboutUs extends Component {
                                                 <p>{data.section1_paragraph}</p>
                                                 <p className="famous-quote"><span className="quote">{data.famous_quote.split("–")[0]}</span> - <span className="quote-by">{data.famous_quote.split("–")[1]}</span></p>
                                             </div>
-
-
                                             <div className="row-column">
                                                 <div className="subsection-text">
                                                     <h2>{data.section2_title}</h2>
@@ -92,10 +94,7 @@ class AboutUs extends Component {
                                                 <div></div>
                                                 <div></div>
                                             </div>
-                                            {/*<div className="subsection-img">*/}
-                                            {/*    <img src={data.section4_image}*/}
-                                            {/*         className="inspire-photo" alt="inspire"/>*/}
-                                            {/*</div>*/}
+
                                         </div>
                                     </div>
                                 </div>

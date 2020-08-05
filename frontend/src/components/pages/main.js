@@ -23,7 +23,7 @@ class Main extends Component {
                 {this.props.maincontent[0]? document.title = `Home - ${this.props.maincontent[0].site_name}` : ''}
                 {this.props.maincontent.slice(0).map(data=>{
                     return(
-                        <Fragment >
+                        <Fragment key={data.id}>
                             <div className="main-containers">
                                 <div className="section1">
                                     <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
