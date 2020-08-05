@@ -5,6 +5,7 @@ from django.db import models
 
 
 class AboutUs(models.Model):
+    active_content = models.BooleanField(default=False)
     cover_image = models.FileField(upload_to="sidepages/aboutus", blank=True)
     button_name = models.CharField(max_length=1000, blank=True)
 

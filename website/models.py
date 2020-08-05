@@ -6,6 +6,7 @@ from django.db import models
 
 class WebsiteMain(models.Model):
     # backgroundImg = models.FileField(upload_to="website_main/")
+    active_content = models.BooleanField(default=False)
     site_name = models.CharField(max_length=1000, blank=True)
     logo = models.FileField(upload_to="website_main/")
     footer_title = models.CharField(max_length=1000)

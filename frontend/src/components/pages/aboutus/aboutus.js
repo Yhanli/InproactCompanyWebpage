@@ -42,7 +42,7 @@ class AboutUs extends Component {
                                         <div className="front-image-name">
                                                 <span>ABOUT US</span>
                                                 <section className="text-liner" />
-                                                <a onClick={this.nextSlide}>INPG</a>
+                                                <a onClick={this.nextSlide}>{data.button_name}</a>
                                         </div>
 
                                     </div>

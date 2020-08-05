@@ -38,18 +38,17 @@ class Story extends Component {
                             <div className="main-container">
                                 <div className="section1">
                                     <div className="front-image">
-                                        <img src={data.cover_image}/>
+                                        <img src={data.story.cover_image}/>
                                         <div className="front-image-name">
                                             <span>ABOUT US</span>
                                             <section className="text-liner" />
-                                            <a onClick={this.nextSlide}>INPG</a>
+                                            <a onClick={this.nextSlide}>{data.story.button_name}</a>
                                         </div>
-
                                     </div>
                                 </div>
                                 <div>
                                     <div className="content-section" id="content-section" style={{
-                                        backgroundImage: `url(${data.light_background_image})`,
+                                        backgroundImage: `url(${data.story.light_background_image})`,
                                         height: '100%',
                                         backgroundPosition: 'center',
                                         backgroundRepeat: 'no-repeat',
