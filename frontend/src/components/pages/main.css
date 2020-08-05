@@ -1,4 +1,4 @@
-.main-container{
+.main-containers{
     width: 100vw;
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(240px,auto));
@@ -7,13 +7,14 @@
 }
 .section1{
     background-color: #88c540;
-    width: 100%;
+    width: 90%;
 }
 
 .section2{
     width: 90%;
     height: auto;
     padding-top: 5em;
+    padding-bottom: 5em;
 }
 
 @media screen and (min-width: 1100px){
@@ -28,9 +29,13 @@
         width: 100%;
         padding-top: 3em;
         align-items: center;
+        /*padding-left: 5vw;*/
+        /*padding-right: 5vw;*/
+
     }
     .section2 .subsection2{
         text-align: center;
+
     }
 
 }
@@ -40,16 +45,14 @@
 }
 
 .carousel{
-    /*margin-left: -15px;*/
     width: 100%;
     height: 100%;
-    /*box-sizing: border-box;*/
     z-index: 3;
 }
 
 .subsection1{
     display: grid;
-    grid-template-columns: 1fr 0.1fr;
+    grid-template-columns: 0.9fr 0.1fr;
     align-items: center;
     padding-bottom: 3em;
 }
@@ -139,6 +142,7 @@
 
 }
 .subsection2 img{
+    width: auto;
     max-width: 80%;
     border-bottom-color: #cdcdcd;
     border-radius: 10px;

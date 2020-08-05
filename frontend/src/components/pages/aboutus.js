@@ -101,11 +101,8 @@ class AboutUs extends Component {
                                                 paddingBottom:"5vw"
                                             }}>
                                                 <div className="subsection-text">
-                                                    <h2 style={{
-                                                        paddingBottom:"-50px"
-                                                    }}>{data.section4_title}</h2>
+                                                    <h2>{data.section4_title}</h2>
                                                     {data.section4_paragraph ? <p>{data.section4_paragraph}</p>:""}
-                                                    <p>{data.section4_paragraph}</p>
                                                     <img src={data.section4_image}
                                                          className="aboutus-img" alt="inspire"/>
                                                 </div>
