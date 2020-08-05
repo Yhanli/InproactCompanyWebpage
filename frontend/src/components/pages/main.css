@@ -29,6 +29,9 @@
         padding-top: 3em;
         align-items: center;
     }
+    .section2 .subsection2{
+        text-align: center;
+    }
 
 }
 
@@ -127,7 +130,7 @@
 
 .subsection2 .subsection-row{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px,auto));
+    grid-template-columns: repeat(auto-fit, minmax(500px,auto));
 
 }
 .subsection2 .subsection-last_row{
