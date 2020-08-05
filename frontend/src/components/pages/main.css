@@ -150,7 +150,7 @@
 
 }
 
-@media screen and (max-width: 968px){
+@media screen and (max-width: 900px){
     .subsection-row .subsection-img {
         visibility: hidden;
         height: 0px;

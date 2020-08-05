@@ -53,18 +53,22 @@ class AboutUs extends Component {
                     return(
                         <Fragment key={data.id}>
                             <div className="main-container">
+
+
                                 <div className="section1">
-                                    <div className="front-image" style={{
-                                        backgroundImage: `url(${data.cover_image})`,
-                                        backgroundSize: 'cover',
-                                        maxWidth:"100%",
-                                        maxHeight: "auto"
-                                    }}>
-                                        {/*<img src={data.cover_image}/>*/}
-                                        <div className="front-image-name"><span>ABOUT US</span></div>
+                                    <div className="front-image">
+                                        <img src={data.cover_image}/>
+                                        <div className="front-image-name">
+                                            <p>
+                                                <span>ABOUT US</span>
+                                                <br className="text-liner" />
+                                                <a href="#content-section">INPG</a>
+                                            </p>
+                                        </div>
+
                                     </div>
                                 </div>
-                                <div className="content-section" style={{
+                                <div className="content-section" id="content-section" style={{
                                     backgroundImage: `url(${data.light_background_image})`,
                                     height: '100%',
                                     backgroundPosition: 'center',
@@ -72,9 +76,10 @@ class AboutUs extends Component {
                                     backgroundSize: 'cover',
                                     paddingTop: "3em"
                                 }}>
+                                    <div><br/><br/><br/></div>
                                     <div id={`subsection1`} className="subsection">
                                         <div className="subsection-text">
-                                            <h2>{data.section1_title}</h2>
+                                            <h2 className="first-text">{data.section1_title}</h2>
                                             <p>{data.section1_paragraph}</p>
                                         </div>
                                         <div className="subsection-text">
@@ -87,6 +92,7 @@ class AboutUs extends Component {
                                         </div>
                                         <div className="subsection-text">
                                             <h2>{data.section4_title}</h2>
+                                            {data.section4_paragraph ? <p>{data.section4_paragraph}</p>:""}
                                             <p>{data.section4_paragraph}</p>
                                             <img src={data.section4_image}
                                                  className="aboutus-img" alt="inspire"/>

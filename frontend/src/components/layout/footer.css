@@ -38,7 +38,9 @@
     .inner_footer {
         background-color: rgba(241, 241, 241,0.3);
         grid-template-columns: 100%;
-        grid-template-rows: 0.1fr 0fr 1fr 0.1fr ;
+        /*grid-template-rows: 0.1fr 0fr 1fr 0.1fr ;*/
+        grid-template-rows: repeat(auto-fit,auto) ;
+
         grid-template-areas:
             "ourfeed"
             "columnbreaker"
@@ -61,7 +63,8 @@
 
 .inner_footer .logo_container{
     width: 100%;
-    display: flex;
+    max-width: 120%;
+    display: grid;
     justify-content: center;
     /*background-color: ghostwhite;*/
     grid-area: logo;
@@ -69,7 +72,9 @@
 }
 
 .inner_footer .logo_container img{
-    width: 200px;
+    padding-top: 2em;
+    width: 120%;
+    max-width: 120%;
     height: auto;
     /*margin-left: 40%;*/
 }
@@ -93,6 +98,7 @@
 .inner_footer .footer_third p{
     padding: 8px 0;
     text-shadow: 2px 2px 5px lightgrey;
+
 }
 .border-brline{
     width: 200px;
