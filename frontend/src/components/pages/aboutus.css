@@ -48,12 +48,15 @@
         width: 35%;
         height: 25%;
     }
+    .main-container .text-liner{
+        height: 1vw;
+    }
 
 }
 
 .front-image-name{
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -94,9 +97,28 @@
 }
 
 .text-liner{
-    height: 0.1vw;
+    height: 3vw;
 }
 
 .content-section .subsection {
     text-align: center;
+}
+.content-section .subsection h2{
+    padding-top: 3vw;
+}
+
+.famous-quote{
+    font-weight: bold;
+}
+.famous-quote .quote{
+    font-style: italic;
+    color: grey;
+}
+.famous-quote .quote-by{
+    color: darkgray;
+}
+
+.row-column{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px,auto));
 }
