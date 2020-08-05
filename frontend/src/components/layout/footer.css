@@ -50,6 +50,7 @@
 
     }
     .inner_footer .footer_third{
+        /*padding: 0 0;*/
         text-align: center;
     }
     .footer_third .border-brline{
@@ -62,7 +63,7 @@
 }
 
 .inner_footer .logo_container{
-    width: 100%;
+    width: 90%;
     max-width: 120%;
     display: grid;
     justify-content: center;
@@ -80,10 +81,10 @@
 }
 
 .inner_footer .footer_third{
-    padding-left: 1rem;
+    /*padding: 0 20px;*/
     width: 100%;
-    margin-right: 10px;
-    float: left;
+    /*margin-right: 10px;*/
+    /*float: left;*/
     height: 100%;
     /*background-color: lightcyan;*/
     grid-area: aboutus;
@@ -92,7 +93,7 @@
 }
 .inner_footer .footer_third h2{
     text-shadow: 2px 2px 20px grey;
-    padding: 10px 0;
+    /*padding: 10px 0;*/
     white-space: nowrap;
 }
 .inner_footer .footer_third p{

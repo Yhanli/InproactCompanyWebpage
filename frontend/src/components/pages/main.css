@@ -3,10 +3,11 @@
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(240px,auto));
     align-items: center;
-    margin-top: 50px;
+    padding-top: 1.2rem;
+    /*margin-top: 50px;*/
 }
 .section1{
-    background-color: #88c540;
+    /*background-color: #88c540;*/
     width: 90%;
 }
 
@@ -29,8 +30,8 @@
         width: 100%;
         padding-top: 3em;
         align-items: center;
-        /*padding-left: 5vw;*/
-        /*padding-right: 5vw;*/
+        padding-left: 5vw;
+        padding-right: 5vw;
 
     }
     .section2 .subsection2{
@@ -79,21 +80,16 @@
         height: auto;
         grid-area: subsection-img;
     }
-    .subsection1 .subsection-img img{
-        max-width: 80%;
-    }
+
 }
 
 .inspire-photo{
     max-width: 200px;
     width: auto;
 }
-.subsection-text{
-    width: 100%;
-}
 .subsection-text h2{
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-bottom: 1em;
     font-weight: unset;
     font-size: 1.9em;
@@ -105,8 +101,8 @@
     font-family: "Poppins", Helvetica, Arial, sans-serif;
     font-size: 1em;
     white-space: pre-wrap;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 1rem;
+    padding-right: 1rem;
     text-shadow: 2px 2px 5px lightgrey;
     color: #626262;
     letter-spacing: 1px;
@@ -133,9 +129,10 @@
 
 .subsection2 .subsection-row{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px,auto));
+    grid-template-columns: repeat(auto-fit, minmax(340px,auto));
 
 }
+
 .subsection2 .subsection-last_row{
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(240px,auto));
@@ -160,14 +157,14 @@
 @media screen and (max-width: 900px){
     .subsection-row .subsection-img {
         visibility: hidden;
-        height: 0px;
+        /*height: 0px;*/
     }
 }
 
 .subsection-divider{
     font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 1rem;
+    padding-right: 1rem;
     text-shadow: 2px 2px 5px lightgrey;
 }
 
@@ -176,7 +173,7 @@
     border-radius: 5px;
     width: 60%;
     height: 2px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 1rem;
+    margin-right: 1rem;
     margin-bottom: 50px;
 }

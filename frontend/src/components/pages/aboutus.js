@@ -24,23 +24,6 @@ class AboutUs extends Component {
     };
 
     render() {
-        const styles = {
-            header: {
-                backgroundImage: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeiF7nMwP-MSiNmsbbf2kDneK_bLQ8SidSRfl-Hezb5WEFlcfx)',
-                height: '100vh',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover'
-            },
-
-            content: {
-                height: '100%',
-                width: '100%',
-                backgroundColor: 'rgba(255, 255, 255, 0.6)',
-                color: 'white'
-            }
-        }
-
         return (
             <Fragment>
                 {/*{console.log(this.props.aboutus)}*/}

@@ -9,7 +9,7 @@
     justify-items: center;
 }
 .section1{
-    background-color: #88c540;
+    /*background-color: #88c540;*/
     width: 100%;
 }
 
@@ -44,9 +44,9 @@
         align-items: center;
 
     }
-    .front-image-name{
-        width: 35%;
-        height: 25%;
+    .section1 .front-image .front-image-name{
+        width: 35vw;
+        height: 22vw;
     }
     .main-container .text-liner{
         height: 1vw;
@@ -62,8 +62,8 @@
 
     border: 10px double #cdcccc;
     border-radius: 20px;
-    width: 35%;
-    height: 25%;
+    width: 35vw;
+    height: 17vw;
     box-shadow: 0px 0px 30px 2px #ffffff;
 }
 
@@ -81,14 +81,14 @@
 .front-image-name span{
     color: #e3e3e3;
     /*font-weight: bold;*/
-    font-size: 3vw;
+    font-size: 5vw;
     text-shadow: 0px 1px 0.7vw #2b2b2b;
 
 }
 
 .front-image-name a{
     color: #e3e3e3;
-    font-size: 1.8vw;
+    font-size: 3vw;
     text-shadow: 0px -1px 2px rgba(0, 0, 0, 0.99);
     border: 3px solid #cdcccc;
     border-radius: 10px;
@@ -128,4 +128,10 @@
 .row-column{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px,auto));
+}
+
+@media screen and (min-width: 900px)  {
+    .row-column .subsection-text p{
+        padding: 0 20%;
+    }
 }
