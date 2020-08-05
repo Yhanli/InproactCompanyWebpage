@@ -99,7 +99,7 @@ class Navbar extends Component {
                                          aria-labelledby="navbarDropdown2" id="dropitems1">
                                         <a className="dropdown-item" href="/aboutus">INPG</a>
                                         <div className="dropdown-divider"></div>
-                                        <a className="dropdown-item" href="#">INPG Story</a>
+                                        <a className="dropdown-item" href="/story">INPG Story</a>
                                         <a className="dropdown-item" href="#">INPG Team</a>
                                         <a className="dropdown-item" href="#">INPG Why Us</a>
                                     </div>

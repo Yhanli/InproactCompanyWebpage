@@ -2,11 +2,11 @@ import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
-import {getAboutUs,getLandingContent} from "../../actions/frontend";
+import {getAboutUs,getLandingContent} from "../../../actions/frontend";
 import smoothscroll from 'smoothscroll-polyfill'
 import "./aboutus.css";
 
-class AboutUs extends Component {
+class Story extends Component {
 
     static propTypes = {
         aboutus:PropTypes.array.isRequired,
@@ -31,7 +31,7 @@ class AboutUs extends Component {
         return (
             <Fragment>
                 {/*{console.log(this.props.aboutus)}*/}
-                {this.props.maincontent[0]? document.title = `About Us - ${this.props.maincontent[0].site_name}` : ''}
+                {this.props.maincontent[0]? document.title = `About Us (Story) - ${this.props.maincontent[0].site_name}` : ''}
                 {this.props.aboutus.slice(0).map(data=>{
                     return(
                         <Fragment key={data.id}>
@@ -40,9 +40,9 @@ class AboutUs extends Component {
                                     <div className="front-image">
                                         <img src={data.cover_image}/>
                                         <div className="front-image-name">
-                                                <span>ABOUT US</span>
-                                                <section className="text-liner" />
-                                                <a onClick={this.nextSlide}>INPG</a>
+                                            <span>ABOUT US</span>
+                                            <section className="text-liner" />
+                                            <a onClick={this.nextSlide}>INPG</a>
                                         </div>
 
                                     </div>
@@ -115,7 +115,4 @@ const mapStateToProps = state=> ({
     maincontent:state.maincontent.maincontent
 });
 
-export default connect(mapStateToProps,{getAboutUs,getLandingContent})(AboutUs);
-
-// export default AboutUs;
-
+export default connect(mapStateToProps,{getAboutUs,getLandingContent})(Story);

@@ -1,9 +1,5 @@
 from django.contrib import admin
-from .models import AboutUs
-
-admin.site.site_header = "Admin"
-admin.site.site_title = "Admin Portal"
-admin.site.index_title = "Welcome"
+from .models import AboutUs,Story
 
 # from django import forms
 #
@@ -17,4 +13,13 @@ admin.site.index_title = "Welcome"
 #             ''
 #         }
 
-admin.site.register(AboutUs)
+class StoryInline(admin.StackedInline):
+    model = Story
+    field_sets = (field.name for field in Story._meta.fields if field.name != "id")
+
+
+class PageAdmin(admin.ModelAdmin):
+    inlines = [StoryInline]
+
+
+admin.site.register(AboutUs, PageAdmin)

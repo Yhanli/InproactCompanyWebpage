@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route, Switch, BrowserRouter} from 'react-router-dom';
 
 import Main from "./pages/main"
-import AboutUs from "./pages/aboutus";
+import AboutUs from "./pages/aboutus/aboutus";
+import Story from "./pages/aboutus/story";
 
 import Navbar from "./layout/Navbar";
 import Footer from './layout/Footer'
@@ -26,6 +27,7 @@ class App extends Component {
                         <Switch>
                             <Route exact path={'/'} component={Main}/>
                             <Route exact path={'/aboutus'} component={AboutUs}/>
+                            <Route exact path={'/story'} component={Story}/>
                         </Switch>
                         <Footer />
                     </div>
