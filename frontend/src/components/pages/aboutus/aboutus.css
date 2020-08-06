@@ -16,7 +16,7 @@
 }
 
 .subsection .first-text{
-    padding-top: 15em;
+    /*padding-top: 15em;*/
     /*margin-top: 5em;*/
 }
 
@@ -69,22 +69,11 @@
     .subsection-text{
         padding-top: 1rem;
     }
+    .front-image-name{
+        width: 40vw;
+        height: 25vw;
+    }
 }
-
-.front-image-name{
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    border: 10px double #cdcccc;
-    border-radius: 20px;
-    width: 35vw;
-    height: 17vw;
-    box-shadow: 0px 0px 30px 2px #ffffff;
-}
-
-
 
 .section1{
     width: 100%;
@@ -96,26 +85,46 @@
     width: 100vw;
     max-width: 100vw;
 }
+
+.front-image-name{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: 10px double #ffffff;
+    border-radius: 20px;
+    width: 40vw;
+    height: 20vw;
+    box-shadow: 0px 0px 30px 2px #282828;
+    background-color: rgba(255, 255, 255, 0.5);
+    align-items: center;
+
+
+}
+
 .front-image-name span{
-    color: #e3e3e3;
+    color: #ffffff;
     /*font-weight: bold;*/
-    font-size: 5vw;
+    font-size: 6vw;
     text-shadow: 0px 1px 0.7vw #2b2b2b;
+    white-space: nowrap;
 
 }
 
 .front-image-name a{
-    color: #e3e3e3;
-    font-size: 3vw;
+    text-align: center;
+    color: #a27a44;
+    font-size: 4vw;
     text-shadow: 0px -1px 2px rgba(0, 0, 0, 0.99);
     border: 3px solid #cdcccc;
     border-radius: 10px;
     padding: 3px 10px;
-    background-color: rgba(255, 255, 255,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .text-liner{
-    height: 3vw;
+    height: 1rem;
 }
 
 .content-section .subsection {
@@ -224,6 +233,7 @@ blockquote:before {
     left: 0;
     content: "\201C";
     text-align: center;
+    color: #a27a44;
 }
 blockquote:after {
     font-family: Georgia, serif;
@@ -235,6 +245,7 @@ blockquote:after {
     right:0;
     bottom:-0.5em;
     content: "\201D";
+    color: #a27a44;
 }
 blockquote footer {
     padding: 0 2em 0 0;

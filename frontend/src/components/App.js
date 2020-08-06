@@ -8,6 +8,7 @@ import Story from "./pages/aboutus/story";
 
 import Navbar from "./layout/Navbar";
 import Footer from './layout/Footer'
+import NotFoundPage from './pages/notfound'
 
 import "../App.css"
 
@@ -21,14 +22,14 @@ class App extends Component {
         <Provider store={store}>
             <BrowserRouter>
                 <Fragment>
-
                     <div className='container'>
-                        <Navbar/>
                         <Switch>
                             <Route exact path={'/'} component={Main}/>
                             <Route exact path={'/aboutus'} component={AboutUs}/>
                             <Route exact path={'/story'} component={Story}/>
+                            <Route path="*" component={NotFoundPage} />
                         </Switch>
+                        <Navbar/>
                         <Footer />
                     </div>
                 </Fragment>

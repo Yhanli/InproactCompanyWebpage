@@ -22,7 +22,7 @@ class Story extends Component {
         const element = document.getElementById("content-section-flex");
         smoothscroll.polyfill();
         window.scroll({
-            top:element.offsetTop - 50,
+            top:element.offsetTop,
             behavior: "smooth"
         })
     };
@@ -31,18 +31,19 @@ class Story extends Component {
         return (
             <Fragment>
                 {/*{console.log(this.props.aboutus)}*/}
-                {this.props.maincontent[0]? document.title = `About Us (Story) - ${this.props.maincontent[0].site_name}` : ''}
                 {this.props.aboutus.slice(0).map(data=>{
                     return(
                         <Fragment key={data.id}>
-                            <div className="main-container">
+                            <div className="main-container" value={this.props.maincontent[0]? document.title = `About Us (Story) - ${this.props.maincontent[0].site_name}` : ''}>
                                 <div className="section1">
                                     <div className="front-image">
                                         <img src={data.story.cover_image}/>
                                         <div className="front-image-name">
-                                            <span>ABOUT US</span>
-                                            <section className="text-liner" />
-                                            <a onClick={this.nextSlide}>{data.story.button_name}</a>
+                                            <br/>
+                                            <br/>
+                                            <span><a onClick={this.nextSlide}>{data.story.button_name}</a></span>
+                                            {/*<section className="text-liner" />*/}
+
                                         </div>
                                     </div>
                                 </div>

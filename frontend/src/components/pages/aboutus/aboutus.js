@@ -7,7 +7,9 @@ import smoothscroll from 'smoothscroll-polyfill'
 import "./aboutus.css";
 
 class AboutUs extends Component {
+    state = {
 
+    };
     static propTypes = {
         aboutus:PropTypes.array.isRequired,
         maincontent: PropTypes.array.isRequired
@@ -22,7 +24,7 @@ class AboutUs extends Component {
         const element = document.getElementById("content-section");
         smoothscroll.polyfill();
         window.scroll({
-            top:element.offsetTop - 50,
+            top:element.offsetTop,
             behavior: "smooth"
         })
     };
@@ -30,21 +32,19 @@ class AboutUs extends Component {
     render() {
         return (
             <Fragment>
-                {/*{console.log(this.props.aboutus)}*/}
-                {this.props.maincontent[0]? document.title = `About Us - ${this.props.maincontent[0].site_name}` : ''}
                 {this.props.aboutus.slice(0).map(data=>{
                     return(
                         <Fragment key={data.id}>
-                            <div className="main-container">
+                            <div className="main-container" value={this.props.maincontent[0]? document.title = `About Us - ${this.props.maincontent[0].site_name}` : ''}>
                                 <div className="section1">
                                     <div className="front-image">
                                         <img src={data.cover_image}/>
                                         <div className="front-image-name">
+
                                                 <span>ABOUT US</span>
-                                                <section className="text-liner" />
+                                                <br/>
                                                 <a onClick={this.nextSlide}>{data.button_name}</a>
                                         </div>
-
                                     </div>
                                 </div>
                                 <div>
@@ -54,15 +54,12 @@ class AboutUs extends Component {
                                         backgroundPosition: 'center',
                                         backgroundRepeat: 'no-repeat',
                                         backgroundSize: 'cover',
-                                        // paddingTop: "3em"
                                     }}>
-                                        {/*<div><br/></div>*/}
                                         <div id={`subsection1`} className="subsection">
-
                                             <div className="subsection-text">
                                                 <h2 className="first-text">{data.section1_title}</h2>
                                                 <p>{data.section1_paragraph}</p>
-                                                <p className="famous-quote"><span className="quote">{data.famous_quote.split("–")[0]}</span> <span className="quote-by">`- ${data.famous_quote.split("–")[1]}`</span></p>
+                                                <p className="famous-quote"><span className="quote">{data.famous_quote.split("–")[0]}</span> <span className="quote-by">- {data.famous_quote.split("–")[1]}</span></p>
                                             </div>
                                             <div className="row-column">
                                                 <div className="subsection-text">
@@ -70,12 +67,8 @@ class AboutUs extends Component {
                                                     <p>{data.section2_paragraph}</p>
                                                 </div>
                                                 <div></div>
-                                                {/*<div></div>*/}
-
                                             </div>
-
                                             <div className="row-column">
-                                                {/*<div></div>*/}
                                                 <div></div>
                                                 <div className="subsection-text">
                                                     <h2>{data.section3_title}</h2>
@@ -94,12 +87,11 @@ class AboutUs extends Component {
                                                 <div></div>
                                                 <div></div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    <br />
+                                    <br/>
                                 </div>
                             </div>
                         </Fragment>

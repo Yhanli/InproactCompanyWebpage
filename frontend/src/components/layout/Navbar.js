@@ -3,28 +3,59 @@ import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {getAboutUs, getLandingContent} from "../../actions/frontend";
-
+import {NavLink} from "react-router-dom";
 
 import './navbar.css';
 
 class Navbar extends Component {
+    state = {
+        dropdown: false,
+        burger: false
+    };
 
     static propTypes = {
         maincontent: PropTypes.array.isRequired
     };
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            prevScrollpos: window.pageYOffset,
+            visible: true
+        };
+    }
+    componentWillUnmount() {
+        window.removeEventListener("scroll", this.handleScroll);
+    }
+    handleScroll = () => {
+
+        const { prevScrollpos } = this.state;
+        const currentScrollPos = window.pageYOffset;
+        console.log(`${currentScrollPos} - ${prevScrollpos}`);
+        const visible = prevScrollpos > currentScrollPos;
+        if (!visible && this.state.burger){
+            console.log("close burger");
+            document.getElementById("myBtn").click()
+            this.setState({dropdown:false});
+        }
+        if (currentScrollPos > 50){
+            this.setState({
+                prevScrollpos: currentScrollPos,
+                visible
+            });
+        }
+    };
+
     componentDidMount() {
+        window.addEventListener("scroll", this.handleScroll);
         this.props.getLandingContent();
         // const favicon = document.getElementById("favicon");
         // favicon.href = "http://inproact.theia.nz/wp-content/uploads/2018/03/favicon.ico";
         // console.log(this.props.maincontent)
     }
 
-    state = {
-        current: '',
-        dropdown: false,
-        burger: false
-    };
+
 
     _onMouseEnter = (event) => {
         const dropdown_name = event.target.name;
@@ -35,7 +66,7 @@ class Navbar extends Component {
         this.setState({dropdown:false});
     };
 
-    navSlide = () => {
+    _navcollapse = () => {
         const navLinks = document.querySelectorAll(".nav-links li");
         this.setState(
             { burger:!this.state.burger }
@@ -48,20 +79,18 @@ class Navbar extends Component {
                 link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.4}s`;
                 }
             }
-
         )
     };
 
-    setActiveTab = (event,tab) => {
-        console.log(tab);
-    };
+
+
 
     render() {
-        const {current} = this.state;
-        // console.log(this.props.maincontent[0]);
+        // const {current} = this.state;
+        console.log(this.props.currentTab);
         return (
             <Fragment>
-                <nav className="navbar navbar-expand-md">
+                <nav className={`navbar navbar-expand-md ${!this.state.visible? "navbar--hidden":""}`}>
                     <div className="container-fluid">
                         <a className="navbar-brand" href="/">
                             <img className="logo horizontal-logo"
@@ -72,8 +101,9 @@ class Navbar extends Component {
                                  alt="logo"/>
                         </a>
                         <button className={`navbar-toggler ${this.state.burger ? "toggle" : ""}`}
+                                id="myBtn"
                                 type="button" data-toggle="collapse"
-                                onClick={this.navSlide}
+                                onClick={this._navcollapse}
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
                                     <div className="line1"></div>
@@ -83,9 +113,7 @@ class Navbar extends Component {
 
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav ml-auto">
-                                <li className={`nav-item dropdown ${this.state.dropdown ? 'show' : '' }
-                                                ${this.state.current === "aboutus" ? 'active-tab' : ""}
-                                                `}
+                                <li className={`nav-item dropdown ${this.state.dropdown ? 'show' : '' }`}
                                     onMouseEnter={this._onMouseEnter}
                                     onMouseLeave={this._onMouseLeave}
                                     ref="dropdown1"
@@ -97,28 +125,42 @@ class Navbar extends Component {
                                     </a>
                                     <div className={`dropdown-menu ${this.state.dropdown ? 'show' : '' }`}
                                          aria-labelledby="navbarDropdown2" id="dropitems1">
-                                        <a className="dropdown-item" href="/aboutus">INPG</a>
+                                        <NavLink exact className="dropdown-item-" activeClassName="active-tab" to="/aboutus" >
+                                            <span>INPG</span>
+                                        </NavLink>
+
                                         <div className="dropdown-divider"></div>
-                                        <a className="dropdown-item" href="/story">INPG Story</a>
-                                        <a className="dropdown-item" href="#">INPG Team</a>
-                                        <a className="dropdown-item" href="#">INPG Why Us</a>
+                                        <NavLink exact className="dropdown-item-" activeClassName="active-tab" to="/story" >
+                                            <span>INPG Story</span>
+                                        </NavLink>
+                                        <NavLink exact className="dropdown-item-" activeClassName="active-tab" to="/team" >
+                                            <span>INPG Team</span>
+                                        </NavLink>
+                                        <NavLink exact className="dropdown-item-" activeClassName="active-tab" to="/whyus" >
+                                            <span>INPG Why Us</span>
+                                        </NavLink>
                                     </div>
                                 </li>
-                                <li className={`nav-item ${this.state.current === "service" ? 'active-tab' : ""}`}
-                                    onClick={this.setActiveTab.bind('service')}
-                                >
-                                    <a className="nav-link" href="#">Service</a>
-                                </li>
+
+
                                 <li className="nav-item">
+                                    <NavLink exact className="nav-link" activeClassName="active-tab" to="/service" >
+                                        <span>Service</span>
+                                    </NavLink>
+                                </li>
+
+
+
+                                <li className={`nav-item ${this.state.currentTab === "inhub" ? 'active-tab' : ""}`}>
                                     <a className="nav-link" href="#">IN-Hub</a>
                                 </li>
-                                <li className="nav-item">
+                                <li className={`nav-item ${this.state.currentTab === "insight" ? 'active-tab' : ""}`}>
                                     <a className="nav-link" href="#">IN-Sights</a>
                                 </li>
-                                <li className="nav-item">
+                                <li className={`nav-item ${this.state.currentTab === "icare" ? 'active-tab' : ""}`}>
                                     <a className="nav-link" href="#">i-CARE</a>
                                 </li>
-                                <li className="nav-item">
+                                <li className={`nav-item ${this.state.currentTab === "contact" ? 'active-tab' : ""}`}>
                                     <a className="nav-link" href="#">Contact</a>
                                 </li>
                             </ul>

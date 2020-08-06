@@ -20,11 +20,10 @@ class Main extends Component {
     render() {
         return (
             <Fragment>
-                {this.props.maincontent[0]? document.title = `Home - ${this.props.maincontent[0].site_name}` : ''}
                 {this.props.maincontent.slice(0).map(data=>{
                     return(
                         <Fragment key={data.id}>
-                            <div className="main-containers">
+                            <div className="main-containers" value={this.props.maincontent[0]? document.title = `Home - ${this.props.maincontent[0].site_name}` : ''}>
                                 <div className="section1">
                                     <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
                                         <div className="carousel-inner">

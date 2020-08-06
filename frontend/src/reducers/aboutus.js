@@ -9,7 +9,8 @@ export default function(state = initialState, action) {
         case GET_ABOUTUS:
             return {
                 ...state,
-                aboutus:action.payload
+                aboutus:action.payload,
+                currentTab: "aboutus"
             };
         default:
             return state;

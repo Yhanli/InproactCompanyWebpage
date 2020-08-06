@@ -3,7 +3,8 @@
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(240px,auto));
     align-items: center;
-    padding-top: 1.2rem;
+    margin-top: -2px;
+    /*padding-top: 1.2rem;*/
     /*margin-top: 50px;*/
 }
 .section1{
@@ -91,10 +92,11 @@
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 1em;
-    font-weight: unset;
-    font-size: 1.9em;
+    font-weight: normal;
+    font-size: 2em;
     color: #8bc53f;
-    text-shadow: 2px 2px 5px lightgrey;
+    font-family: Georgia
+    /*text-shadow: 2px 2px 5px lightgrey;*/
 
 }
 .subsection-text p{
@@ -118,7 +120,7 @@
 .subsection1 .inspire-photo{
     border-bottom-color: #cdcdcd;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px 2px #87be40;
+    box-shadow: 0px 0px 10px 2px #a27a44;
 }
 
 .subsection2{
@@ -169,10 +171,10 @@
 }
 
 .subsection-divider-line{
-    background-color: #2c4d3c;
-    border-radius: 5px;
+    background-color: #a27a44;
+    border-radius: 20px;
     width: 60%;
-    height: 2px;
+    height: 4px;
     margin-left: 1rem;
     margin-right: 1rem;
     margin-bottom: 50px;
