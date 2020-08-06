@@ -23,13 +23,13 @@ class App extends Component {
             <BrowserRouter>
                 <Fragment>
                     <div className='container'>
+                        <Navbar/>
                         <Switch>
                             <Route exact path={'/'} component={Main}/>
                             <Route exact path={'/aboutus'} component={AboutUs}/>
                             <Route exact path={'/story'} component={Story}/>
                             <Route path="*" component={NotFoundPage} />
                         </Switch>
-                        <Navbar/>
                         <Footer />
                     </div>
                 </Fragment>
