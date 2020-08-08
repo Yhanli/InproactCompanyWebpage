@@ -5,6 +5,8 @@ import { HashRouter as Router, Route, Switch, BrowserRouter} from 'react-router-
 import Main from "./pages/main"
 import AboutUs from "./pages/aboutus/aboutus";
 import Story from "./pages/aboutus/story";
+import Team from "./pages/aboutus/team";
+import WhyUs from "./pages/aboutus/whyus";
 import Services from "./pages/services";
 
 import Navbar from "./layout/Navbar";
@@ -29,7 +31,9 @@ class App extends Component {
                             <Route exact path={'/'} component={Main}/>
                             <Route exact path={'/aboutus'} component={AboutUs}/>
                             <Route exact path={'/story'} component={Story}/>
-                            <Route exact path={'/service'} component={Services}/>
+                            <Route exact path={'/team'} component={Team}/>
+                            <Route exact path={'/whyus'} component={WhyUs}/>
+                            <Route exact path={'/services'} component={Services}/>
                             <Route path="*" component={NotFoundPage} />
                         </Switch>
                         <Footer />

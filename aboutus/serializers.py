@@ -1,5 +1,12 @@
 from rest_framework import serializers
-from aboutus.models import AboutUs, Story
+from aboutus.models import AboutUs, Story, Team, Services, WhyUs
+
+
+class WhyUsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = WhyUs
+        fields = "__all__"
+
 
 class StorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -7,9 +14,25 @@ class StorySerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
+class TeamSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Team
+        fields = "__all__"
+
+
+class ServicesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Services
+        fields = "__all__"
+
+
 class AboutUsSerializer(serializers.ModelSerializer):
     story = StorySerializer()
+    team = TeamSerializer()
+    services = ServicesSerializer()
+    whyus = WhyUsSerializer()
+
     class Meta:
         model = AboutUs
         fields = "__all__"
-        extra_fields = ["story"]
+        extra_fields = ["story", "team", "services", "whyus"]

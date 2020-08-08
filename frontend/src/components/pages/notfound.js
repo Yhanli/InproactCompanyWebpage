@@ -12,9 +12,6 @@ class NotFoundPage extends React.Component{
                 maxWidth: '100vw',
                 width: '100vw',
             }} />
-            <p style={{textAlign:"center", width:'100vw'}}>
-                <Link to="/">Go to Home </Link>
-            </p>
         </div>;
     }
 }

@@ -32,7 +32,7 @@ class Navbar extends Component {
 
         const { prevScrollpos } = this.state;
         const currentScrollPos = window.pageYOffset;
-        console.log(`${currentScrollPos} - ${prevScrollpos}`);
+        // console.log(`${currentScrollPos} - ${prevScrollpos}`);
         const visible = prevScrollpos > currentScrollPos;
         if (!visible && this.state.burger){
             console.log("close burger");
@@ -144,7 +144,7 @@ class Navbar extends Component {
 
 
                                 <li className="nav-item">
-                                    <NavLink exact className="nav-link" activeClassName="active-tab" to="/service" >
+                                    <NavLink exact className="nav-link" activeClassName="active-tab" to="/services" >
                                         <span>Service</span>
                                     </NavLink>
                                 </li>
