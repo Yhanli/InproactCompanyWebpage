@@ -39,11 +39,9 @@ class Story extends Component {
                                     <div className="front-image">
                                         <img src={data.story.cover_image}/>
                                         <div className="front-image-name">
-                                            <br/>
-                                            <br/>
-                                            <span><a onClick={this.nextSlide}>{data.story.button_name}</a></span>
-                                            {/*<section className="text-liner" />*/}
-
+                                            <p>
+                                            <a onClick={this.nextSlide}>{data.story.button_name}</a>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>

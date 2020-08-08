@@ -40,10 +40,11 @@ class AboutUs extends Component {
                                     <div className="front-image">
                                         <img src={data.cover_image}/>
                                         <div className="front-image-name">
-
-                                                <span>ABOUT US</span>
-                                                <br/>
-                                                <a onClick={this.nextSlide}>{data.button_name}</a>
+                                                <p>
+                                                    <span>ABOUT US</span>
+                                                    <br/>
+                                                    <a onClick={this.nextSlide}>{data.button_name}</a>
+                                                </p>
                                         </div>
                                     </div>
                                 </div>
