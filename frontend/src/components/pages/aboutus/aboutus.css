@@ -29,11 +29,30 @@
     max-width:none;
     margin:0 -100%;
 }
-@media screen and (min-aspect-ratio: 8/5){
-
+@media screen and (min-aspect-ratio: 17/8){
+    .section1 .front-image img{
+        width: auto;
+        min-width: 0%;
+    }
+    .front-image-name {
+        padding: 6vh 11vh;
+    }
 }
-@media screen and (max-aspect-ratio: 3/2){
-
+@media screen and (max-aspect-ratio: 17/15){
+    .section1 .front-image img{
+        width: 100vw;
+        min-width: 0;
+        height: auto;
+        transform: scale(1.5);
+    }
+    .section1{
+        padding-top: 50px;
+    }
+    .section1 .front-image{
+        /*padding: 50% 50%;*/
+        height: auto;
+        overflow: hidden;
+    }
 }
 
 .front-image-name{

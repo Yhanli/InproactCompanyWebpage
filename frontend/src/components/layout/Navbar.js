@@ -87,7 +87,7 @@ class Navbar extends Component {
 
     render() {
         // const {current} = this.state;
-        console.log(this.props.currentTab);
+        // console.log(this.props.currentTab);
         return (
             <Fragment>
                 <nav className={`navbar navbar-expand-md ${!this.state.visible? "navbar--hidden":""}`}>
@@ -120,7 +120,8 @@ class Navbar extends Component {
                                 >
                                     <a className="nav-link dropdown-toggle" href="/aboutus" id="navbarDropdown2" role="button"
                                        data-toggle="dropdown" aria-haspopup="true" name="dropdown1"
-                                       aria-expanded={`${this.state.dropdown ? 'true' : 'false' }`}>
+                                       aria-expanded={`${this.state.dropdown ? 'true' : 'false' }`}
+                                    >
                                         About Us
                                     </a>
                                     <div className={`dropdown-menu ${this.state.dropdown ? 'show' : '' }`}

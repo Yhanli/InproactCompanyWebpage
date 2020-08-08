@@ -34,7 +34,7 @@
     }
 
 }
-@media screen and (max-width: 910px) {
+@media screen and (max-width: 1060px) {
     .inner_footer {
         background-color: rgba(241, 241, 241,0.3);
         grid-template-columns: 100%;

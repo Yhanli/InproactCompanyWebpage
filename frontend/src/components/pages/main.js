@@ -24,29 +24,6 @@ class Main extends Component {
                     return(
                         <Fragment key={data.id}>
                             <div className="main-containers" value={this.props.maincontent[0]? document.title = `Home - ${this.props.maincontent[0].site_name}` : ''}>
-                                {/*<div className="main-section">*/}
-                                {/*    <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">*/}
-                                {/*        <div className="carousel-inner">*/}
-                                {/*            {data.landing_images.map(imgs=>{*/}
-                                {/*                return(*/}
-                                {/*                    <div className={`carousel-item ${imgs.id===data.landing_images[0].id?'active':""}`} key={imgs.id}>*/}
-                                {/*                        <img src={imgs.picture} className="corousel-img d-block w-100" alt="..."/>*/}
-                                {/*                    </div>*/}
-                                {/*                )*/}
-                                {/*            })}*/}
-                                {/*        </div>*/}
-                                {/*        <a className="carousel-control-prev" href="#carouselExampleControls" role="button"*/}
-                                {/*           data-slide="prev">*/}
-                                {/*            <span className="carousel-control-prev-icon" aria-hidden="true"></span>*/}
-                                {/*            <span className="sr-only">Previous</span>*/}
-                                {/*        </a>*/}
-                                {/*        <a className="carousel-control-next" href="#carouselExampleControls" role="button"*/}
-                                {/*           data-slide="next">*/}
-                                {/*            <span className="carousel-control-next-icon" aria-hidden="true"></span>*/}
-                                {/*            <span className="sr-only">Next</span>*/}
-                                {/*        </a>*/}
-                                {/*    </div>*/}
-                                {/*</div>*/}
 
                                 <div className="section1">
                                     <div className="front-image">
@@ -54,10 +31,21 @@ class Main extends Component {
 
                                     </div>
                                 </div>
-                                <div className="container-fluid section2" id="section2">
-
-                                    <div id={`subsections3`}>
-                                        {/*<p>testing</p>*/}
+                                <div className="main-section2" id="section2">
+                                    <div className="main-subsection1">
+                                        <div className="subsection-inner1">
+                                            <div className="subsection-content left-content">
+                                                <h2>{data.section_1_heading1}</h2>
+                                                <p>{data.section_1_paragraph1}</p>
+                                            </div>
+                                            <div className="subsection-content left-content">
+                                                <img src={`${data.section_1_picture}`}/>
+                                            </div>
+                                            <div className="subsection-content left-content">
+                                                <h2>{data.section_1_heading2}</h2>
+                                                <p>{data.section_1_paragraph2}</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

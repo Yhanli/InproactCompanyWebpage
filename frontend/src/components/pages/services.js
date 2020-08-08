@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import {getAboutUs, getLandingContent} from "../../actions/frontend";
 
-import "./main.css";
+import "./services.css";
 import "./aboutus/aboutus.css"
 import smoothscroll from "smoothscroll-polyfill";
 
