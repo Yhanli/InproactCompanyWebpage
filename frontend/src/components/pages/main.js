@@ -5,6 +5,9 @@ import PropTypes from 'prop-types';
 import {getAboutUs, getLandingContent} from "../../actions/frontend";
 
 import "./main.css";
+import "./aboutus/aboutus.css";
+
+import {Routes} from './../../actions/constants'
 
 
 
@@ -31,6 +34,9 @@ class Main extends Component {
 
                                     </div>
                                 </div>
+
+
+
                                 <div className="main-section2" id="section2">
                                     <div className="main-subsection1">
                                         <div className="subsection-inner1">
@@ -45,7 +51,7 @@ class Main extends Component {
                                                     }}>{data.section_1_heading1}</h2>
                                                 </div>
                                             </div>
-                                            <div className="subsection-content left-content">
+                                            <div className="subsection-content center-content center-img">
                                                 <img src={`${data.section_1_picture}`}/>
                                             </div>
                                             <div className="subsection-content right-content">
@@ -59,25 +65,68 @@ class Main extends Component {
                                         </div>
                                     </div>
 
+
                                     <div className="main-subsection-with-bg">
+                                        <div className="subsection-inner1">
+                                            <div className="subsection-content left-content">
+                                                    <p>{data.section_1_stat_caption1.split(' ').map(word=>{
+                                                        return(
+                                                            <span className="lit-up">{word} </span>
+                                                        )
+                                                    })}</p>
+                                            </div>
+                                            <div className="subsection-content right-content">
+                                                <span>{data.section_1_stat_title1}</span><br/>
+                                                <span className="stat-number" style={{
+                                                    left: `${data.section_1_stat_number1}%`
+                                                }}>{data.section_1_stat_number1}%</span>
+                                                <div className="stat-bar" style={{
+                                                    width:`${data.section_1_stat_number1-2}%`,
+                                                    top:"-10px"
+                                                }} />
+
+                                                <span>{data.section_1_stat_title2}</span><br/>
+                                                <span className="stat-number" style={{
+                                                    left: `${data.section_1_stat_number2}%`
+                                                }}>{data.section_1_stat_number2}%</span>
+                                                <div className="stat-bar" style={{
+                                                    width:`${data.section_1_stat_number2-2}%`,
+                                                    top:"-10px"
+                                                }} />
+
+                                                <span>{data.section_1_stat_title3}</span><br/>
+                                                <span className="stat-number" style={{
+                                                    left: `${data.section_1_stat_number3}%`
+                                                }}>{data.section_1_stat_number3}%</span>
+                                                <div className="stat-bar" style={{
+                                                    width:`${data.section_1_stat_number3-2}%`,
+                                                    top:"-10px"
+                                                }} />
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div className="main-subsection1">
                                         <div className="subsection-inner1">
                                             <div className="subsection-content left-content">
                                                 <div className={"title-num"}>
                                                     <div className="line-through"></div>
-                                                    <span className="">01</span>
+                                                    <span className="">02</span>
                                                 </div>
                                                 <div className="">
                                                     <h2 style={{
                                                         textAlign:"left"
-                                                    }}>{data.section_1_heading1}</h2>
+                                                    }}>{data.section_1_heading2}</h2>
                                                 </div>
                                             </div>
-                                            <div className="subsection-content left-content">
-                                                <img src={`${data.section_1_picture}`}/>
+                                            <div className="subsection-content center-content center-img">
+                                                <img src={`${data.section_2_picture}`}/>
                                             </div>
                                             <div className="subsection-content right-content">
                                                 <div>
-                                                    <p>{data.section_1_paragraph1}</p>
+                                                    <p>{data.section_1_paragraph2}</p>
                                                     <div style={ { textAlign:'right' }}>
                                                         <a href="/aboutus" className={"ReadMore"}>Read More</a>
                                                     </div>
@@ -85,6 +134,9 @@ class Main extends Component {
                                             </div>
                                         </div>
                                     </div>
+
+
+
 
                                 </div>
                             </div>

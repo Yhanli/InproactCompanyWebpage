@@ -11,7 +11,7 @@
     overflow: hidden;
     padding-top: 20px;
     box-sizing: border-box;
-    background-color: rgb(236, 236, 236);
+    background-color: rgba(236, 236, 236,0.2);
     grid-template-rows: 2fr 0.1fr;
 }
 
@@ -28,7 +28,7 @@
 
 @media screen and (max-width: 1424px) {
     .inner_footer {
-        background-color: rgba(241, 241, 241,0.3);
+        /*background-color: rgba(241, 241, 241,0.1);*/
         grid-template-columns: 15% 40% 5% 40%;
 
     }
@@ -36,7 +36,6 @@
 }
 @media screen and (max-width: 1060px) {
     .inner_footer {
-        background-color: rgba(241, 241, 241,0.3);
         grid-template-columns: 100%;
         /*grid-template-rows: 0.1fr 0fr 1fr 0.1fr ;*/
         grid-template-rows: repeat(auto-fit,auto) ;
@@ -92,7 +91,7 @@
 
 }
 .inner_footer .footer_third h2{
-    text-shadow: 2px 2px 20px grey;
+    /*text-shadow: 2px 2px 20px grey;*/
     /*padding: 10px 0;*/
     white-space: nowrap;
 }
@@ -105,7 +104,7 @@
     width: 200px;
     height: 5px;
     border-radius: 3px;
-    background-color: #8bc540;
+    background-color: #a27b43;
 }
 
 .copy_info{
@@ -209,7 +208,7 @@ a:link{
 .btn:hover{
     text-decoration: underline;
     color: rgba(255, 255, 255, 1);
-    text-shadow: 1px 1px 3px #8bc540;
+    /*text-shadow: 1px 1px 3px #8bc540;*/
     background-color: #8bc541;
     transition: .3s linear;
 }

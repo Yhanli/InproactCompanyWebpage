@@ -15,7 +15,7 @@
 .main-subsection-with-bg{
 
     /*height: 10vw;*/
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(172, 172, 172, 0.1);
     padding: 4rem 0;
 }
 .subsection-inner1{
@@ -47,17 +47,23 @@
     min-width: 300px;
     height: auto;
     border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.subsection-inner1 .subsection-content img:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 20px #a27b43;
 }
 @media screen and (max-width: 768px) {
     .subsection-content{
-        width: 95%;
+        width: 10%;
     }
     .subsection-inner1 .subsection-content img{
         width: 100%;
     }
     .subsection-inner1{
         flex-wrap: wrap;
-
     }
 }
 @media screen and (min-width: 1100px){
@@ -139,4 +145,67 @@
     color: white;
     background-color: #a27b43;
     transition: all 0.7s ease-in-out;
+}
+
+/*section2 content css*/
+.main-subsection-with-bg .subsection-content{
+    margin: auto 0px ;
+    position: relative;
+    width: 50%;
+    min-width: 300px;
+    height: auto;
+    /*background-color: #d6d6d6;*/
+    display: block;
+    text-align: left!important;
+}
+@media screen and (max-width: 768px) {
+    .main-subsection-with-bg .subsection-content{
+        width: 50%;
+        min-width: 280px;
+    }
+    .main-subsection-with-bg .left-content p{
+        font-size: 1.4rem;
+        text-align: center;
+        /*margin-left: 1rem;*/
+    }
+    .main-subsection-with-bg .left-content{
+    }
+}
+
+.main-subsection-with-bg .subsection-inner1 .left-content{
+    font-size: 1.5em;
+}
+
+.main-subsection-with-bg .subsection-inner1 .left-content p{
+    padding: 3rem 0 0 2rem;
+    color: #818181;
+    font-family: Georgia;
+}
+
+.right-content span{
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+    font-size: 0.8em;
+    color: #000000;
+
+}
+.right-content span{
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+    font-size: 0.8em;
+    color: #000000;
+
+}
+.right-content .stat-bar{
+    position: relative;
+    background-color: #a27b43;
+    height: 2px;
+    margin-bottom: 1rem;
+}
+.stat-number{
+    position: relative;
+    /*top: -8px;*/
+
+}
+.lit-up:hover{
+    color: #a27b43;
+    transition: all 0.6s ease-in-out;
 }

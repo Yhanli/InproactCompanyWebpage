@@ -33,7 +33,7 @@ class WebsiteMain(models.Model):
 
     section_1_stat_title1 = models.CharField(max_length=1000, blank=True)
     section_1_stat_number1 = models.IntegerField(blank=True, default=0)
-    section_1_stat_caption1 = models.CharField(max_length=1000, blank=True)
+    section_1_stat_caption1 = models.TextField(blank=True)
     section_1_stat_title2 = models.CharField(max_length=1000, blank=True)
     section_1_stat_number2 = models.IntegerField(blank=True, default=0)
     section_1_stat_caption2 = models.CharField(max_length=1000, blank=True)

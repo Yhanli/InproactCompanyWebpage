@@ -87,6 +87,10 @@
     width: 30px;
     height: auto;
     /*background-color: whitesmoke;*/
+    transition: all 0.2s ease-in;
+}
+.logo:hover {
+    transform: scale(1.5);
 }
 
 @media screen and (max-width: 768px){
