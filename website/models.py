@@ -31,6 +31,16 @@ class WebsiteMain(models.Model):
     section_1_paragraph2 = models.TextField(blank=True)
     section_1_picture = models.ImageField(upload_to="website_main/", blank=True)
 
+    section_1_stat_title1 = models.CharField(max_length=1000, blank=True)
+    section_1_stat_number1 = models.IntegerField(blank=True, default=0)
+    section_1_stat_caption1 = models.CharField(max_length=1000, blank=True)
+    section_1_stat_title2 = models.CharField(max_length=1000, blank=True)
+    section_1_stat_number2 = models.IntegerField(blank=True, default=0)
+    section_1_stat_caption2 = models.CharField(max_length=1000, blank=True)
+    section_1_stat_title3 = models.CharField(max_length=1000, blank=True)
+    section_1_stat_number3 = models.IntegerField(blank=True, default=0)
+    section_1_stat_caption3 = models.CharField(max_length=1000, blank=True)
+
 
     section_2_activate = models.BooleanField(default=True)
     section_2_heading1 = models.CharField(max_length=1000, blank=True)
