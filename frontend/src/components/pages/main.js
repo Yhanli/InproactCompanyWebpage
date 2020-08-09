@@ -6,6 +6,7 @@ import {getAboutUs, getLandingContent} from "../../actions/frontend";
 
 import "./main.css";
 import "./aboutus/aboutus.css";
+import "./services.css"
 
 import {Routes} from './../../actions/constants'
 
@@ -78,28 +79,28 @@ class Main extends Component {
                                             <div className="subsection-content right-content">
                                                 <span>{data.section_1_stat_title1}</span><br/>
                                                 <span className="stat-number" style={{
-                                                    left: `${data.section_1_stat_number1}%`
+                                                    left: `${data.section_1_stat_number1-8}%`
                                                 }}>{data.section_1_stat_number1}%</span>
                                                 <div className="stat-bar" style={{
-                                                    width:`${data.section_1_stat_number1-2}%`,
+                                                    width:`${data.section_1_stat_number1-10}%`,
                                                     top:"-10px"
                                                 }} />
 
                                                 <span>{data.section_1_stat_title2}</span><br/>
                                                 <span className="stat-number" style={{
-                                                    left: `${data.section_1_stat_number2}%`
+                                                    left: `${data.section_1_stat_number2-8}%`
                                                 }}>{data.section_1_stat_number2}%</span>
                                                 <div className="stat-bar" style={{
-                                                    width:`${data.section_1_stat_number2-2}%`,
+                                                    width:`${data.section_1_stat_number2-10}%`,
                                                     top:"-10px"
                                                 }} />
 
                                                 <span>{data.section_1_stat_title3}</span><br/>
                                                 <span className="stat-number" style={{
-                                                    left: `${data.section_1_stat_number3}%`
+                                                    left: `${data.section_1_stat_number3-8}%`
                                                 }}>{data.section_1_stat_number3}%</span>
                                                 <div className="stat-bar" style={{
-                                                    width:`${data.section_1_stat_number3-2}%`,
+                                                    width:`${data.section_1_stat_number3-10}%`,
                                                     top:"-10px"
                                                 }} />
 
@@ -122,7 +123,9 @@ class Main extends Component {
                                                 </div>
                                             </div>
                                             <div className="subsection-content center-content center-img">
-                                                <img src={`${data.section_2_picture}`}/>
+                                                <img src={`${data.section_2_picture}`} style={{
+                                                    borderRadius:'1px'
+                                                }}/>
                                             </div>
                                             <div className="subsection-content right-content">
                                                 <div>

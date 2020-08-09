@@ -43,7 +43,7 @@ class App extends Component {
                                     <Route exact path={Routes.AboutUs} component={AboutUs}/>
                                     <Route exact path={Routes.Story} component={Story}/>
                                     <Route exact path={Routes.Team} component={Team}/>
-                                    <Route exact path={Routes.WhyUs} component={WhyUs}/>
+                                    {/*<Route exact path={Routes.WhyUs} component={WhyUs}/>*/}
                                     <Route exact path={Routes.Services} component={Services}/>
 
                             <Route path="*" component={NotFoundPage} />
