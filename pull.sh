@@ -1,4 +1,5 @@
 sudo git stash
+sudo git reset --hard origin/master
 sudo git pull
 sudo rm -R media_root
 sudo rm db.sqlite3

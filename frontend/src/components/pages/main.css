@@ -1,7 +1,7 @@
 .main-section2{
     width: 100vw;
     height: auto;
-    padding: 5em 0;
+    padding: 1em 0;
     /*background-color: #436f59;*/
     /*border: 1px dotted black;*/
 }
@@ -9,7 +9,6 @@
 .main-subsection1{
     /*height: 10vw;*/
     /*background-color: rgba(0,0,0,0.1);*/
-    padding: 4rem 0;
 }
 
 .main-subsection-with-bg{
@@ -31,6 +30,9 @@
 
 }
 
+.main-subsection1 .subsection-content{
+    padding: 10vw 0;
+}
 .subsection-content{
     margin: auto 0px ;
     position: relative;
@@ -127,9 +129,8 @@
     padding-bottom: 2em;
 
 }
-.subsection-inner1 .right-content{
-    padding-top: 3rem;
-}
+
+
 .subsection-inner1 .right-content h2{
     padding-top: 3rem;
     white-space: pre-wrap;
@@ -143,12 +144,14 @@
 }
 .ReadMore:hover{
     color: white;
+    padding: 5px 13px;
     background-color: #a27b43;
-    transition: all 0.7s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 /*section2 content css*/
 .main-subsection-with-bg .subsection-content{
+    padding: 3rem 0;
     margin: auto 0px ;
     position: relative;
     width: 50%;

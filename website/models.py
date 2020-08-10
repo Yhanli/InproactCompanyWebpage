@@ -43,13 +43,24 @@ class WebsiteMain(models.Model):
 
 
     section_2_activate = models.BooleanField(default=True)
+    section_2_picture = models.ImageField(upload_to="website_main/", blank=True)
     section_2_heading1 = models.CharField(max_length=1000, blank=True)
     section_2_subheading1 = models.TextField(blank=True)
     section_2_paragraph1 = models.TextField(blank=True)
     section_2_heading2 = models.CharField(max_length=1000, blank=True)
     section_2_subheading2 = models.TextField(blank=True)
     section_2_paragraph2 = models.TextField(blank=True)
-    section_2_picture = models.ImageField(upload_to="website_main/", blank=True)
+
+    section_2_stat_title1 = models.CharField(max_length=1000, blank=True)
+    section_2_stat_number1 = models.IntegerField(blank=True, default=0)
+    section_2_stat_title2 = models.CharField(max_length=1000, blank=True)
+    section_2_stat_number2 = models.IntegerField(blank=True, default=0)
+    section_2_stat_title3 = models.CharField(max_length=1000, blank=True)
+    section_2_stat_number3 = models.IntegerField(blank=True, default=0)
+    section_2_stat_title4 = models.CharField(max_length=1000, blank=True)
+    section_2_stat_number4 = models.IntegerField(blank=True, default=0)
+
+
 
     section_3_activate = models.BooleanField(default=True)
     section_3_heading1 = models.CharField(max_length=1000, blank=True)

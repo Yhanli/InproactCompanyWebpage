@@ -38,6 +38,8 @@ class Main extends Component {
 
 
                                 <div className="main-section2" id="section2">
+
+
                                     <div className="main-subsection1">
                                         <div className="subsection-inner1">
                                             <div className="subsection-content left-content">
@@ -52,7 +54,7 @@ class Main extends Component {
                                                 </div>
                                             </div>
                                             <div className="subsection-content center-content center-img">
-                                                <img src={`${data.section_1_picture}`}/>
+                                                <img src={`${data.section_1_picture}`} />
                                             </div>
                                             <div className="subsection-content right-content">
                                                 <div>
@@ -136,6 +138,17 @@ class Main extends Component {
                                     </div>
 
 
+                                    {/*<div className="main-subsection-with-bg">*/}
+                                    {/*    <div className="subsection-inner1">*/}
+                                    {/*        <div className="subsection-content left-content">*/}
+                                    {/*            <p>{data.section_1_stat_caption1.split(' ').map(word=>{*/}
+                                    {/*                return(*/}
+                                    {/*                    <span className="lit-up">{word} </span>*/}
+                                    {/*                )*/}
+                                    {/*            })}</p>*/}
+                                    {/*        </div>*/}
+                                    {/*    </div>*/}
+                                    {/*</div>*/}
 
 
                                 </div>
