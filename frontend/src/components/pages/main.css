@@ -136,7 +136,7 @@
 }
 .ReadMore{
     background-color: black;
-    color: white;
+    color: white !important;
     padding: 4px 12px;
     border: unset;
     text-decoration: unset;
@@ -177,7 +177,7 @@
 }
 
 .main-subsection-with-bg .subsection-inner1 .left-content p{
-    padding: 3rem 0 0 2rem;
+    padding: 3rem 0 0 0;
     color: #818181;
     font-family: Georgia;
 }
@@ -207,5 +207,5 @@
 }
 .lit-up:hover{
     color: #a27b43;
-    transition: all 0.6s ease-in-out;
+    transition: all 0.7s ease-in-out;
 }

@@ -37,7 +37,6 @@ class Main extends Component {
                                 </div>
 
 
-
                                 <div className="main-section2" id="section2">
                                     <div className="main-subsection1">
                                         <div className="subsection-inner1">
@@ -85,7 +84,6 @@ class Main extends Component {
                                                     width:`${data.section_1_stat_number1-10}%`,
                                                     top:"-10px"
                                                 }} />
-
                                                 <span>{data.section_1_stat_title2}</span><br/>
                                                 <span className="stat-number" style={{
                                                     left: `${data.section_1_stat_number2-8}%`
@@ -94,7 +92,6 @@ class Main extends Component {
                                                     width:`${data.section_1_stat_number2-10}%`,
                                                     top:"-10px"
                                                 }} />
-
                                                 <span>{data.section_1_stat_title3}</span><br/>
                                                 <span className="stat-number" style={{
                                                     left: `${data.section_1_stat_number3-8}%`

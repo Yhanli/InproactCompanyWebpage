@@ -176,11 +176,12 @@ a:link{
 }
 .newsletter-form{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
     flex-wrap: wrap;
+    text-align: left;
 }
 .txtb{
+    max-width: 25rem;
     flex: 1;
     padding: 10px 40px;
     font-size: 16px;
