@@ -40,7 +40,14 @@ class Main extends Component {
                 section.classList.add('fade-in');
                 section.classList.remove('fade-in-allowed');
             }
-        })
+        });
+        const all_drop_items = document.querySelectorAll(".drop-in-allowed")
+        all_drop_items.forEach((section, index) => {
+            if (this.state.currentScrollPos > section.offsetTop){
+                section.classList.add('drop-in');
+                section.classList.remove('drop-in-allowed');
+            }
+        });
     };
 
     render() {
@@ -83,7 +90,7 @@ class Main extends Component {
                                                 <div>
                                                     <p>{data.section_1_paragraph1}</p>
                                                     <div style={ { textAlign:'right' }}>
-                                                        <a href="/aboutus" className={"ReadMore"}>Read More</a>
+                                                        <a href={Routes.AboutUs} className={"ReadMore"}>Read More</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -153,7 +160,7 @@ class Main extends Component {
                                                 <div>
                                                     <p>{data.section_1_paragraph2}</p>
                                                     <div style={ { textAlign:'right' }}>
-                                                        <a href="/aboutus" className={"ReadMore"}>Read More</a>
+                                                        <a href={Routes.Story} className={"ReadMore"}>Read More</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -161,18 +168,76 @@ class Main extends Component {
                                     </div>
 
 
-                                    {/*<div className="main-subsection-with-bg fade-in-allowed">*/}
-                                    {/*    <div className="subsection-inner1">*/}
-                                    {/*        <div className="subsection-content left-content">*/}
-                                    {/*            <p>{data.section_1_stat_caption1.split(' ').map(word=>{*/}
-                                    {/*                return(*/}
-                                    {/*                    <span className="lit-up">{word} </span>*/}
-                                    {/*                )*/}
-                                    {/*            })}</p>*/}
-                                    {/*        </div>*/}
-                                    {/*    </div>*/}
-                                    {/*</div>*/}
+                                    <div className="main-subsection-with-bg fade-in-allowed">
+                                        <div className="subsection-inner1">
+                                            <div className="subsection-content-auto left-content">
+                                                {/*<div>*/}
+                                                    <div className="content-columns drop-in-allowed" style={{
+                                                        transitionDelay: '0s',
+                                                    }}>
+                                                        <h2>{data.section_2_stat_number1}</h2>
+                                                        <span>{data.section_2_stat_title1}</span>
+                                                        <div className="underline-deco"/>
+                                                    </div>
+                                                    <div className="content-columns drop-in-allowed" style={{
+                                                        transitionDelay: '0.2s',
+                                                    }}>
+                                                        <h2>{data.section_2_stat_number2}</h2>
+                                                        <span>{data.section_2_stat_title2}</span>
+                                                        <div className="underline-deco"/>
+                                                    </div>
+                                                {/*</div>*/}
+                                                {/*<div>*/}
+                                                    <div className="content-columns drop-in-allowed" style={{
+                                                        transitionDelay: '0.4s',
+                                                    }}>
+                                                        <h2>{data.section_2_stat_number3}</h2>
+                                                        <span>{data.section_2_stat_title3}</span>
+                                                        <div className="underline-deco"/>
+                                                    </div>
+                                                    <div className="content-columns drop-in-allowed" style={{
+                                                        transitionDelay: '0.6s',
+                                                    }}>
+                                                        <h2>{data.section_2_stat_number4}</h2>
+                                                        <span>{data.section_2_stat_title4}</span>
+                                                        <div className="underline-deco"/>
+                                                    </div>
+                                                {/*</div>*/}
+                                            </div>
+                                        </div>
+                                    </div>
 
+
+                                    <div className="main-subsection1 fade-in-allowed" style={{
+                                        backgroundImage: `url(${data.section_3_picture})`,
+                                        backgroundRepeat: "no-repeat",
+                                        backgroundSize: "100vw auto"
+                                    }}>
+                                        <div className="subsection-inner-grid" >
+                                            <div className="subsection-content-two left-content">
+                                                <div className={"title-num"}>
+                                                    <div className="line-through"></div>
+                                                    <span className="">03</span>
+                                                </div>
+                                                <div className="">
+                                                    <h2 style={{
+                                                        textAlign:"left"
+                                                    }}>{data.section_3_heading1}</h2>
+                                                </div>
+                                            </div>
+                                            <div className="subsection-content-two right-content">
+                                                <div>
+                                                    <h3>{data.section_3_subheading1}</h3>
+                                                    <p>{data.section_3_paragraph1}</p>
+                                                    <h3>{data.section_3_subheading2}</h3>
+                                                    <p>{data.section_3_paragraph2}</p>
+                                                    <div style={ { textAlign:'right' }}>
+                                                        <a href={Routes.Services} className={"ReadMore"}>Read More</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 </div>
                             </div>
