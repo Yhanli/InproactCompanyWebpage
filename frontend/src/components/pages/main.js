@@ -34,7 +34,7 @@ class Main extends Component {
     }
 
     handleScroll = () => {
-        const currentScrollPos = window.pageYOffset + window.outerHeight - 100;
+        const currentScrollPos = window.pageYOffset + window.outerHeight - 200;
         this.setState({currentScrollPos});
         // console.log(`${this.state.currentScrollPos}  ${this.state.previousScrollPos}`);
         const all_fade_items = document.querySelectorAll(".fade-in-allowed");
