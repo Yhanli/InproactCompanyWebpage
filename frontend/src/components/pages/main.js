@@ -42,7 +42,6 @@ class Main extends Component {
             if (this.state.currentScrollPos > section.offsetTop){
                 section.classList.add('fade-in');
                 section.classList.remove('fade-in-allowed');
-
             }
         });
         const all_drop_items = document.querySelectorAll(".drop-in-allowed");

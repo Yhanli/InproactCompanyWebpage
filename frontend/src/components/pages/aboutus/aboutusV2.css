@@ -1,0 +1,27 @@
+.content-section{
+    max-width: 1100px;
+    /*background-color: #1e347b;*/
+    border: 1px solid black;
+    margin: auto;
+    padding: 5rem 0;
+}
+.content-section-row{
+    position: relative;
+    text-align: center;
+    /*background-color: #2aabd2;*/
+    align-content: center;
+}
+.head-box-container{
+    display: flex;
+    align-items: center;
+    /*flex-wrap: wrap;*/
+}
+.section1-img{
+    flex: fit-content;
+    /*width: inherit;*/
+    max-width: 100vw;
+}
+.box-container{
+    margin: auto;
+    display: flex;
+}

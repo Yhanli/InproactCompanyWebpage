@@ -7,6 +7,7 @@
 }
 
 .main-subsection1{
+
     /*height: 10vw;*/
     /*background-color: rgba(0,0,0,0.1);*/
 }
@@ -59,7 +60,7 @@
 }
 @media screen and (max-width: 768px) {
     .subsection-content{
-        width: 10%;
+        /*width: 10%;*/
     }
     .subsection-inner1 .subsection-content img{
         width: 100%;
