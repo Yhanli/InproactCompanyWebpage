@@ -278,12 +278,17 @@
 }
 @media screen and (min-width: 768px) {
     .subsection-inner-grid{
-        display: grid;
         grid-gap: 2rem;
         grid-template-columns: 1fr 3fr;
     }
+
 }
 
+@media screen and (max-width: 768px) {
+    .subsection-inner-grid .subsection-content-two h2 {
+        padding-left: 6rem;
+    }
+}
 .subsection-content-two{
     margin: auto 0px ;
     position: relative;
@@ -309,7 +314,7 @@
 
 }
 .subsection-content-two h3{
-    padding: 0 1rem;
+    padding: 0 2rem;
     /*padding-bottom: 1em;*/
     font-weight: normal;
     font-size: 1.6em;
@@ -322,7 +327,7 @@
     font-family: "Poppins", Helvetica, Arial, sans-serif;
     font-size: 1em;
     white-space: pre-wrap;
-    padding: 0 1rem;
+    padding: 0 2rem;
     text-shadow: 2px 2px 5px lightgrey;
     color: #000000;
     letter-spacing: 1px;
