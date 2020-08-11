@@ -212,3 +212,13 @@
     color: #a27b43;
     transition: all 0.7s ease-in-out;
 }
+
+/*whole section fade in animation*/
+.fade-in-allowed{
+    opacity: 0;
+
+}
+.fade-in{
+    opacity: 1;
+    transition: all 0.7s ease-in-out;
+}

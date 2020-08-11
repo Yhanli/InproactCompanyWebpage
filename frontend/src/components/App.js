@@ -33,7 +33,15 @@ class App extends Component {
         return (
         <Provider store={store}>
             <BrowserRouter>
-                <Suspense fallback={<h1>Still Loading…</h1>}>
+                <Suspense fallback={<div
+                    style={{
+                        position: "absolute",
+                        top:'50%',
+                        left:"50%",
+                        transform: "translate(-50%, -50%)",
+                        color: "#a27b43"
+                    }}
+                ><h1>Loading…</h1></div>}>
                 <Fragment>
                     <div className='container'>
                         <Navbar/>

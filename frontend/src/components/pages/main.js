@@ -13,7 +13,9 @@ import {Routes} from './../../actions/constants'
 
 
 class Main extends Component {
-
+    state = {
+        currentScrollPos:0
+    }
     static propTypes = {
         maincontent:PropTypes.array.isRequired
     };
@@ -21,12 +23,33 @@ class Main extends Component {
         const height = document.getElementById("section2").offsetHeight;
         document.querySelector('html').scrollTo(0, height - 75);
     };
+
+    componentDidMount(){
+        window.addEventListener("scroll", this.handleScroll);
+    }
+    componentWillUnmount(){
+        window.removeEventListener("scroll", this.handleScroll);
+    }
+
+    handleScroll = () => {
+        const currentScrollPos = window.pageYOffset + window.outerHeight - 200;
+        this.setState({currentScrollPos})
+        const all_fade_items = document.querySelectorAll(".fade-in-allowed")
+        all_fade_items.forEach((section, index) => {
+            if (this.state.currentScrollPos > section.offsetTop){
+                section.classList.add('fade-in');
+                section.classList.remove('fade-in-allowed');
+            }
+        })
+    };
+
     render() {
+
         return (
             <Fragment>
                 {this.props.maincontent.slice(0).map(data=>{
                     return(
-                        <Fragment key={data.id}>
+                        <Fragment>
                             <div className="main-containers" value={this.props.maincontent[0]? document.title = `Home - ${this.props.maincontent[0].site_name}` : ''}>
 
                                 <div className="section1">
@@ -40,7 +63,7 @@ class Main extends Component {
                                 <div className="main-section2" id="section2">
 
 
-                                    <div className="main-subsection1">
+                                    <div className="main-subsection1 fade-in-allowed">
                                         <div className="subsection-inner1">
                                             <div className="subsection-content left-content">
                                                 <div className={"title-num"}>
@@ -68,12 +91,12 @@ class Main extends Component {
                                     </div>
 
 
-                                    <div className="main-subsection-with-bg">
+                                    <div className="main-subsection-with-bg fade-in-allowed">
                                         <div className="subsection-inner1">
                                             <div className="subsection-content left-content">
                                                     <p>{data.section_1_stat_caption1.split(' ').map(word=>{
                                                         return(
-                                                            <span className="lit-up">{word} </span>
+                                                            <span className="lit-up" key={word}>{word} </span>
                                                         )
                                                     })}</p>
                                             </div>
@@ -108,7 +131,7 @@ class Main extends Component {
                                     </div>
 
 
-                                    <div className="main-subsection1">
+                                    <div className="main-subsection1 fade-in-allowed">
                                         <div className="subsection-inner1">
                                             <div className="subsection-content left-content">
                                                 <div className={"title-num"}>
@@ -138,7 +161,7 @@ class Main extends Component {
                                     </div>
 
 
-                                    {/*<div className="main-subsection-with-bg">*/}
+                                    {/*<div className="main-subsection-with-bg fade-in-allowed">*/}
                                     {/*    <div className="subsection-inner1">*/}
                                     {/*        <div className="subsection-content left-content">*/}
                                     {/*            <p>{data.section_1_stat_caption1.split(' ').map(word=>{*/}
