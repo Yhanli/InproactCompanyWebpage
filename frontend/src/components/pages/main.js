@@ -225,7 +225,7 @@ class Main extends Component {
                                                     }}>{data.section_3_heading1}</h2>
                                                 </div>
                                             </div>
-                                            <div className="subsection-content-two right-content">
+                                            <div className="subsection-content-two right-content fade-in-allowed">
                                                 <div>
                                                     <h3>{data.section_3_subheading1}</h3>
                                                     <p>{data.section_3_paragraph1}</p>
