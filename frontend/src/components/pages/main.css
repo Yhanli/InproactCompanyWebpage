@@ -220,5 +220,5 @@
 }
 .fade-in{
     opacity: 1;
-    transition: all 0.7s ease-in-out;
+    transition: all 1s ease-in-out;
 }
