@@ -19,7 +19,7 @@ class WebsiteMain(models.Model):
     youtube = models.CharField(max_length=1000, blank=True)
     linkedin = models.CharField(max_length=1000, blank=True)
     # landing_images = models.ForeignKey("LandingPictures", on_delete=models.CASCADE, blank=True)
-
+    arrowdown_image = models.FileField(upload_to="website_main/", blank=True)
 
 
     section_1_activate = models.BooleanField(default=True)

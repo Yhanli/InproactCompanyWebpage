@@ -32,7 +32,7 @@
 @media screen and (min-aspect-ratio: 17/8){
     .section1 .front-image img{
         width: auto;
-        min-width: 0%;
+        min-width: 0;
     }
     .front-image-name {
         padding: 6vh 11vh;

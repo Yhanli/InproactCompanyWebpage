@@ -9,13 +9,15 @@ import "./aboutus/aboutus.css";
 import "./services.css"
 
 import {Routes} from './../../actions/constants'
-
+import smoothscroll from "smoothscroll-polyfill";
+import {MOUSE_ENTER, MOUSE_CLICK} from "../../actions/types";
 
 
 class Main extends Component {
     state = {
         currentScrollPos:window.innerHeight,
-        previousScrollPos:0
+        previousScrollPos:0,
+        moveToContent:true
     };
     static propTypes = {
         maincontent:PropTypes.array.isRequired
@@ -53,8 +55,21 @@ class Main extends Component {
         });
     };
 
-    render() {
+    nextSlide = (actionType) => ()=> {
+        const element = document.getElementById("section2");
+        smoothscroll.polyfill();
+        if ((this.state.moveToContent && actionType === MOUSE_ENTER) || actionType === MOUSE_CLICK){
+            window.scroll({
+                top:element.offsetTop,
+                behavior: "smooth",
+            });
+            if (actionType === MOUSE_ENTER){
+                this.setState({moveToContent:false});
+            }
+        }
+    };
 
+    render() {
         return (
             <Fragment>
                 {this.props.maincontent.slice(0).map(data=>{
@@ -65,7 +80,9 @@ class Main extends Component {
                                 <div className="section1">
                                     <div className="front-image">
                                         <img src={data.cover_image}/>
-
+                                    </div>
+                                    <div>
+                                        <a onMouseEnter={this.nextSlide(MOUSE_ENTER)} onClick={this.nextSlide(MOUSE_CLICK)}><img className="arrow-down-centre" src={data.arrowdown_image}/></a>
                                     </div>
                                 </div>
 
