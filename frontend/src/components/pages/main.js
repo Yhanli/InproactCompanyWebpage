@@ -17,7 +17,8 @@ class Main extends Component {
     state = {
         currentScrollPos:window.innerHeight,
         previousScrollPos:0,
-        moveToContent:true
+        moveToContent:true,
+        arrowShow: true
     };
     static propTypes = {
         maincontent:PropTypes.array.isRequired
@@ -53,6 +54,15 @@ class Main extends Component {
                 section.classList.remove('drop-in-allowed');
             }
         });
+        const arrow_element = document.querySelector(".arrow-down-centre");
+        if (window.pageYOffset>window.outerHeight/3 && this.state.arrowShow){
+            arrow_element.classList.add('no-show');
+            this.setState({arrowShow:!this.state.arrowShow});
+        }else if (window.pageYOffset<window.outerHeight/3 && !this.state.arrowShow){
+            arrow_element.classList.remove('no-show');
+            this.setState({arrowShow:!this.state.arrowShow});
+        }
+
     };
 
     nextSlide = (actionType) => ()=> {
@@ -88,8 +98,6 @@ class Main extends Component {
 
 
                                 <div className="main-section2" id="section2">
-
-
                                     <div className="main-subsection1 fade-in-allowed" id="section1">
                                         <div className="subsection-inner1">
                                             <div className="subsection-content left-content">

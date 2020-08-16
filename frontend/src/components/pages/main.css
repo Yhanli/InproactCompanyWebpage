@@ -159,9 +159,14 @@
 }
 .arrow-down-centre:hover{
     transform: translate(-50%, -130%);
-    background-color: #cdcdcd;
+    background-color: #e8e8e8;
     border-radius: 10px;
     animation: unset;
+}
+
+.no-show{
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
 }
 
 @keyframes up-down {
@@ -170,6 +175,11 @@
     }
     to{
         transform: translate(-50%, -130%);
+    }
+}
+@media screen and (max-aspect-ratio: 17/15){
+    .arrow-down-centre{
+        opacity: 0;
     }
 }
 
@@ -186,11 +196,7 @@
     text-align: left!important;
 }
 
-@media screen and (max-aspect-ratio: 17/15){
-    .arrow-down-centre{
-        opacity: 0;
-    }
-}
+
 
 @media screen and (max-width: 768px) {
     .main-subsection-with-bg .subsection-content{

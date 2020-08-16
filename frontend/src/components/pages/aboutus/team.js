@@ -36,7 +36,7 @@ class Team extends Component {
                 {this.props.aboutus.slice(0).map(data=>{
                     return(
                         <Fragment key={data.id}>
-                            <div className="main-container" value={this.props.maincontent[0]? document.title = `About Us (Story) - ${this.props.maincontent[0].site_name}` : ''}>
+                            <div className="main-container" value={this.props.maincontent[0]? document.title = `About Us (Team-under dev) - ${this.props.maincontent[0].site_name}` : ''}>
                                 <div className="section1">
                                     <div className="front-image">
                                         <img src={data.team.cover_image}/>
