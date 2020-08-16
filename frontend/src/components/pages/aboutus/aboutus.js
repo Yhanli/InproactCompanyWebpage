@@ -9,7 +9,7 @@ import "./../services.css"
 
 class AboutUs extends Component {
     state = {
-
+        frontImageChanged:false
     };
     static propTypes = {
         aboutus:PropTypes.array.isRequired,
@@ -30,6 +30,16 @@ class AboutUs extends Component {
         })
     };
 
+    fadeInAnimate = () => {
+        if (!this.state.frontImageChanged){
+            const element = document.querySelector(".front-image-header");
+            element.className = 'h1-fade-in-perm';
+            this.setState({
+                frontImageChanged:true
+            });
+        }
+    };
+
     render() {
         return (
             <Fragment>
@@ -42,7 +52,7 @@ class AboutUs extends Component {
                                         <img src={data.cover_image}/>
                                         <div className="front-image-name">
                                                 <p>
-                                                    <span>ABOUT US</span>
+                                                    <span onMouseEnter={this.fadeInAnimate} className="front-image-header">ABOUT US</span>
                                                     <br/>
                                                     <a onClick={this.nextSlide}>{data.button_name}</a>
                                                 </p>

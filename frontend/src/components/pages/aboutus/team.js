@@ -71,13 +71,9 @@ class Team extends Component {
                                         </div>
                                         <p>{data.team.section1_subparagraph_3}</p>
                                     </div>
-
                                     <div className="content-section-row">
-
                                     </div>
-
                                     <div className="content-section-row first-row">
-
                                     </div>
 
                                 </div>

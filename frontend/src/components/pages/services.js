@@ -8,13 +8,13 @@ import "./services.css";
 import "./aboutus/aboutus.css"
 import smoothscroll from "smoothscroll-polyfill";
 
-
-
 class Services extends Component {
-
+    state = {
+        frontImageChanged:false
+    };
     static propTypes = {
         aboutus:PropTypes.array.isRequired,
-        maincontent: PropTypes.array.isRequired
+        maincontent: PropTypes.array.isRequired,
     };
     componentDidMount() {
         this.props.getAboutUs();
@@ -29,6 +29,15 @@ class Services extends Component {
             behavior: "smooth"
         })
     };
+    fadeInAnimate = () => {
+        if (!this.state.frontImageChanged){
+            const element = document.querySelector(".front-image-header");
+            element.className = 'h1-fade-in-perm';
+            this.setState({
+                frontImageChanged:true
+            });
+        }
+    };
 
     render() {
         return (
@@ -42,7 +51,7 @@ class Services extends Component {
                                         <img src={data.services.cover_image}/>
                                         <div className="front-image-name">
                                             <p>
-                                                <span>Our Service</span>
+                                                <span onMouseEnter={this.fadeInAnimate} className="front-image-header">Our Service</span>
                                                 <br/>
                                                 <a onClick={this.nextSlide}>{data.services.button_name}</a>
                                             </p>
@@ -85,7 +94,6 @@ class Services extends Component {
                                                     <p>{data.services.section_2_text_3_paragraph}</p>
                                                 </div>
                                             </div>
-
                                             <div className="subsection-img">
                                                 <img src={data.services.section_2_picture}
                                                      className="inspire-photo" alt="inspire"/>
@@ -93,7 +101,6 @@ class Services extends Component {
                                         </div>
                                     </div>
                                     <div id={`subsections3`}>
-                                        {/*<p>testing</p>*/}
                                     </div>
                                 </div>
                             </div>

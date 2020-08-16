@@ -45,6 +45,7 @@
     display: grid;
     grid-template-columns: 0.9fr 0.1fr;
     align-items: center;
+    margin-bottom: 6rem;
 }
 
 @media screen and (max-width: 668px){

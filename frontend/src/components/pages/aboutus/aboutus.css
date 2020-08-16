@@ -67,21 +67,21 @@
     background-color: rgba(255, 255, 255, 0.5);
     text-align: center;
     padding: 6vw 11vw;
-
-
 }
 
-.front-image-name span{
+.front-image-name .front-image-header{
     color: #ffffff;
     font-size: 6vw;
     text-shadow: 0px 1px 20px #2b2b2b;
     white-space: nowrap;
 }
-.front-image-name span:hover{
-    color: #626262;
-    text-shadow: 0px 1px 10px #b0b0b0;
-    transition: all 1s ease-in!important;
 
+.h1-fade-in-perm{
+    color: #626262;
+    font-size: 6vw;
+    white-space: nowrap;
+    text-shadow: 0px 1px 10px #b0b0b0;
+    transition: all 1.5s ease-in-out!important;
 }
 
 .front-image-name a{
@@ -101,7 +101,6 @@
     text-shadow: 0px 1px 20px #a27a44;
     transition: all 1s ease-in!important;
 }
-
 
 .content-section{
     width: 100%;
