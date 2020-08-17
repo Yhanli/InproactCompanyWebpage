@@ -6,7 +6,10 @@ import {getAboutUs,getLandingContent} from "../../../actions/frontend";
 import smoothscroll from 'smoothscroll-polyfill'
 import "./aboutusV2.css";
 import "./fullLandingImage.css";
-import "./../services.css"
+import "./../services.css";
+import "./hoverStyles.css";
+import "./generalStyle.css";
+
 
 class Team extends Component {
 
@@ -14,12 +17,10 @@ class Team extends Component {
         aboutus:PropTypes.array.isRequired,
         maincontent: PropTypes.array.isRequired
     };
-
     componentDidMount(){
         this.props.getAboutUs();
         this.props.getLandingContent();
     }
-
     nextSlide = () => {
         const element = document.getElementById("content-section");
         smoothscroll.polyfill();
@@ -50,30 +51,49 @@ class Team extends Component {
 
                                 <div className="content-section" id="content-section">
                                     <div className="content-section-row first-row subsection-text">
-                                        <div className="head-box-container subsection-text">
+                                        <div className="head-box-container flex-wrap-reverse subsection-text">
                                             <div>
-                                                <img className="section1-img" src={data.team.section1_image}/>
+                                                <img className="section1-img enlg-glow-gold" src={data.team.section1_image} style={{
+                                                    borderRadius: "50%",
+                                                    margin:"2rem 0",
+                                                    maxWidth: "80vw",
+                                                    minWidth: "200px",
+                                                }}/>
                                             </div>
-                                            <div>
+                                            <div className={"right-container left-border-gold-sm"}>
                                                 <h2>{data.team.section1_heading_1}</h2>
                                                 <p>{data.team.section1_paragraph_1}</p>
+                                                <p>{data.team.section1_subparagraph_1}</p>
+                                                <p>{data.team.section1_subparagraph_2}</p>
                                             </div>
                                         </div>
-
-                                        <div className="box-container subsection-text">
-                                        {/*     style={{*/}
-                                        {/*    backgroundImage: `url(${data.team.section1_image})`,*/}
-                                        {/*    backgroundRepeat: "no-repeat",*/}
-
-                                        {/*}}>*/}
-                                            <p>{data.team.section1_subparagraph_1}</p>
-                                            <p>{data.team.section1_subparagraph_2}</p>
+                                        <div className={"text-grey-bg"}>
+                                            <p className={'top-space-2'}>{data.team.section1_subparagraph_3}</p>
                                         </div>
-                                        <p>{data.team.section1_subparagraph_3}</p>
                                     </div>
-                                    <div className="content-section-row">
-                                    </div>
-                                    <div className="content-section-row first-row">
+
+                                    <div className={"div-blank-space-10vw"}></div>
+
+                                    <div className="content-section-row first-row subsection-text">
+                                        <div>
+                                            <h2 className={"text-border-shadow-header"}>{data.team.section2_heading_1}</h2>
+                                        </div>
+                                        <div className="head-box-container flex-wrap-normal subsection-text">
+                                            <div>
+                                                <img className="section1-img enlg-glow-gold" src={data.team.section2_image} style={{
+                                                    borderRadius: "5%",
+                                                    margin:"2vw 0",
+                                                    maxWidth: "320px",
+                                                    minWidth: "200px",
+
+                                                }}/>
+                                            </div>
+                                            <div className={"right-container top-margin-2 bot-margin-2"}>
+                                                <p>{data.team.section2_paragraph_1}</p>
+                                                <p>{data.team.section2_subparagraph_1}</p>
+                                                <p>{data.team.section2_subparagraph_2}</p>
+                                            </div>
+                                        </div>
                                     </div>
 
                                 </div>

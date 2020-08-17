@@ -5,6 +5,7 @@ from django.db import models
 
 
 class AboutUs(models.Model):
+
     active_content = models.BooleanField(default=False)
     cover_image = models.FileField(upload_to="sidepages/aboutus", blank=True)
     button_name = models.CharField(max_length=1000, blank=True)
@@ -27,6 +28,9 @@ class AboutUs(models.Model):
 
     light_background_image = models.FileField(upload_to="sidepages/aboutus", blank=True)
 
+    class Meta:
+        verbose_name = "AboutUs"
+        verbose_name_plural = "AboutUs"
 
 class Story(models.Model):
     aboutus = models.OneToOneField(AboutUs, on_delete=models.CASCADE, blank=True, null=True)
@@ -52,6 +56,9 @@ class Story(models.Model):
     section2_subparagraph_3 = models.TextField(default=None, blank=True, null=True)
     section2_quote_1 = models.TextField(default=None, blank=True, null=True)
 
+    class Meta:
+        verbose_name = "Story"
+        verbose_name_plural = "Story"
 
 class Team(models.Model):
     aboutus = models.OneToOneField(AboutUs, on_delete=models.CASCADE, blank=True, null=True)
@@ -78,6 +85,9 @@ class Team(models.Model):
     section2_subparagraph_3 = models.TextField(default=None, blank=True, null=True)
     section2_quote_1 = models.TextField(default=None, blank=True, null=True)
 
+    class Meta:
+        verbose_name = "Team"
+        verbose_name_plural = "Team"
 
 class Services(models.Model):
     aboutus = models.OneToOneField(AboutUs, on_delete=models.CASCADE, blank=True, null=True)
@@ -108,6 +118,10 @@ class Services(models.Model):
     section_2_text_4_title = models.CharField(max_length=1000, blank=True)
     section_2_text_4_paragraph = models.TextField(blank=True)
 
+    class Meta:
+        verbose_name = "Service"
+        verbose_name_plural = "Service"
+
 class WhyUs(models.Model):
     aboutus = models.OneToOneField(AboutUs, on_delete=models.CASCADE, blank=True, null=True)
 
@@ -136,3 +150,8 @@ class WhyUs(models.Model):
 
     section_2_text_4_title = models.CharField(max_length=1000, blank=True)
     section_2_text_4_paragraph = models.TextField(blank=True)
+
+
+    class Meta:
+        verbose_name = "WhyUs"
+        verbose_name_plural = "WhyUs"

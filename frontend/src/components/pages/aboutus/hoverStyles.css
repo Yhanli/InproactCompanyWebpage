@@ -1,0 +1,5 @@
+.enlg-glow-gold:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 20px #a27b43;
+    transition: all 0.5s ease-in-out;
+}
