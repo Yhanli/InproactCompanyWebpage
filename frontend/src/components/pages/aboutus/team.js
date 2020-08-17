@@ -85,7 +85,6 @@ class Team extends Component {
                                                     margin:"2vw 0",
                                                     maxWidth: "320px",
                                                     minWidth: "200px",
-
                                                 }}/>
                                             </div>
                                             <div className={"right-container top-margin-2 bot-margin-2"}>
