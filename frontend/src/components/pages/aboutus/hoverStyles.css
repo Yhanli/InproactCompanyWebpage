@@ -3,3 +3,11 @@
     box-shadow: 0 0 20px #a27b43;
     transition: all 0.5s ease-in-out;
 }
+
+
+.ReadMore:hover{
+    color: white;
+    padding: 5px 13px;
+    background-color: #a27b43;
+    transition: all 0.5s ease-in-out;
+}

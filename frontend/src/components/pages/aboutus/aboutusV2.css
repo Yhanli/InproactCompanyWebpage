@@ -3,7 +3,7 @@
     /*background-color: #1e347b;*/
     /*border: 1px solid black;*/
     margin: auto;
-    padding-top: 4rem;
+    padding-top: 2rem;
 }
 .content-section-row{
     padding: 0 5vw;
@@ -20,6 +20,11 @@
 }
 @media screen and (max-width:980px ){
     .content-section-row .head-box-container .right-container {
+        max-width: 95vw;
+        border: unset;
+        max-width:900px;
+    }
+    .content-section-row .head-box-container .left-container {
         max-width: 95vw;
         border: unset;
         max-width:900px;
@@ -42,5 +47,10 @@
 
 .head-box-container .right-container {
     max-width: 500px;
+    margin-left: 1rem;
+}
+
+.left-container {
+    max-width: 400px;
     margin-left: 1rem;
 }

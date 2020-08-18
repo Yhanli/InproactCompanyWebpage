@@ -14,11 +14,24 @@
     padding-bottom: 2rem;
 }
 
+.vert-margin-4{
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+}
+
 .top-margin-2{
     margin-top: 2rem;
 }
 .bot-margin-2{
     margin-bottom: 2rem;
+}
+.horiz-padding-2{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.vert-padding-21{
+    padding-top: 2rem;
+    padding-bottom: 1rem;
 }
 
 .div-horizontal-line {
@@ -33,12 +46,15 @@
 .div-blank-space-10vw{
     height: 10vw;
 }
+.div-blank-space-5vw{
+    height: 5vw;
+}
 
 .text-border-shadow-header{
     border: 10px dot-dash #ffffff;
     border-radius: 20px;
     box-shadow: 0px 0px 30px 2px #d1d1d1;
-    background-color: rgba(234, 234, 234, 0.4);
+    background-color: rgba(234, 234, 234, 0.24);
     /*background-color: #a27b43;*/
     padding-top: 1rem;
     margin: 2rem 0;
@@ -47,9 +63,73 @@
 .left-border-gold-sm{
     border-left: 1px solid #a27a44;
 }
+.gold-divider-sm-md{
+    position: relative;
+    height: 2px;
+    width: 20vw;
+    background-color: #a27a44;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
 .flex-wrap-normal{
     flex-wrap: wrap;
 }
 .flex-wrap-reverse{
     flex-wrap: wrap-reverse;
+}
+
+
+.ReadMore{
+    background-color: black;
+    color: white !important;
+    padding: 4px 12px;
+    border: unset;
+    text-decoration: unset;
+    cursor: pointer;
+}
+.subsection-text h2{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1em;
+    font-weight: normal;
+    font-size: 2em;
+    color: #8bc53f;
+    font-family: Georgia
+    /*text-shadow: 2px 2px 5px lightgrey;*/
+
+}
+.subsection-text p{
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    white-space: pre-wrap;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    /*text-shadow: 2px 2px 5px lightgrey;*/
+    color: #626262;
+    letter-spacing: 1px;
+    padding-bottom: 2em;
+
+}
+
+.subheading{
+    font-size: 1.3rem;
+    color: #000000;
+    font-family: Georgia
+}
+.subtext{
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    white-space: pre-wrap;
+    color: #626262;
+    letter-spacing: 1px;
+}
+.justified-text{
+    text-align: justify!important;
+    text-justify:inter-word!important;
+}
+
+.hide-display{
+    display:none;
+    opacity: 0;
 }

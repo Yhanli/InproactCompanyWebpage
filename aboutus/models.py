@@ -5,7 +5,6 @@ from django.db import models
 
 
 class AboutUs(models.Model):
-
     active_content = models.BooleanField(default=False)
     cover_image = models.FileField(upload_to="sidepages/aboutus", blank=True)
     button_name = models.CharField(max_length=1000, blank=True)
@@ -31,6 +30,7 @@ class AboutUs(models.Model):
     class Meta:
         verbose_name = "AboutUs"
         verbose_name_plural = "AboutUs"
+
 
 class Story(models.Model):
     aboutus = models.OneToOneField(AboutUs, on_delete=models.CASCADE, blank=True, null=True)
@@ -59,6 +59,7 @@ class Story(models.Model):
     class Meta:
         verbose_name = "Story"
         verbose_name_plural = "Story"
+
 
 class Team(models.Model):
     aboutus = models.OneToOneField(AboutUs, on_delete=models.CASCADE, blank=True, null=True)
@@ -89,6 +90,7 @@ class Team(models.Model):
         verbose_name = "Team"
         verbose_name_plural = "Team"
 
+
 class Services(models.Model):
     aboutus = models.OneToOneField(AboutUs, on_delete=models.CASCADE, blank=True, null=True)
 
@@ -118,9 +120,12 @@ class Services(models.Model):
     section_2_text_4_title = models.CharField(max_length=1000, blank=True)
     section_2_text_4_paragraph = models.TextField(blank=True)
 
+
+
     class Meta:
         verbose_name = "Service"
         verbose_name_plural = "Service"
+
 
 class WhyUs(models.Model):
     aboutus = models.OneToOneField(AboutUs, on_delete=models.CASCADE, blank=True, null=True)
@@ -128,30 +133,23 @@ class WhyUs(models.Model):
     cover_image = models.FileField(upload_to="sidepages/aboutus/whyus", blank=True)
     button_name = models.CharField(max_length=1000, default=None, blank=True, null=True)
 
-    # main_section_heading = models.CharField(max_length=1000, default=None, blank=True, null=True)
-    # main_section_paragraph = models.TextField(default=None, blank=True, null=True)
-
     section_1_title = models.CharField(max_length=1000, blank=True)
     section_1_words = models.TextField(blank=True)
-    section_1_picture = models.ImageField(upload_to="website_main/", blank=True)
-
-    section_1_2_divider = models.CharField(max_length=1000, blank=True)
-
-    section_2_picture = models.ImageField(upload_to="website_main/", blank=True)
 
     section_2_text_1_title = models.CharField(max_length=1000, blank=True)
     section_2_text_1_paragraph = models.TextField(blank=True)
 
-    section_2_text_2_title = models.CharField(max_length=1000, blank=True)
-    section_2_text_2_paragraph = models.TextField(blank=True)
-
-    section_2_text_3_title = models.CharField(max_length=1000, blank=True)
-    section_2_text_3_paragraph = models.TextField(blank=True)
-
-    section_2_text_4_title = models.CharField(max_length=1000, blank=True)
-    section_2_text_4_paragraph = models.TextField(blank=True)
-
+    whyus_subitem_title = models.CharField(max_length=1000, blank=True)
 
     class Meta:
         verbose_name = "WhyUs"
         verbose_name_plural = "WhyUs"
+
+
+class WhyUsSubItem(models.Model):
+    aboutus = models.ForeignKey(AboutUs, on_delete=models.CASCADE, blank=True, null=True, related_name="whyus_subitems")
+    heading = models.CharField(max_length=1000, blank=True)
+    paragraph = models.TextField(blank=True)
+    class Meta:
+        verbose_name = "Why Us SubItem"
+        verbose_name_plural = "Why Us SubItems"

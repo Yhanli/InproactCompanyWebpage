@@ -18,7 +18,6 @@ class WebsiteMain(models.Model):
     twitter = models.CharField(max_length=1000, blank=True)
     youtube = models.CharField(max_length=1000, blank=True)
     linkedin = models.CharField(max_length=1000, blank=True)
-    # landing_images = models.ForeignKey("LandingPictures", on_delete=models.CASCADE, blank=True)
     arrowdown_image = models.FileField(upload_to="website_main/", blank=True)
 
 
@@ -90,4 +89,4 @@ class WebsiteMain(models.Model):
 
 class LandingPictures(models.Model):
     picture = models.ImageField(upload_to="website_main/landing_corousel/", blank=True)
-    pageId = models.ForeignKey('WebsiteMain', on_delete=models.CASCADE, related_name="landing_images")
+    pageId = models.ForeignKey('WebsiteMain', on_delete=models.CASCADE, related_name="landing_images") #must have related_name if item want to pass in serializer

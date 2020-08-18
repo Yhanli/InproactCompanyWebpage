@@ -4,10 +4,18 @@ import PropTypes from 'prop-types';
 
 import {getAboutUs,getLandingContent} from "../../../actions/frontend";
 import smoothscroll from 'smoothscroll-polyfill'
-import "./aboutus.css";
-import "./../services.css"
+import "./aboutusV2.css";
+import "./fullLandingImage.css";
+import "./../services.css";
+import "./hoverStyles.css";
+import "./generalStyle.css";
+import {Routes} from "../../../actions/constants";
 
 class WhyUs extends Component {
+
+    state = {
+      showSubItem: false
+    };
 
     static propTypes = {
         aboutus:PropTypes.array.isRequired,
@@ -18,14 +26,36 @@ class WhyUs extends Component {
         this.props.getAboutUs();
         this.props.getLandingContent();
     }
-
     nextSlide = () => {
-        const element = document.getElementById("content-section-flex");
+        const element = document.getElementById("content-section");
         smoothscroll.polyfill();
         window.scroll({
             top:element.offsetTop,
             behavior: "smooth"
         })
+    };
+
+    expandExtra = () => {
+        const expand_element = document.getElementById("expand_content");
+        if (!this.state.showSubItem){
+            expand_element.classList.remove('hide-display');
+            smoothscroll.polyfill();
+            window.scroll({
+                top:expand_element.offsetTop,
+                behavior: "smooth"
+            });
+            this.setState({showSubItem: true})
+        }
+        else{
+            expand_element.classList.add('hide-display');
+            this.nextSlide();
+            this.setState({showSubItem: false})
+        }
+    };
+
+    wordLength = (words) =>() => {
+        // console.log(words.length);
+        return words.length
     };
 
     render() {
@@ -35,7 +65,7 @@ class WhyUs extends Component {
                 {this.props.aboutus.slice(0).map(data=>{
                     return(
                         <Fragment key={data.id}>
-                            <div className="main-container" value={this.props.maincontent[0]? document.title = `About Us (Story) - ${this.props.maincontent[0].site_name}` : ''}>
+                            <div className="main-container" value={this.props.maincontent[0]? document.title = `About Us (Why Us) - ${this.props.maincontent[0].site_name}` : ''}>
                                 <div className="section1">
                                     <div className="front-image">
                                         <img src={data.whyus.cover_image}/>
@@ -46,88 +76,48 @@ class WhyUs extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <div className="content-section-flex" id="content-section-flex">
-                                        <div className="subsection-flex">
-                                            <div className="subsection-head subsection-text">
-                                                <h2>{data.whyus.main_section_heading}</h2>
-                                                <p>{data.whyus.main_section_paragraph}</p>
+                                <div className="content-section" id="content-section">
+                                    <div className="content-section-row first-row subsection-text">
+                                        <div className="head-box-container flex-wrap-normal subsection-text">
+                                            <div className={"right-container"}>
+                                                <h2 >{data.whyus.section_1_title}</h2>
+                                                <p>{data.whyus.section_1_words}</p>
                                             </div>
-                                            <div className="subsection-body">
-                                                <div>
-                                                    <img src={data.whyus.section1_image}/>
-                                                </div>
-                                                <div className="subsection-head subsection-text">
-                                                    <h2>{data.whyus.section1_heading_1}</h2>
-                                                    <p>{data.whyus.section1_paragraph_1}</p>
-                                                </div>
-                                            </div>
-                                            <div className="subsection-body2">
-                                                <div className="subsection-text">
-                                                    <blockquote>
-                                                        <p>
-                                                            {data.whyus.section1_subparagraph_1}
-                                                        </p>
-                                                    </blockquote>
-                                                </div>
-                                            </div>
-                                            <div className="subsection-tail">
-                                                <div className="subsection-text text-bg">
-                                                    <p>{data.whyus.section1_subparagraph_2}</p>
-                                                </div>
-                                                <div className="subsection-text">
-                                                    <p>{data.whyus.section1_subparagraph_3}</p>
-                                                </div>
-                                            </div>
-                                            <div className="subsection-end">
-                                                <div className="subsection-text">
-                                                    <p className="famous-quote"><span className="quote">{data.team.section1_quote_1.split("–")[0]}</span> <span className="quote-by">- {data.team.section1_quote_1.split("–")[1]}</span></p>
-                                                    {/*<p>{data.story.section1_quote_1}</p>*/}
+                                            <div className={"left-container"}>
+                                                <p>{data.whyus.section_2_text_1_paragraph}</p>
+                                                <div style={ { textAlign:'right' }}>
+                                                    <a onClick={this.expandExtra} className={"ReadMore"}>Read More</a>
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div className="subsection-divider-line"></div>
-
-                                        <div className="subsection-flex">
-                                            {/*<div className="subsection-head subsection-text">*/}
-                                            {/*    <h2>{data.story.section2_heading_1}</h2>*/}
-                                            {/*    <p>{data.story.section2_paragraph_1}</p>*/}
-                                            {/*</div>*/}
-                                            <div className="subsection-body">
-                                                <div>
-                                                    <img src={data.team.section2_image}/>
-                                                </div>
-                                                <div className="subsection-head subsection-text">
-                                                    <h2>{data.team.section2_heading_1}</h2>
-                                                    <p>{data.team.section2_paragraph_1}</p>
-                                                </div>
-                                            </div>
-                                            <div className="subsection-body2">
-                                                <div className="subsection-text text-bg">
-                                                    {/*<blockquote>*/}
-                                                    <p>
-                                                        {data.team.section2_subparagraph_1}
-                                                    </p>
-                                                    {/*</blockquote>*/}
-
-                                                </div>
-                                            </div>
-                                            <div className="subsection-tail">
-                                                <div className="subsection-text">
-                                                    <p>{data.team.section2_subparagraph_2}</p>
-                                                </div>
-                                                <div className="subsection-text text-bg">
-                                                    <p>{data.team.section2_subparagraph_3}</p>
-                                                </div>
-                                            </div>
-                                            <div className="subsection-end">
-                                                <div className="subsection-text">
-                                                    <p className="famous-quote"><span className="quote">{data.team.section2_quote_1.split("–")[0]}</span> <span className="quote-by">- {data.team.section2_quote_1.split("–")[1]}</span></p>
-                                                    {/*<p>{data.story.section1_quote_1}</p>*/}
-                                                </div>
-                                            </div>
+                                        <div className={"text-grey-bg"}>
+                                            {/*<p className={'top-space-2'}>{data.team.section1_subparagraph_3}</p>*/}
                                         </div>
+                                    </div>
+                                    <div className={"div-blank-space-5vw"}></div>
+                                    <div className="content-section-row hide-display" id="expand_content" style={{
+
+                                    }}>
+                                        <div className="subsection-text top-space-2">
+                                            <h2 >{data.whyus.section_1_title}</h2>
+                                        </div>
+                                        <div>
+                                            {data.whyus_subitems.map(subitem=>{
+                                                return(
+                                                    <div key={subitem.id} className="vert-margin-4">
+                                                        <div className="text-border-shadow-header horiz-padding-2 vert-padding-21">
+                                                            <h2 className="subheading">{subitem.heading}</h2>
+                                                            <div className="gold-divider-sm-md bot-margin-2" style={{
+                                                                width: `${subitem.heading.length/2}vw`,
+                                                                maxWidth:`${subitem.heading.length/2}rem`
+                                                            }}></div>
+                                                            <p className="subtext justified-text">{subitem.paragraph}</p>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            })}
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>

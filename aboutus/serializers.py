@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from aboutus.models import AboutUs, Story, Team, Services, WhyUs
+from aboutus.models import AboutUs, Story, Team, Services, WhyUs, WhyUsSubItem
 
 
 class WhyUsSerializer(serializers.ModelSerializer):
@@ -7,6 +7,10 @@ class WhyUsSerializer(serializers.ModelSerializer):
         model = WhyUs
         fields = "__all__"
 
+class WhyUsSubItemsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = WhyUsSubItem
+        fields = "__all__"
 
 class StorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -31,8 +35,9 @@ class AboutUsSerializer(serializers.ModelSerializer):
     team = TeamSerializer()
     services = ServicesSerializer()
     whyus = WhyUsSerializer()
+    whyus_subitems = WhyUsSubItemsSerializer(many=True)
 
     class Meta:
         model = AboutUs
         fields = "__all__"
-        extra_fields = ["story", "team", "services", "whyus"]
+        extra_fields = ["story", "team", "services", "whyus","whyus_subitems"]
