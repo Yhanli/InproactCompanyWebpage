@@ -53,11 +53,6 @@ class WhyUs extends Component {
         }
     };
 
-    wordLength = (words) =>() => {
-        // console.log(words.length);
-        return words.length
-    };
-
     render() {
         return (
             <Fragment>
@@ -90,9 +85,6 @@ class WhyUs extends Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className={"text-grey-bg"}>
-                                            {/*<p className={'top-space-2'}>{data.team.section1_subparagraph_3}</p>*/}
-                                        </div>
                                     </div>
                                     <div className={"div-blank-space-5vw"}></div>
                                     <div className="content-section-row hide-display" id="expand_content" style={{
@@ -111,7 +103,7 @@ class WhyUs extends Component {
                                                                 width: `${subitem.heading.length/2}vw`,
                                                                 maxWidth:`${subitem.heading.length/2}rem`
                                                             }}></div>
-                                                            <p className="subtext justified-text">{subitem.paragraph}</p>
+                                                            <p className="subtext">{subitem.paragraph}</p>
                                                         </div>
                                                     </div>
                                                 )

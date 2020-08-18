@@ -18,6 +18,13 @@
         padding: 0 2rem;
     }
 }
+@media screen and (min-width:768px ){
+
+    .subtext{
+        text-align: justify!important;
+        text-justify:inter-word!important;
+    }
+}
 @media screen and (max-width:980px ){
     .content-section-row .head-box-container .right-container {
         max-width: 95vw;
