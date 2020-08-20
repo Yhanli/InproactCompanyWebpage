@@ -1,20 +1,37 @@
 import React, { Component, Fragment } from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import {addSubscriber} from "../../actions/subscriber";
 
 import './footer.css';
 
 class Footer extends Component {
-
+    state = {
+        email: ''
+    };
     static  propTypes = {
-        maincontent: PropTypes.array.isRequired
+        maincontent: PropTypes.array.isRequired,
+        addSubscriber: PropTypes.func.isRequired,
     };
 
     // const favicon = document.getElementById("favicon");
     // favicon.href = "http://inproact.theia.nz/wp-content/uploads/2018/03/favicon.ico";
 
+    onChange = e => this.setState({[e.target.name]: e.target.value});
+
+    onSubmit = e => {
+        e.preventDefault();
+        const {email} = this.state;
+        const subscriber = {
+            email,
+            receive_feeds: true
+        };
+        this.props.addSubscriber(subscriber);
+    };
+
     render() {
         // console.log(this.props.maincontent.slice(0,1));
+        const {email} = this.state;
         return (
             <Fragment>
                 {this.props.maincontent.slice(0).map(data=> {
@@ -53,8 +70,8 @@ class Footer extends Component {
                                             {data.linkedin ? <a href={`${data.linkedin}`}><i className="fab fa-linkedin-in"></i></a> : ""}
                                         </div>
                                         <p>Subscribe Your Email to get our news and updates.</p>
-                                        <form action="" className="newsletter-form">
-                                            <input type="text" className="txtb" placeholder="Enter Your Email"/>
+                                        <form onSubmit={this.onSubmit} className="newsletter-form">
+                                            <input type="text" name="email" onChange={this.onChange} value={email} className="txtb" placeholder="Enter Your Email"/>
                                                 <input type="submit" className="btn" value="submit"/>
                                         </form>
                                     </div>
@@ -72,8 +89,8 @@ class Footer extends Component {
 }
 
 const mapStateToProps = state=> ({
-    maincontent:state.maincontent.maincontent
+    maincontent:state.maincontent.maincontent,
 });
 
-export default connect(mapStateToProps)(Footer);
+export default connect(mapStateToProps,{addSubscriber})(Footer);
 

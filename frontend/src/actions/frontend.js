@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {GET_ABOUTUS,GET_MAINPAGE} from "./types";
+import {CREATE_MESSAGE, GET_ABOUTUS, GET_MAINPAGE, ERROR_MESSAGE} from "./types";
 
 
 export const getLandingContent = () => (dispatch,getState) => {
@@ -30,4 +30,19 @@ export const getAboutUs = () => (dispatch,getState) => {
         .catch(
         err => console.log(err)
     );
+};
+
+
+export const createMessage = msg => {
+  return {
+      type: CREATE_MESSAGE,
+      payload: msg
+  }
+};
+
+export const errorMessage = (msg,status) => {
+    return {
+        type: ERROR_MESSAGE,
+        payload: {msg,status}
+    }
 };
