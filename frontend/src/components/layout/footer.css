@@ -97,7 +97,7 @@
 }
 .inner_footer .footer_third p{
     padding: 8px 0;
-    text-shadow: 2px 2px 5px lightgrey;
+    /*text-shadow: 2px 2px 5px lightgrey;*/
 
 }
 .border-brline{
@@ -108,8 +108,9 @@
 }
 
 .copy_info{
+    color: black;
     text-align: center;
-    text-shadow: 2px 2px 5px #cdcdcd;
+    /*text-shadow: 2px 2px 5px #cdcdcd;*/
 }
 
 .contactus_btn {
@@ -145,12 +146,12 @@ a:link{
 }
 
 .inner_footer .our-news h3{
-    text-shadow: 2px 2px 20px lightgray;
+    /*text-shadow: 2px 2px 20px lightgray;*/
     padding: 10px 0;
 }
 .inner_footer .our-news p{
     padding: 8px 0;
-    text-shadow: 2px 2px 5px lightgrey;
+    /*text-shadow: 2px 2px 5px lightgrey;*/
 }
 
 .column_breaker{
