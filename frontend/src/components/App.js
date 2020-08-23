@@ -30,6 +30,7 @@ const Story = lazy(()=> import("./pages/aboutus/story"));
 const Team = lazy(()=> import("./pages/aboutus/team"));
 const WhyUs = lazy(()=> import("./pages/aboutus/whyus"));
 const Services = lazy(()=> import("./pages/services"));
+const Contact = lazy(()=> import("./pages/contact"));
 
 const alertOptions = {
     timeout: 3000,
@@ -59,11 +60,12 @@ class App extends Component {
                             <Switch>
                                 <Route exact path={Routes.Home} component={Main}/>
 
-                                        <Route exact path={Routes.AboutUs} component={AboutUs}/>
-                                        <Route exact path={Routes.Story} component={Story}/>
-                                        <Route exact path={Routes.Team} component={Team}/>
-                                        <Route exact path={Routes.WhyUs} component={WhyUs}/>
-                                        <Route exact path={Routes.Services} component={Services}/>
+                                    <Route exact path={Routes.AboutUs} component={AboutUs}/>
+                                    <Route exact path={Routes.Story} component={Story}/>
+                                    <Route exact path={Routes.Team} component={Team}/>
+                                    <Route exact path={Routes.WhyUs} component={WhyUs}/>
+                                    <Route exact path={Routes.Services} component={Services}/>
+                                    <Route exact path={Routes.Contact} component={Contact}/>
 
                                 <Route path="*" component={NotFoundPage} />
                             </Switch>

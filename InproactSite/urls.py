@@ -27,6 +27,7 @@ urlpatterns = [
     path('', include('frontend.urls')),
     path('', include('aboutus.urls')),
     path('', include('website.urls')),
+    path('', include('websitePages.urls')),
     path('', include('subscriber.urls')),
     path('', include('post.urls')),
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),

@@ -7,10 +7,12 @@ class WhyUsSerializer(serializers.ModelSerializer):
         model = WhyUs
         fields = "__all__"
 
+
 class WhyUsSubItemsSerializer(serializers.ModelSerializer):
     class Meta:
         model = WhyUsSubItem
         fields = "__all__"
+
 
 class StorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -40,4 +42,4 @@ class AboutUsSerializer(serializers.ModelSerializer):
     class Meta:
         model = AboutUs
         fields = "__all__"
-        extra_fields = ["story", "team", "services", "whyus","whyus_subitems"]
+        extra_fields = ["story", "team", "services", "whyus", "whyus_subitems"]

@@ -24,16 +24,15 @@
     padding: 0 2rem;
     max-width: 1100px;
     /*background-color: rgba(0,0,0,0.2);*/
-
     justify-content: center;
     display: flex;
     flex-wrap: nowrap;
-
 }
 
 .main-subsection1 .subsection-content{
     padding: 10vw 0;
 }
+
 .subsection-content{
     margin: auto 0px ;
     position: relative;
@@ -45,6 +44,7 @@
     display: block;
     text-align: left!important;
 }
+
 .subsection-inner1 .subsection-content img{
     width: inherit;
     min-width: 300px;
@@ -53,11 +53,11 @@
     transition: all 0.3s ease-in-out;
 }
 
-
 .subsection-inner1 .subsection-content img:hover{
     transform: scale(1.03);
     box-shadow: 0 0 20px #a27b43;
 }
+
 @media screen and (max-width: 768px) {
     .subsection-content{
         /*width: 10%;*/
@@ -69,6 +69,7 @@
         flex-wrap: wrap;
     }
 }
+
 @media screen and (min-width: 1100px){
     .subsection-inner1 .subsection-content img{
         width: inherit;
@@ -107,6 +108,7 @@
 /*    color: #000000;*/
 /*    font-family: Georgia;*/
 /*}*/
+
 .subsection-content h2{
     padding-left: 6rem;
     padding-right: 1rem;
@@ -116,8 +118,8 @@
     color: #000000;
     font-family: Georgia
     /*text-shadow: 2px 2px 5px lightgrey;*/
-
 }
+
 .subsection-content p{
     font-family: "Poppins", Helvetica, Arial, sans-serif;
     font-size: 1em;
@@ -131,11 +133,11 @@
 
 }
 
-
 .subsection-inner1 .right-content h2{
     padding-top: 3rem;
     white-space: pre-wrap;
 }
+
 .ReadMore{
     background-color: black;
     color: white !important;
@@ -143,6 +145,7 @@
     border: unset;
     text-decoration: unset;
 }
+
 .ReadMore:hover{
     color: white;
     padding: 5px 13px;
@@ -157,6 +160,7 @@
     transition: all 1s ease-in-out;
     animation: up-down 1s ease-in-out infinite alternate;
 }
+
 .arrow-down-centre:hover{
     transform: translate(-50%, -130%);
     background-color: #e8e8e8;
@@ -177,6 +181,7 @@
         transform: translate(-50%, -130%);
     }
 }
+
 @media screen and (max-aspect-ratio: 17/15){
     .arrow-down-centre{
         opacity: 0;
@@ -196,8 +201,6 @@
     text-align: left!important;
 }
 
-
-
 @media screen and (max-width: 768px) {
     .main-subsection-with-bg .subsection-content{
         width: 50%;
@@ -210,7 +213,6 @@
     }
     .main-subsection-with-bg .left-content{
     }
-
 }
 
 .main-subsection-with-bg .subsection-inner1 .left-content{
@@ -229,23 +231,26 @@
     color: #000000;
 
 }
+
 .right-content span{
     font-family: "Poppins", Helvetica, Arial, sans-serif;
     font-size: 0.8em;
     color: #000000;
 
 }
+
 .right-content .stat-bar{
     position: relative;
     background-color: #a27b43;
     height: 2px;
     margin-bottom: 1rem;
 }
+
 .stat-number{
     position: relative;
     /*top: -8px;*/
-
 }
+
 .lit-up:hover{
     color: #a27b43;
     transition: all 0.7s ease-in-out;
@@ -254,8 +259,8 @@
 /*whole section fade in animation*/
 .fade-in-allowed{
     opacity: 0;
-
 }
+
 .fade-in{
     opacity: 1;
     transition: all 1.5s ease-in-out;
@@ -276,11 +281,13 @@
     transition: all 1s ease-in-out;
     padding: 1rem 0;
 }
+
 .content-columns h2{
     font-family: Georgia;
     font-size: 3rem;
     /*font-weight: bold;*/
 }
+
 .content-columns span{
     white-space: nowrap;
     font-size: 0.9rem;
@@ -298,8 +305,8 @@
 
 .drop-in-allowed{
     transform: translateY(-50px);
-
 }
+
 .drop-in{
     transform: translateY(0);
 }
@@ -314,19 +321,23 @@
     justify-content: center;
     width: 100%;
 }
+
 @media screen and (min-width: 768px) {
     .subsection-inner-grid{
         grid-gap: 2rem;
         grid-template-columns: 1fr 3fr;
     }
-
 }
 
 @media screen and (max-width: 768px) {
     .subsection-inner-grid .subsection-content-two h2 {
         padding-left: 6rem;
     }
+    .fade-in-allowed{
+        opacity: 1;
+    }
 }
+
 .subsection-content-two{
     margin: auto 0px ;
     position: relative;
@@ -349,8 +360,8 @@
     color: #000000;
     font-family: Georgia
     /*text-shadow: 2px 2px 5px lightgrey;*/
-
 }
+
 .subsection-content-two h3{
     padding: 0 2rem;
     /*padding-bottom: 1em;*/
@@ -361,12 +372,13 @@
     /*text-shadow: 2px 2px 5px lightgrey;*/
     line-break: auto;
 }
+
 .subsection-content-two p{
     font-family: "Poppins", Helvetica, Arial, sans-serif;
     font-size: 1em;
     white-space: pre-wrap;
     padding: 0 2rem;
-    text-shadow: 2px 2px 5px lightgrey;
+    text-shadow: 0px 0px 2px lightgrey;
     color: #000000;
     letter-spacing: 1px;
     padding-bottom: 2em;

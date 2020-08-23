@@ -45,8 +45,10 @@ INSTALLED_APPS = [
     'frontend',
     'aboutus',
     'website',
+    'websitePages',
     'subscriber',
     'post',
+
 
 ]
 
@@ -65,7 +67,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'InproactSite.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

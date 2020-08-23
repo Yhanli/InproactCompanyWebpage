@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 import {getAboutUs,getLandingContent} from "../../../actions/frontend";
 import smoothscroll from 'smoothscroll-polyfill'
 import "./aboutusV2.css";
-import "./fullLandingImage.css";
+import "../styles/fullLandingImage.css";
 import "./../services.css";
-import "./hoverStyles.css";
-import "./generalStyle.css";
+import "../styles/hoverStyles.css";
+import "../styles/generalStyle.css";
 
 
 class Team extends Component {

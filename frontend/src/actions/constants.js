@@ -8,5 +8,6 @@ export const Routes = {
     Story:"/story",
     Team:'/team',
     WhyUs:"/whyus",
-    Services:"/services"
+    Services:"/services",
+    Contact:"/contact"
 };
