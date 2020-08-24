@@ -387,6 +387,6 @@ dist
 # End of https://www.toptal.com/developers/gitignore/api/node
 
 
-/frontend/static_root/
-/frontend/static/public/
-/frontend/static_root/
+frontend/static_root/
+frontend/static/
+
