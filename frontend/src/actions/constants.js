@@ -11,3 +11,7 @@ export const Routes = {
     Services:"/services",
     Contact:"/contact"
 };
+
+export const REST_API = {
+    websitePages:"/api/websitepages/",
+};

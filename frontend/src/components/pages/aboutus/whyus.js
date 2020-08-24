@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
-import {getAboutUs,getLandingContent} from "../../../actions/frontend";
+import {getAboutUs} from "../../../actions/frontend";
 import smoothscroll from 'smoothscroll-polyfill'
 import "./aboutusV2.css";
 import "../styles/fullLandingImage.css";
@@ -24,7 +24,6 @@ class WhyUs extends Component {
 
     componentDidMount(){
         this.props.getAboutUs();
-        this.props.getLandingContent();
     }
     nextSlide = () => {
         const element = document.getElementById("content-section");
@@ -126,4 +125,4 @@ const mapStateToProps = state=> ({
     maincontent:state.maincontent.maincontent
 });
 
-export default connect(mapStateToProps,{getAboutUs,getLandingContent})(WhyUs);
+export default connect(mapStateToProps,{getAboutUs})(WhyUs);

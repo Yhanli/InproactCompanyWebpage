@@ -18,7 +18,6 @@ class AboutUs extends Component {
 
     componentDidMount(){
         this.props.getAboutUs();
-        this.props.getLandingContent();
     }
 
     nextSlide = () => {
@@ -119,4 +118,4 @@ const mapStateToProps = state=> ({
     maincontent:state.maincontent.maincontent
 });
 
-export default connect(mapStateToProps,{getAboutUs,getLandingContent})(AboutUs);
+export default connect(mapStateToProps,{getAboutUs})(AboutUs);

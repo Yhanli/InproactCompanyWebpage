@@ -105,7 +105,6 @@ class Services(models.Model):
     section_1_picture = models.ImageField(upload_to="website_main/", blank=True)
 
     section_1_2_divider = models.CharField(max_length=1000, blank=True)
-
     section_2_picture = models.ImageField(upload_to="website_main/", blank=True)
 
     section_2_text_1_title = models.CharField(max_length=1000, blank=True)
@@ -119,8 +118,6 @@ class Services(models.Model):
 
     section_2_text_4_title = models.CharField(max_length=1000, blank=True)
     section_2_text_4_paragraph = models.TextField(blank=True)
-
-
 
     class Meta:
         verbose_name = "Service"
@@ -150,6 +147,7 @@ class WhyUsSubItem(models.Model):
     aboutus = models.ForeignKey(AboutUs, on_delete=models.CASCADE, blank=True, null=True, related_name="whyus_subitems")
     heading = models.CharField(max_length=1000, blank=True)
     paragraph = models.TextField(blank=True)
+
     class Meta:
         verbose_name = "Why Us SubItem"
         verbose_name_plural = "Why Us SubItems"

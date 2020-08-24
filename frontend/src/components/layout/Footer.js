@@ -14,9 +14,6 @@ class Footer extends Component {
         addSubscriber: PropTypes.func.isRequired,
     };
 
-    // const favicon = document.getElementById("favicon");
-    // favicon.href = "http://inproact.theia.nz/wp-content/uploads/2018/03/favicon.ico";
-
     onChange = e => this.setState({[e.target.name]: e.target.value});
 
     onSubmit = e => {

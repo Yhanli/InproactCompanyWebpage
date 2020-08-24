@@ -21,5 +21,3 @@ class WebsitePagesViewSet(viewsets.ViewSet):
         else:
             serializer = WebsitePagesSerializer(queryset, many=True)
             return Response(serializer.data[0])
-
-
