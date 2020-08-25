@@ -9,6 +9,8 @@ import "../styles/fullLandingImage.css";
 import "./../services.css";
 import "../styles/hoverStyles.css";
 import "../styles/generalStyle.css";
+import {Time_Out} from "../../../actions/constants";
+import {AUTO, MOUSE_CLICK} from "../../../actions/types";
 
 
 class Team extends Component {
@@ -19,8 +21,12 @@ class Team extends Component {
     };
     componentDidMount(){
         this.props.getAboutUs();
+        window.onload = setTimeout(
+            this.nextSlide(AUTO),
+            Time_Out.timeToContent)
     }
-    nextSlide = () => {
+    nextSlide = (actionType=AUTO) => () => {
+        if (window.pageYOffset !== 0 && actionType === AUTO) return;
         const element = document.getElementById("content-section");
         smoothscroll.polyfill();
         window.scroll({
@@ -42,7 +48,7 @@ class Team extends Component {
                                         <img src={data.team.cover_image}/>
                                         <div className="front-image-name">
                                             <p>
-                                                <a onClick={this.nextSlide}>{data.team.button_name}</a>
+                                                <a onClick={this.nextSlide(MOUSE_CLICK)}>{data.team.button_name}</a>
                                             </p>
                                         </div>
                                     </div>

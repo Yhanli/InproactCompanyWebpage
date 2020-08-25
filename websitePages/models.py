@@ -15,6 +15,15 @@ class Contact(models.Model):
 
     cover_image = models.FileField(upload_to="websitepages/contact", blank=True)
     button_name = models.CharField(max_length=1000, default=None, blank=True, null=True)
+    embed_map_frame = models.TextField(blank=True)
+    phone_primary = models.CharField(max_length=50, default=None, blank=True, null=True)
+    phone_description_primary = models.CharField(max_length=100, default=None, blank=True, null=True)
+    phone_secondary = models.CharField(max_length=50, default=None, blank=True, null=True)
+    phone_description_secondary = models.CharField(max_length=100, default=None, blank=True, null=True)
+
+    email = models.EmailField(default=None, blank=True, null=True)
+    address = models.CharField(max_length=100, default=None, blank=True, null=True)
+    address_description = models.CharField(max_length=100, default=None, blank=True, null=True)
 
     class Meta:
         verbose_name = "Contact"

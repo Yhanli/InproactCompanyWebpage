@@ -8,9 +8,9 @@ import "./main.css";
 import "./aboutus/aboutus.css";
 import "./services.css"
 
-import {Routes} from './../../actions/constants'
+import {Routes, Time_Out} from './../../actions/constants'
 import smoothscroll from "smoothscroll-polyfill";
-import {MOUSE_ENTER, MOUSE_CLICK} from "../../actions/types";
+import {MOUSE_ENTER, MOUSE_CLICK, AUTO} from "../../actions/types";
 
 
 class Main extends Component {
@@ -23,13 +23,12 @@ class Main extends Component {
     static propTypes = {
         maincontent:PropTypes.array.isRequired
     };
-    nextSlide = () => {
-        const height = document.getElementById("section2").offsetHeight;
-        document.querySelector('html').scrollTo(0, height - 75);
-    };
 
     componentDidMount(){
         window.addEventListener("scroll", this.handleScroll);
+        window.onload = setTimeout(
+            this.nextSlide(AUTO),
+            Time_Out.timeToContent)
     }
 
     componentWillUnmount(){
@@ -68,12 +67,14 @@ class Main extends Component {
     nextSlide = (actionType) => ()=> {
         const element = document.getElementById("section2");
         smoothscroll.polyfill();
-        if ((this.state.moveToContent && actionType === MOUSE_ENTER) || actionType === MOUSE_CLICK){
+        if ((this.state.moveToContent && actionType === MOUSE_ENTER) ||
+            actionType === MOUSE_CLICK ||
+            (window.pageYOffset === 0 && actionType === AUTO)){
             window.scroll({
                 top:element.offsetTop,
                 behavior: "smooth",
             });
-            if (actionType === MOUSE_ENTER){
+            if (actionType === MOUSE_ENTER || actionType === AUTO){
                 this.setState({moveToContent:false});
             }
         }

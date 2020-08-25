@@ -6,6 +6,8 @@ import {getAboutUs,getLandingContent} from "../../../actions/frontend";
 import smoothscroll from 'smoothscroll-polyfill'
 import "./aboutus.css";
 import "./../services.css"
+import {Time_Out} from "../../../actions/constants";
+import {AUTO, MOUSE_CLICK} from "../../../actions/types";
 
 class Story extends Component {
 
@@ -16,9 +18,13 @@ class Story extends Component {
 
     componentDidMount(){
         this.props.getAboutUs();
+        window.onload = setTimeout(
+            this.nextSlide(AUTO),
+            Time_Out.timeToContent)
     }
 
-    nextSlide = () => {
+    nextSlide = (actionType=AUTO) => () => {
+        if (window.pageYOffset !== 0 && actionType === AUTO) return;
         const element = document.getElementById("content-section-flex");
         smoothscroll.polyfill();
         window.scroll({
@@ -40,7 +46,7 @@ class Story extends Component {
                                         <img src={data.story.cover_image}/>
                                         <div className="front-image-name">
                                             <p>
-                                            <a onClick={this.nextSlide}>{data.story.button_name}</a>
+                                            <a onClick={this.nextSlide(MOUSE_CLICK)}>{data.story.button_name}</a>
                                             </p>
                                         </div>
                                     </div>

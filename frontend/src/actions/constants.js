@@ -15,3 +15,7 @@ export const Routes = {
 export const REST_API = {
     websitePages:"/api/websitepages/",
 };
+
+export const Time_Out = {
+    timeToContent: 3500
+};

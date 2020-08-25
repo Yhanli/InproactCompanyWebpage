@@ -3,28 +3,33 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
-import {getLandingContent, getWebsitePages} from "../../actions/frontend";
+import {getWebsitePages} from "../../actions/frontend";
 
 import "./services.css";
 import "./aboutus/aboutus.css"
+import "./styles/fullLandingImage.css";
 import smoothscroll from "smoothscroll-polyfill";
+import {Time_Out} from "../../actions/constants";
+import {MOUSE_ENTER, MOUSE_CLICK, AUTO} from "../../actions/types";
 
 class Services extends Component {
-
     state = {
         frontImageChanged:false,
     };
-
     static propTypes = {
         maincontent: PropTypes.array.isRequired,
         websitePage: PropTypes.object.isRequired
     };
     componentDidMount() {
         this.props.getWebsitePages();
+        window.onload = setTimeout(
+            this.nextSlide(AUTO),
+            Time_Out.timeToContent)
     }
 
 
-    nextSlide = () => {
+    nextSlide = (actionType=AUTO) => () => {
+        if (window.pageYOffset !== 0 && actionType === AUTO) return;
         const element = document.getElementById("section2");
         smoothscroll.polyfill();
         window.scroll({
@@ -47,6 +52,9 @@ class Services extends Component {
         if (this.props.websitePage.loading || content.websitePage.services == undefined){
             return (<Fragment/>)
         }else{
+            window.onload = setTimeout(
+                this.nextSlide,
+                Time_Out.timeToContent)
             const data = content.websitePage;
             return (
                     <Fragment>
@@ -58,7 +66,7 @@ class Services extends Component {
                                         <p>
                                             <span onMouseEnter={this.fadeInAnimate} className="front-image-header">Our Service</span>
                                             <br/>
-                                            <a onClick={this.nextSlide}>{data.services.button_name}</a>
+                                            <a onClick={this.nextSlide(MOUSE_CLICK)}>{data.services.button_name}</a>
                                         </p>
                                     </div>
                                 </div>

@@ -2,10 +2,12 @@ import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
-import {getAboutUs,getLandingContent} from "../../../actions/frontend";
+import {getAboutUs} from "../../../actions/frontend";
 import smoothscroll from 'smoothscroll-polyfill'
 import "./aboutus.css";
 import "./../services.css"
+import {Time_Out} from "../../../actions/constants";
+import {AUTO, MOUSE_CLICK} from "../../../actions/types";
 
 class AboutUs extends Component {
     state = {
@@ -18,9 +20,13 @@ class AboutUs extends Component {
 
     componentDidMount(){
         this.props.getAboutUs();
+        window.onload = setTimeout(
+            this.nextSlide(AUTO),
+            Time_Out.timeToContent)
     }
 
-    nextSlide = () => {
+    nextSlide = (actionType=AUTO) => () => {
+        if (window.pageYOffset !== 0 && actionType === AUTO) return;
         const element = document.getElementById("content-section");
         smoothscroll.polyfill();
         window.scroll({
@@ -53,7 +59,7 @@ class AboutUs extends Component {
                                                 <p>
                                                     <span onMouseEnter={this.fadeInAnimate} className="front-image-header">ABOUT US</span>
                                                     <br/>
-                                                    <a onClick={this.nextSlide}>{data.button_name}</a>
+                                                    <a onClick={this.nextSlide(MOUSE_CLICK)}>{data.button_name}</a>
                                                 </p>
                                         </div>
                                     </div>

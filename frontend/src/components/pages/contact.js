@@ -2,89 +2,101 @@ import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
-import {getAboutUs,getLandingContent} from "../../actions/frontend";
+import {getAboutUs, getLandingContent, getWebsitePages} from "../../actions/frontend";
 import smoothscroll from 'smoothscroll-polyfill'
 import "./styles/fullLandingImage.css";
 import "./services.css";
 import "./aboutus/aboutusV2.css"
 import "./styles/hoverStyles.css";
 import "./styles/generalStyle.css";
-import {Routes} from "../../actions/constants";
+import {Routes, Time_Out} from "../../actions/constants";
+import {AUTO, MOUSE_CLICK} from "../../actions/types";
 
 class Contact extends Component {
-
     state = {
-        showSubItem: false
+        frontImageChanged:false,
     };
-
     static propTypes = {
-        aboutus:PropTypes.array.isRequired,
-        maincontent: PropTypes.array.isRequired
+        maincontent: PropTypes.array.isRequired,
+        websitePage: PropTypes.object.isRequired
     };
-
-    componentDidMount(){
-        this.props.getAboutUs();
-        this.props.getLandingContent();
+    componentDidMount() {
+        this.props.getWebsitePages();
+        window.onload = setTimeout(
+            this.nextSlide(AUTO),
+            Time_Out.timeToContent)
     }
-    nextSlide = () => {
-        const element = document.getElementById("content-section");
+
+
+    nextSlide = (actionType=AUTO) => () => {
+        if (window.pageYOffset !== 0 && actionType === AUTO) return;
+        const element = document.getElementById("section2");
         smoothscroll.polyfill();
         window.scroll({
             top:element.offsetTop,
             behavior: "smooth"
         })
     };
+    fadeInAnimate = () => {
+        if (!this.state.frontIamageChanged){
+            const element = document.querySelector(".front-image-header");
+            element.className = 'h1-fade-in-perm';
+            this.setState({
+                frontImageChanged:true
+            });
+        }
+    };
 
     render() {
-        return (
-            <Fragment>
-                {/*{console.log(this.props.aboutus)}*/}
-                {this.props.aboutus.slice(0).map(data=>{
-                    return(
-                        <Fragment key={data.id}>
-                            <div className="main-container"
-                                 value={this.props.maincontent[0]?
-                                     document.title = `Contact Us - ${this.props.maincontent[0].site_name}` : ''}>
-                                <div className="section1">
-                                    <div className="front-image">
-                                        <img src={data.whyus.cover_image}/>
-                                        <div className="front-image-name">
-                                            <p>
-                                                <a onClick={this.nextSlide}>Contact Us</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="content-section" id="content-section">
-                                    <div className="content-section-row first-row subsection-text">
-                                        <div className="head-box-container flex-wrap-normal subsection-text">
-                                            <div className={"right-container"}>
-                                                <h2 >{data.whyus.section_1_title}</h2>
-                                                <p>{data.whyus.section_1_words}</p>
-                                            </div>
-                                            <div className={"left-container"}>
-                                                <p>{data.whyus.section_2_text_1_paragraph}</p>
-                                                <div style={ { textAlign:'right' }}>
-                                                    <a onClick={this.expandExtra} className={"ReadMore"}>Read More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className={"div-blank-space-5vw"}></div>
-
+        const content = this.props.websitePage;
+        if (this.props.websitePage.loading || content.websitePage.services == undefined){
+            return (<Fragment/>)
+        }else{
+            const data = content.websitePage;
+            return (
+                <Fragment>
+                    <div className="main-containers" value={this.props.maincontent[0]? document.title = `Service - ${this.props.maincontent[0].site_name}` : ''}>
+                        <div className="section1">
+                            <div className="front-image">
+                                <img src={data.contact.cover_image}/>
+                                <div className="front-image-name">
+                                    <p>
+                                        <span onClick={this.nextSlide(MOUSE_CLICK)} className="front-image-header">{data.contact.button_name}</span>
+                                    </p>
                                 </div>
                             </div>
-                        </Fragment>
-                    )
-                })}
-            </Fragment>
-        )
+                        </div>
+                        <div className="container-fluid section2" id="section2">
+                            <div id={`subsection1`} className="subsection1">
+                                <div className="subsection-text">
+                                    <h2>{data.services.section_1_title}</h2>
+                                    <p>{data.services.section_1_words}</p>
+                                </div>
+                                <div className="subsection-img">
+                                    <img src={data.services.section_1_picture}
+                                         className="inspire-photo" alt="inspire"/>
+                                </div>
+                            </div>
+                            <div className="subsection-divider"><span>{data.services.section_1_2_divider}</span></div>
+                            <div className="subsection-divider-line"></div>
+
+                            <div id={`subsections3`}>
+                            </div>
+                        </div>
+                    </div>
+                    <div></div>
+                </Fragment>
+
+            )
+        }
     }
 }
 
-const mapStateToProps = state=> ({
-    aboutus:state.aboutus.aboutus,
-    maincontent:state.maincontent.maincontent
-});
+const mapStateToProps = state=> {
+    return{
+        maincontent:state.maincontent.maincontent,
+        websitePage:state.websitePage
+    }
+};
 
-export default connect(mapStateToProps,{getAboutUs,getLandingContent})(Contact);
+export default connect(mapStateToProps,{getWebsitePages})(Contact);
