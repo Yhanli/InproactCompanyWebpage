@@ -2,11 +2,11 @@ import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
-import {getAboutUs, getLandingContent, getWebsitePages} from "../../actions/frontend";
+import {getWebsitePages} from "../../actions/frontend";
 import smoothscroll from 'smoothscroll-polyfill'
 import "./styles/fullLandingImage.css";
 import "./services.css";
-import "./aboutus/aboutusV2.css"
+import "./contact.css";
 import "./styles/hoverStyles.css";
 import "./styles/generalStyle.css";
 import {Routes, Time_Out} from "../../actions/constants";
@@ -30,13 +30,20 @@ class Contact extends Component {
 
     nextSlide = (actionType=AUTO) => () => {
         if (window.pageYOffset !== 0 && actionType === AUTO) return;
-        const element = document.getElementById("section2");
+        const element = document.getElementById("content-section");
         smoothscroll.polyfill();
         window.scroll({
             top:element.offsetTop,
             behavior: "smooth"
         })
     };
+
+    stringToHtml = (stringItem) => () => {
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(stringItem, 'text/html');
+        return doc.body;
+    };
+
     fadeInAnimate = () => {
         if (!this.state.frontIamageChanged){
             const element = document.querySelector(".front-image-header");
@@ -45,6 +52,11 @@ class Contact extends Component {
                 frontImageChanged:true
             });
         }
+    };
+
+    onChange = e => this.setState({[e.target.name]: e.target.value});
+    onSubmit = () => {
+        console.log('submitform')
     };
 
     render() {
@@ -66,21 +78,121 @@ class Contact extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="container-fluid section2" id="section2">
-                            <div id={`subsection1`} className="subsection1">
-                                <div className="subsection-text">
-                                    <h2>{data.services.section_1_title}</h2>
-                                    <p>{data.services.section_1_words}</p>
-                                </div>
-                                <div className="subsection-img">
-                                    <img src={data.services.section_1_picture}
-                                         className="inspire-photo" alt="inspire"/>
-                                </div>
-                            </div>
-                            <div className="subsection-divider"><span>{data.services.section_1_2_divider}</span></div>
-                            <div className="subsection-divider-line"></div>
+                        <div className="content-section" id="content-section">
 
-                            <div id={`subsections3`}>
+                            <div className="content-section-row first-row">
+                                <div className="head-box-container flex-wrap-normal">
+                                    <div className="row-max"><div className="content-main-heading"><h2>Get In Touch</h2></div></div>
+                                    <div className="row-max"><div className="content-main-subtext align-centre">
+                                        <p>Feel free to fill in your details below along with a brief message. We will get back to you as soon as we can.</p></div></div>
+                                </div>
+                                <div className="head-box-container">
+                                    <form onSubmit={this.onSubmit} className={"form-body"}>
+                                        <div className="half-form">
+                                            <input
+                                                className="form-control"
+                                                type="text"
+                                                name="name"
+                                                placeholder={"Your Full Name*"}
+                                                onChange={this.onChange}
+                                            />
+                                        </div>
+                                        <div className="half-form">
+                                            <input
+                                                className="form-control"
+                                                type="email"
+                                                name="email"
+                                                placeholder={"Your Email"}
+                                                onChange={this.onChange}
+                                            />
+                                        </div>
+                                        <div className="half-form">
+                                            <input
+                                                className="form-control"
+                                                type="text"
+                                                name="phone"
+                                                placeholder={"Your Contact Phone Number*"}
+                                                onChange={this.onChange}
+                                            />
+                                        </div>
+                                        <div className="half-form">
+                                            <input
+                                                className="form-control"
+                                                type="text"
+                                                name="prefContact"
+                                                placeholder={"Your Preferred Contact Detail*"}
+                                                onChange={this.onChange}
+                                            />
+                                        </div>
+                                        <div className="full-form">
+                                            <input
+                                                className="form-control"
+                                                type="text"
+                                                name="subject"
+                                                placeholder={"Subject"}
+                                                onChange={this.onChange}
+                                            />
+                                        </div>
+                                        <div className="full-form">
+                                            {/*<label>Message</label>*/}
+                                            <textarea
+                                                className="form-control"
+                                                type="text"
+                                                name="message"
+                                                placeholder={"Your Message*"}
+                                                onChange={this.onChange}
+                                            />
+                                        </div>
+                                        <div className="full-form submit-button">
+                                            <button type="submit" className="btn">
+                                                Submit
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+
+                            <div className="content-section-row first-row subsection-text">
+                                <div className="head-box-container flex-wrap-reverse subsection-text">
+                                    <div className={"rightleft-container"} style={{
+                                        width:"550px",
+                                        height:"350px",
+                                        maxWidth:"95vw",
+                                        maxHeight:"95vw"
+                                    }}>
+                                        <iframe
+                                            src={`${data.contact.embed_map_frame}`}
+                                            className="map-frame-2c"
+                                            frameBorder="0" allowFullScreen="" aria-hidden="false"
+                                            tabIndex="0"
+                                        />
+                                    </div>
+                                    <div className={"right-container top-margin-2"}>
+                                        <h2 className="subheading">Other Ways To Contact Us</h2>
+
+                                        <p className="focused-text">
+                                            <i className="fas fa-phone"></i>
+                                            &nbsp;
+                                            <a href={`tel:${data.contact.phone_primary}`}>{data.contact.phone_primary}</a>
+                                            <br/>
+                                        <span>{data.contact.phone_description_primary}</span>
+                                        </p>
+
+                                        <p className="focused-text"><i className="fas fa-phone"></i>
+                                            &nbsp;
+                                            <a href={`tel:${data.contact.phone_secondary}`}>{data.contact.phone_secondary}</a>
+                                            <br/>
+                                            <span>{data.contact.phone_description_secondary}</span>
+                                        </p>
+
+                                        <p className="focused-text"><i className="far fa-envelope"></i>&nbsp;
+                                            <a href={`mailto:${data.contact.email}`}>{data.contact.email}</a></p>
+                                        <p className="focused-text"><i className="fas fa-map-marker-alt"></i>&nbsp;
+                                            <a href={data.contact.address_map_link}
+                                               target="_blank">{data.contact.address}</a></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

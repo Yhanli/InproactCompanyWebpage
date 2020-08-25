@@ -27,7 +27,7 @@ class Footer extends Component {
     };
 
     render() {
-        // console.log(this.props.maincontent.slice(0,1));
+        // console.log(this.props.maincontent);
         const {email} = this.state;
         return (
             <Fragment>

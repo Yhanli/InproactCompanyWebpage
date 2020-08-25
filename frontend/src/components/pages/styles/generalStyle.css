@@ -25,6 +25,7 @@
 .bot-margin-2{
     margin-bottom: 2rem;
 }
+
 .horiz-padding-2{
     padding-left: 2rem;
     padding-right: 2rem;
@@ -34,8 +35,18 @@
     padding-bottom: 1rem;
 }
 
+
 .div-horizontal-line {
     position: absolute;
+    height: 2px;
+    background-color: #a27a44;
+    width: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.div-horizontal-line-rel {
+    position: relative;
     height: 2px;
     background-color: #a27a44;
     width: 10%;
@@ -124,6 +135,7 @@
     color: #626262;
     letter-spacing: 1px;
 }
+
 .justified-text{
     text-align: justify!important;
     text-justify:inter-word!important;
@@ -132,4 +144,21 @@
 .hide-display{
     display:none;
     opacity: 0;
+}
+
+.map-frame-2c{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    max-width: 95vw;
+    max-height: 95vw;
+}
+
+.row-max{
+    width: 100%;
+    /*background-color: #cdcdcd;*/
+}
+.align-centre{
+    justify-content: center;
+    margin: 0 auto;
 }

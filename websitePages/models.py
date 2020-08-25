@@ -23,6 +23,7 @@ class Contact(models.Model):
 
     email = models.EmailField(default=None, blank=True, null=True)
     address = models.CharField(max_length=100, default=None, blank=True, null=True)
+    address_map_link = models.CharField(max_length=100, default=None, blank=True, null=True)
     address_description = models.CharField(max_length=100, default=None, blank=True, null=True)
 
     class Meta:

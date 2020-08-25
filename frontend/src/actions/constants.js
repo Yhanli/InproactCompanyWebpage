@@ -17,5 +17,5 @@ export const REST_API = {
 };
 
 export const Time_Out = {
-    timeToContent: 3500
+    timeToContent: 3000
 };
