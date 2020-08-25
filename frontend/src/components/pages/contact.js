@@ -152,7 +152,7 @@ class Contact extends Component {
                                 </div>
 
                             </div>
-
+                            <div className="line-90p align-centre top-margin-2 bot-margin-2"></div>
                             <div className="content-section-row first-row subsection-text">
                                 <div className="head-box-container flex-wrap-reverse subsection-text">
                                     <div className={"rightleft-container"} style={{

@@ -160,5 +160,11 @@
 }
 .align-centre{
     justify-content: center;
-    margin: 0 auto;
+    margin-left:auto;
+    margin-right:auto;
+}
+.line-90p{
+    width: 90%;
+    height: 2px;
+    background-color: black;
 }
