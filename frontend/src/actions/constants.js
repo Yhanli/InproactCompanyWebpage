@@ -1,7 +1,3 @@
-
-
-
-
 export const Routes = {
     Home:"/",
     AboutUs:"/aboutus",
@@ -17,7 +13,7 @@ export const REST_API = {
 };
 
 export const Time_Out = {
-    timeToContent: 3000
+    timeToContent: 5000
 };
 
 export const FORMS = {

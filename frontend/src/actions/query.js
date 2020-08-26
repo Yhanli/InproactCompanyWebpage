@@ -16,7 +16,7 @@ export const addQuery = (query) =>(dispatch,getState)=>{
             });
         }).catch(err =>
         {
-            dispatch(errorMessage(err.response.data, err.response.status))
+            dispatch(errorMessage(err.response.data, err.response.status));
             dispatch({
                 type: ADD_QUERY_FAILURE,
             });}
