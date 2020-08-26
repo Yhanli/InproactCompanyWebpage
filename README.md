@@ -31,6 +31,7 @@ Hosting using
   - pipenv run python manage.py migrate
   - pipenv run python manage.py collectstatic
   restart gunicorn and supervisor
+  (check the push.sh, pull.sh and restart.sh to comfirm commands needed, setting up nginx, supervisor, gunicorn step will include at later stage)
  
  Demo Site (temporary for development use)
   https://yhanl.tech/
