@@ -1,4 +1,4 @@
-# Inproact-Vol-Project
+# Inproact-Vol-Project (still under development)
 This is a volunteer/self learning project; create a website for inproact
 
 While picking up and refining my skills and understanding in python, django, react, redux, javascript, html, css, nodeJs and hosting, I decided to pickup this volunteer project. 
