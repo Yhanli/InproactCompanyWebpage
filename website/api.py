@@ -9,3 +9,4 @@ class WebsiteMainViewSet(viewsets.ModelViewSet):
     ]
     serializer_class = WebsiteMainSerializer
     queryset = WebsiteMain.objects.all()
+    http_method_names = ['get']

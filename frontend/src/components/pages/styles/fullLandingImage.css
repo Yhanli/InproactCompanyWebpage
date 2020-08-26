@@ -71,8 +71,8 @@
     cursor: pointer;
 }
 .front-image-name span:hover{
-    color: #626262;
-    text-shadow: 0px 1px 10px #b0b0b0;
+    /*color: #626262;*/
+    text-shadow: 0px 1px 10px #a27b43;
     transition: all 1s ease-in-out!important;
 
 }

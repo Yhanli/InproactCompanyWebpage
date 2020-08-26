@@ -30,6 +30,7 @@ urlpatterns = [
     path('', include('websitePages.urls')),
     path('', include('subscriber.urls')),
     path('', include('post.urls')),
+    path('', include('query.urls')),
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + [url(r'^.*$', views.index)]

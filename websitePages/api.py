@@ -10,7 +10,7 @@ class WebsitePagesViewSet(viewsets.ViewSet):
         permissions.AllowAny
     ]
     serializer_class = WebsitePagesSerializer
-
+    http_method_names = ['get']
 
 
     def list(self, request):

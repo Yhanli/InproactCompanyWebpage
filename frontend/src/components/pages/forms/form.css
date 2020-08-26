@@ -1,0 +1,35 @@
+
+.form-row{
+    display: flex;
+    justify-content: center;
+}
+
+
+.half-form{
+    width: 100%;
+    margin: 1rem 0;
+    /*background-color: black;*/
+}
+.full-form{
+    width: 100%;
+    margin: 1rem 0;
+}
+.form-control{
+    height: 4rem;
+}
+.row-max{
+    /*background-color: #2aabd2;*/
+}
+.form-body{
+    /*background-color: #8bc540;*/
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.full-form textarea{
+    height: 8rem;
+}
+.submit-button{
+    text-align: right;
+}

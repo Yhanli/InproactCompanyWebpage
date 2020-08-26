@@ -33,8 +33,8 @@ const Services = lazy(()=> import("./pages/services"));
 const Contact = lazy(()=> import("./pages/contact"));
 
 const alertOptions = {
-    timeout: 3000,
-    position: 'top center'
+    timeout: 5000,
+    position: 'middle'
 };
 
 class App extends Component {

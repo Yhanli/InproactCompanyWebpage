@@ -6,8 +6,8 @@ from django.db import models
 class WebsitePages(models.Model):
     active = models.BooleanField(default=False)
     class Meta:
-        verbose_name = "WebsitePages"
-        verbose_name_plural = "WebsitePages"
+        verbose_name = "Website Page"
+        verbose_name_plural = "Website Pages"
 
 
 class Contact(models.Model):
@@ -30,15 +30,22 @@ class Contact(models.Model):
         verbose_name = "Contact"
         verbose_name_plural = "Contact"
 
+class ContactUsTickBoxItems(models.Model):
+    # websitePagesID = models.OneToOneField(WebsitePages, on_delete=models.CASCADE)
+    contactId = models.ForeignKey(Contact, on_delete=models.CASCADE, related_name="tickboxs")
+    question = models.CharField(max_length=200)
+    individual_use = models.BooleanField(default=False)
+    business_use = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name = "Tickbox"
+        verbose_name_plural = "Tickbox"
 
 class Services(models.Model):
     websitePages = models.OneToOneField(WebsitePages, on_delete=models.CASCADE)
 
     cover_image = models.FileField(upload_to="sidepages/aboutus/services", blank=True)
     button_name = models.CharField(max_length=1000, default=None, blank=True, null=True)
-
-    # main_section_heading = models.CharField(max_length=1000, default=None, blank=True, null=True)
-    # main_section_paragraph = models.TextField(default=None, blank=True, null=True)
 
     section_1_title = models.CharField(max_length=1000, blank=True)
     section_1_words = models.TextField(blank=True)

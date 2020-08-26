@@ -82,7 +82,7 @@ class WhyUs extends Component {
                                                 <h2 >{data.whyus.section_1_title}</h2>
                                                 <p>{data.whyus.section_1_words}</p>
                                             </div>
-                                            <div className={"left-container"}>
+                                            <div className={"left-container"} >
                                                 <p>{data.whyus.section_2_text_1_paragraph}</p>
                                                 <div style={ { textAlign:'right' }}>
                                                     <a onClick={this.expandExtra} className={"ReadMore"}>Read More</a>

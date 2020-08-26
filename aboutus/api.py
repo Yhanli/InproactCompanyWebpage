@@ -9,6 +9,6 @@ class AboutUsViewSet(viewsets.ModelViewSet):
     ]
     serializer_class = AboutUsSerializer
     queryset = AboutUs.objects.all()
-
+    http_method_names = ['get']
     # def get_queryset(self):
     #     return self.objects.filter()

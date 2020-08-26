@@ -3,7 +3,6 @@ import {CREATE_MESSAGE, GET_ABOUTUS, GET_MAINPAGE, ERROR_MESSAGE} from "./types"
 import {
     GET_WEBSITEPAGES_REQUEST,
     GET_WEBSITEPAGES_SUCCESS,
-    GET_WEBSITEPAGES_FAILURE
 } from "./types";
 
 
@@ -48,19 +47,6 @@ export const getWebsitePages = () => (dispatch,getState) => {
                     type: GET_WEBSITEPAGES_SUCCESS,
                     payload: res.data
                 });
-            }
-        )
-        .catch(
-            err => console.log(err)
-        );
-};
-
-export const getWebsitePagesData = ()=>(callback) => {
-    axios.get('/api/websitepages/')
-        .then(
-            res => {
-                console.log(res.data);
-                callback(res.data);
             }
         )
         .catch(

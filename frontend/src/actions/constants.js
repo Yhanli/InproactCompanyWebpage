@@ -19,3 +19,9 @@ export const REST_API = {
 export const Time_Out = {
     timeToContent: 3000
 };
+
+export const FORMS = {
+    Contact: "Contact",
+    Business: "Business_Contact",
+    Individual: "Individual_Contact"
+};

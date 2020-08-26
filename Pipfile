@@ -10,6 +10,8 @@ django = "==2.2.13"
 django-rest-knox = "*"
 djangorestframework = "*"
 pillow = "*"
+django-super-inlines = "*"
+django-nested-admin = "*"
 
 [requires]
 python_version = "3.7"

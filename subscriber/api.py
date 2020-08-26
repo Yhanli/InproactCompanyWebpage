@@ -9,3 +9,4 @@ class SubscriberViewSet(viewsets.ModelViewSet):
     ]
     serializer_class = SubscriberSerializer
     queryset = Subscriber.objects.all()
+    http_method_names = ['post']

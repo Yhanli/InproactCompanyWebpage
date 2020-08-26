@@ -1,18 +1,24 @@
 from django.contrib import admin
-from .models import WebsitePages, Contact, Services
+from .models import *
+# from super_inlines.admin import SuperInlineModelAdmin, SuperModelAdmin
 # Register your models here.
 
+import nested_admin
 
 
-class ContactInline(admin.StackedInline):
+class ContactUsTickBoxItemsInline(nested_admin.NestedTabularInline):
+    model = ContactUsTickBoxItems
+
+class ContactInline(nested_admin.NestedStackedInline):
     model = Contact
+    inlines = [ContactUsTickBoxItemsInline]
     classes = ["collapse"]
 
-class ServicesInline(admin.StackedInline):
+class ServicesInline(nested_admin.NestedStackedInline):
     model = Services
     classes = ["collapse"]
 
-class PageAdmin(admin.ModelAdmin):
+class PageAdmin(nested_admin.NestedModelAdmin):
     inlines = [ContactInline,ServicesInline]
 
 

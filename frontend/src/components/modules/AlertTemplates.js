@@ -76,9 +76,9 @@ var _extends = Object.assign || function (target) {
 };
 
 var alertStyle = {
-    backgroundColor: '#717171',
+    backgroundColor: 'rgba(110,110,110,0.78)',
     color: 'white',
-    padding: '10px',
+    padding: '5vh 5vw',
     textTransform: 'uppercase',
     borderRadius: '5px',
     display: 'flex',

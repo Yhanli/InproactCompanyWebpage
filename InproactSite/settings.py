@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'knox',
+    'nested_admin',
 
 
     'frontend',
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'websitePages',
     'subscriber',
     'post',
+    'query',
 
 
 ]
