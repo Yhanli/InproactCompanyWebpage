@@ -5,6 +5,7 @@ from django.db import models
 
 class WebsitePages(models.Model):
     active = models.BooleanField(default=False)
+
     class Meta:
         verbose_name = "Website Page"
         verbose_name_plural = "Website Pages"
@@ -30,6 +31,7 @@ class Contact(models.Model):
         verbose_name = "Contact"
         verbose_name_plural = "Contact"
 
+
 class ContactUsTickBoxItems(models.Model):
     # websitePagesID = models.OneToOneField(WebsitePages, on_delete=models.CASCADE)
     contactId = models.ForeignKey(Contact, on_delete=models.CASCADE, related_name="tickboxs")
@@ -40,6 +42,7 @@ class ContactUsTickBoxItems(models.Model):
     class Meta:
         verbose_name = "Tickbox"
         verbose_name_plural = "Tickbox"
+
 
 class Services(models.Model):
     websitePages = models.OneToOneField(WebsitePages, on_delete=models.CASCADE)
@@ -69,3 +72,24 @@ class Services(models.Model):
     class Meta:
         verbose_name = "Service"
         verbose_name_plural = "Service"
+
+
+class OurBrand(models.Model):
+    websitePages = models.OneToOneField(WebsitePages, on_delete=models.CASCADE)
+
+    cover_image = models.FileField(upload_to="sidepages/aboutus/ourbrand", blank=True)
+    page_name = models.CharField(max_length=1000, default=None, blank=True, null=True)
+    button_name = models.CharField(max_length=1000, default=None, blank=True, null=True)
+
+    section_1_content_paragraph = models.TextField(blank=True)
+
+    thread_title_1 = models.CharField(max_length=1000, default=None, blank=True, null=True)
+    thread_title_2 = models.CharField(max_length=1000, default=None, blank=True, null=True)
+    thread_title_3 = models.CharField(max_length=1000, default=None, blank=True, null=True)
+    thread_title_4 = models.CharField(max_length=1000, default=None, blank=True, null=True)
+
+
+
+    class Meta:
+        verbose_name = "OurBrand"
+        verbose_name_plural = "OurBrand"

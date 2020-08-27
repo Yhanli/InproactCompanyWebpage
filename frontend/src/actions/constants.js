@@ -5,11 +5,14 @@ export const Routes = {
     Team:'/team',
     WhyUs:"/whyus",
     Services:"/services",
-    Contact:"/contact"
+    Contact:"/contact",
+    OurBrand:"/ourbrand"
 };
 
 export const REST_API = {
     websitePages:"/api/websitepages/",
+    Posts:"/api/post/"
+
 };
 
 export const Time_Out = {
@@ -20,4 +23,8 @@ export const FORMS = {
     Contact: "Contact",
     Business: "Business_Contact",
     Individual: "Individual_Contact"
+};
+
+export const POSTTYPE = {
+    Featured:"Ftd"
 };

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {CREATE_MESSAGE, GET_ABOUTUS, GET_MAINPAGE, ERROR_MESSAGE} from "./types";
+import {REST_API} from "./constants";
 import {
     GET_WEBSITEPAGES_REQUEST,
     GET_WEBSITEPAGES_SUCCESS,
@@ -67,4 +68,9 @@ export const errorMessage = (msg,status) => {
         type: ERROR_MESSAGE,
         payload: {msg,status}
     }
+};
+
+export const getPosts = () => {
+    return axios.get(REST_API.Posts)
+
 };

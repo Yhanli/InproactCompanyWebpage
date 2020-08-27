@@ -13,7 +13,7 @@ class Post(models.Model):
     disclaimer = models.TextField(blank=True)
 
     post_type = models.CharField(
-        max_length=1,
+        max_length=3,
         choices=[
             ('Ftd', "Featured Post"),
             ('Suc', "Success Post"),

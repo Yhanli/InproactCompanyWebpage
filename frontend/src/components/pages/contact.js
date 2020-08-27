@@ -13,9 +13,9 @@ import "./styles/generalStyle.css";
 import {Routes, Time_Out, FORMS} from "../../actions/constants";
 import {AUTO, MOUSE_CLICK} from "../../actions/types";
 
-import ContactForm from "./forms/contactForm";
-import BusinessContactForm from "./forms/businessContactForm";
-import IndividualContactForm from "./forms/individualContactForm";
+import ContactForm from "./pageComponents/contactForm";
+import BusinessContactForm from "./pageComponents/businessContactForm";
+import IndividualContactForm from "./pageComponents/individualContactForm";
 
 
 class Contact extends Component {

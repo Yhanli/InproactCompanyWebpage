@@ -20,3 +20,5 @@ class QuerySerializer(serializers.ModelSerializer):
 
         obj = Query.objects.create(**validated_data)
         return obj
+
+

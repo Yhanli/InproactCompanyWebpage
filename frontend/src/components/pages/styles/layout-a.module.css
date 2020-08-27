@@ -5,6 +5,7 @@
     /*border: 1px solid black;*/
     margin: auto;
     padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 .content-section-row{
     padding: 0 5vw;
@@ -12,18 +13,24 @@
     text-align: center;
     /*background-color: #2aabd2;*/
     align-content: center;
-    margin-top: 3rem;
+    /*margin-top: 3rem;*/
 }
 @media screen and (min-width:1100px ){
     .content-section-row{
-        padding: 0 2rem;
+        padding: 0 1rem;
     }
 }
 @media screen and (min-width:768px ){
 
-    .subtext{
-        text-align: justify!important;
-        text-justify:inter-word!important;
+    .content-section-row .content-main-heading h2{
+        font-size: 4rem;
+        color: #000000;
+        font-family: Georgia
+    }
+    .form-body  .half-form{
+        width: 48%;
+        margin: 1rem 0;
+        /*background-color: black;*/
     }
 }
 @media screen and (max-width:980px ){
@@ -44,8 +51,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 2rem 0;
+    /*padding: 2rem ;*/
+    /*background-color: #cdcdcd;*/
 }
 .section1-img{
     flex: fit-content;
@@ -56,11 +63,44 @@
 }
 
 .head-box-container .right-container {
-    max-width: 500px;
+    max-width: 550px;
     /*margin: 0 1rem;*/
+    text-align: left;
 }
 
 .left-container {
-    max-width: 400px;
+    max-width: 550px;
     /*margin: 0 1rem;*/
+}
+
+.focused-text{
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    color: #626262;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+}
+.descrition-text{
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    white-space: pre-wrap;
+    color: #626262;
+    letter-spacing: 1px;
+}
+
+.content-main-heading{
+    text-align: center;
+    justify-content: center;
+}
+
+.content-main-heading h2{
+    font-size: 10vw;
+    color: #000000;
+    font-family: Georgia
+}
+
+.content-main-subtext{
+    font-size: 0.8rem;
+    max-width: 50ch;
 }

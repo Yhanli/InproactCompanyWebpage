@@ -1,3 +1,13 @@
+@media screen and (min-width:768px ){
+
+    .subtext{
+        text-align: justify!important;
+        text-justify:inter-word!important;
+    }
+
+}
+
+
 .text-left-align{
     text-align: left;
 }
@@ -128,7 +138,7 @@
     color: #000000;
     font-family: Georgia
 }
-.subtext{
+.susubtextbtext{
     font-family: "Poppins", Helvetica, Arial, sans-serif;
     font-size: 1rem;
     white-space: pre-wrap;
@@ -156,10 +166,11 @@
 
 .row-max{
     width: 100%;
-    /*background-color: #cdcdcd;*/
+}
+.text-center{
+    text-align: center;
 }
 .align-centre{
-    justify-content: center;
     margin-left:auto;
     margin-right:auto;
 }
@@ -188,3 +199,4 @@
     margin: 0 0;
     padding: 0 0;
 }
+

@@ -1,5 +1,5 @@
 var path = require("path");
-
+const cssRegex = /\.(css|scss)$/;
 module.exports = {
     output: {
         path: path.resolve(__dirname, "build"),
@@ -16,11 +16,37 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/,
+                test: /\.svg$/,
+                use: 'file-loader'
+            },
+
+            {
+                test: /\.module\.css$/,
+                use: [
+                    require.resolve('style-loader'),
+                    {
+                        loader: require.resolve('css-loader'),
+                        options: {
+                            importLoaders: 1,
+                            modules: {
+                                localIdentName: '[name]__[local]__[hash:base64:5]',
+                            },
+                            sourceMap: true,
+                            localsConvention: 'camelCase' //to allow select dash name by the camelCase
+
+                        }
+                    }
+                ],
+                include: /\.module\.css$/
+                // for the css module to work, need to rename the corresponding file to xxx.module.css
+            },
+            {
+                test: /\.(css|scss)$/,
                 use: [
                     'style-loader',
                     'css-loader'
-                ]
+                ],
+                exclude: /\.module\.css$/
             }
             // {
             //     loader: 'css-loader',
