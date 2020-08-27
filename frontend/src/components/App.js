@@ -31,7 +31,7 @@ const Team = lazy(()=> import("./pages/aboutus/team"));
 const WhyUs = lazy(()=> import("./pages/aboutus/whyus"));
 const Services = lazy(()=> import("./pages/services"));
 const Contact = lazy(()=> import("./pages/contact"));
-const OurBrand = lazy(()=> import("./pages/ourbrand"));
+const OurBrand = lazy(()=> import("./pages/ourBrand"));
 const InSight = lazy(()=> import("./pages/inSight"));
 const ICare = lazy(()=> import("./pages/iCare"));
 
