@@ -6,8 +6,11 @@ import {getAboutUs,getLandingContent} from "../../../actions/frontend";
 import smoothscroll from 'smoothscroll-polyfill'
 import "./aboutus.css";
 import "./../services.css"
+import "./../styles/hoverStyles.css";
+import "./../styles/generalStyle.css";
 import {Time_Out} from "../../../actions/constants";
 import {AUTO, MOUSE_CLICK} from "../../../actions/types";
+
 
 class Story extends Component {
 
@@ -67,7 +70,7 @@ class Story extends Component {
                                                     <p>{data.story.section1_paragraph_1}</p>
                                                 </div>
                                             </div>
-                                            <div className="subsection-body2">
+                                            <div className="subsection-body2 justified-text">
                                                 <div className="subsection-text">
                                                     <blockquote>
                                                         <p>
@@ -77,7 +80,7 @@ class Story extends Component {
 
                                                 </div>
                                             </div>
-                                            <div className="subsection-tail">
+                                            <div className="subsection-tail justified-text">
                                                 <div className="subsection-text text-bg">
                                                     <p>{data.story.section1_subparagraph_2}</p>
                                                 </div>
@@ -109,7 +112,7 @@ class Story extends Component {
                                                     <p>{data.story.section2_paragraph_1}</p>
                                                 </div>
                                             </div>
-                                            <div className="subsection-body2">
+                                            <div className="subsection-body2 justified-text">
                                                 <div className="subsection-text text-bg">
                                                     {/*<blockquote>*/}
                                                         <p>
@@ -119,7 +122,7 @@ class Story extends Component {
 
                                                 </div>
                                             </div>
-                                            <div className="subsection-tail">
+                                            <div className="subsection-tail justified-text">
                                                 <div className="subsection-text">
                                                     <p>{data.story.section2_subparagraph_2}</p>
                                                 </div>

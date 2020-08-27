@@ -96,10 +96,10 @@
 .flex-wrap-normal{
     flex-wrap: wrap;
 }
+
 .flex-wrap-reverse{
     flex-wrap: wrap-reverse;
 }
-
 
 .ReadMore{
     background-color: black;
@@ -200,3 +200,11 @@
     padding: 0 0;
 }
 
+.quote_p{
+    font-style: italic;
+    color: #cdcdcd;
+}
+.quote_by{
+    font-weight: bold;
+    color: #a27b43;
+}

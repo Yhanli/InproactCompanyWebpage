@@ -16,6 +16,15 @@ class ContactSerializer(serializers.ModelSerializer):
         fields = "__all__"
         extra_fields = ["tickboxs"]
 
+class ICareSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ICare
+        fields = "__all__"
+
+class InSightSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = InSight
+        fields = "__all__"
 
 class OurBrandSerializer(serializers.ModelSerializer):
     class Meta:
@@ -33,8 +42,10 @@ class WebsitePagesSerializer(serializers.ModelSerializer):
     contact = ContactSerializer()
     services = ServicesSerializer()
     ourbrand = OurBrandSerializer()
+    insight = InSightSerializer()
+    icare = ICareSerializer()
 
     class Meta:
         model = WebsitePages
         fields = "__all__"
-        extra_fields = ["contact", "services", "ourbrand"]
+        extra_fields = ["contact", "services", "ourbrand","insight","icare"]

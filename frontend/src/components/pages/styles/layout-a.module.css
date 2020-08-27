@@ -33,7 +33,7 @@
         /*background-color: black;*/
     }
 }
-@media screen and (max-width:980px ){
+@media screen and (max-width:950px ){
     .content-section-row .head-box-container .right-container {
         max-width: 95vw;
         border: unset;
@@ -62,15 +62,19 @@
     display: flex;
 }
 
-.head-box-container .right-container {
-    max-width: 550px;
+.right-container {
+    min-width: 200px;
+    max-width: 500px;
     /*margin: 0 1rem;*/
     text-align: left;
 }
 
 .left-container {
-    max-width: 550px;
+    min-width: 200px;
+    max-width: 500px;
     /*margin: 0 1rem;*/
+    text-align: left;
+
 }
 
 .focused-text{

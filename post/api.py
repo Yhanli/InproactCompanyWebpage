@@ -37,6 +37,6 @@ class PostViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(post_type=postType)
         queryset = queryset.order_by('-created_at')
         serializer = self.get_serializer(queryset, many=True)
-        for item in serializer.data:
-            print(item['id'])
+        # for item in serializer.data:
+        #     print(item['id'])
         return Response(serializer.data)

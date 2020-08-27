@@ -17,7 +17,7 @@ import {MOUSE_CLICK, AUTO} from "../../actions/types";
 import PostPreview from "./pageComponents/postPreview";
 
 
-class OurBrand extends Component {
+class ICare extends Component {
     state = {
         frontImageChanged:false,
         posts:[]
@@ -72,16 +72,13 @@ class OurBrand extends Component {
             const data = content.websitePage;
             return (
                 <Fragment>
-
-                    <div className="main-containers" value={this.props.maincontent[0]? document.title = `${data.ourbrand.page_name} - ${this.props.maincontent[0].site_name}` : ''}>
+                    <div className="main-containers" value={this.props.maincontent[0]? document.title = `${data.icare.page_name} - ${this.props.maincontent[0].site_name}` : ''}>
                         <div className="section1">
                             <div className="front-image">
-                                <img src={data.ourbrand.cover_image}/>
+                                <img src={data.icare.cover_image}/>
                                 <div className="front-image-name">
                                     <p>
-                                        <span onMouseEnter={this.fadeInAnimate} className="front-image-header">IN-Hub</span>
-                                        <br/>
-                                        <a onClick={this.nextSlide(MOUSE_CLICK)}>{data.ourbrand.button_name}</a>
+                                        <a onClick={this.nextSlide(MOUSE_CLICK)}>{data.icare.button_name}</a>
                                     </p>
                                 </div>
                             </div>
@@ -89,59 +86,27 @@ class OurBrand extends Component {
                         <div className={`${styles.contentSection}`} id="content-section">
                             <div className={`${styles.contentSectionRow} first-row top-margin-2`}>
                                 <div className={`${styles.headBoxContainer} flex-wrap-normal`}>
-                                    <div className="row-max">
-                                        <div className={`align-centre subsection-text`}>
-                                            <p>{data.ourbrand.paragraph}</p>
+                                    <div className={`row-max ${styles.headBoxContainer} flex-wrap-normal`}>
+                                        <div className={`${styles.rightContainer} subsection-text justified-text`}>
+                                            <h2>{data.icare.heading}</h2>
+                                            <p>{data.icare.left_paragraph}</p>
+                                        </div>
+                                        <div className={`${styles.leftContainer} subsection-text justified-text`} >
+                                            <br />
+                                            <br />
+                                            <p>{data.icare.right_paragraph}</p>
+                                            <p>{data.icare.right_paragraph_2}</p>
                                         </div>
                                     </div>
                                     <div className="row-max">
                                         <div className={`align-centre subsection-text`}>
-                                            <h2>{data.ourbrand.thread_title_1}</h2>
+                                            <h2>{data.icare.thread_title}</h2>
                                         </div>
                                     </div>
 
                                     <div className="row-max">
                                         <div className={`${styles.headBoxContainer} flex-wrap-normal`}>
-                                            {this.createPostList(POSTTYPE.Featured,3).map(post => {
-                                                return <PostPreview key={post.id} post={post}/>;
-                                            })}
-                                        </div>
-                                    </div>
-
-                                    <div className="row-max">
-                                        <div className={`align-centre subsection-text`}>
-                                            <h2>{data.ourbrand.thread_title_2}</h2>
-                                        </div>
-                                    </div>
-
-                                    <div className="row-max">
-                                        <div className={`${styles.headBoxContainer} flex-wrap-normal`}>
-                                            {this.createPostList(POSTTYPE.Success,3).map(post => {
-                                                return <PostPreview key={post.id} post={post}/>;
-                                            })}
-                                        </div>
-                                    </div>
-
-                                    <div className="row-max">
-                                        <div className={`align-centre subsection-text`}>
-                                            <h2>{data.ourbrand.thread_title_3}</h2>
-                                        </div>
-                                    </div>
-                                    <div className="row-max">
-                                        <div className={`${styles.headBoxContainer} flex-wrap-normal`}>
-                                            {this.createPostList(POSTTYPE.Collaboration,3).map(post => {
-                                                return <PostPreview key={post.id} post={post}/>;
-                                            })}
-                                        </div>
-                                    </div>
-                                    <div className="row-max">
-                                        <div className={`align-centre subsection-text`}>
-                                            <h2>{data.ourbrand.thread_title_4}</h2>
-                                        </div>
-                                    </div>
-                                    <div className="row-max">
-                                        <div className={`${styles.headBoxContainer} flex-wrap-normal`}>
-                                            {this.createPostList(POSTTYPE.Share,3).map(post => {
+                                            {this.createPostList(POSTTYPE.Business, 3).map(post => {
                                                 return <PostPreview key={post.id} post={post}/>;
                                             })}
                                         </div>
@@ -166,4 +131,4 @@ const mapStateToProps = state=> {
     }
 };
 
-export default connect(mapStateToProps,{getWebsitePages})(OurBrand);
+export default connect(mapStateToProps,{getWebsitePages})(ICare);

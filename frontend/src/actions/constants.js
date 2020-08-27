@@ -6,7 +6,9 @@ export const Routes = {
     WhyUs:"/whyus",
     Services:"/services",
     Contact:"/contact",
-    OurBrand:"/ourbrand"
+    OurBrand:"/ourbrand",
+    InSight:"/insight",
+    ICare:"/icare"
 };
 
 export const REST_API = {
@@ -26,5 +28,11 @@ export const FORMS = {
 };
 
 export const POSTTYPE = {
-    Featured:"Ftd"
+    Featured:"Ftd",
+    Success:"Suc",
+    Collaboration:"Col",
+    Share:"Sha",
+    Educational:"Edu",
+    Business:"Bus",
+    Other:"Oth"
 };

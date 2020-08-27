@@ -157,12 +157,15 @@ class Navbar extends Component {
                                         <span>IN-Hub</span>
                                     </NavLink>
                                 </li>
-
-                                <li className={`nav-item ${this.state.currentTab === "insight" ? 'active-tab' : ""}`}>
-                                    <a className="nav-link" href="#">IN-Sights</a>
+                                <li className="nav-item">
+                                    <NavLink exact className="nav-link" activeClassName="active-tab" to={Routes.InSight}>
+                                        <span>IN-Sights</span>
+                                    </NavLink>
                                 </li>
-                                <li className={`nav-item ${this.state.currentTab === "icare" ? 'active-tab' : ""}`}>
-                                    <a className="nav-link" href="#">i-CARE</a>
+                                <li className="nav-item">
+                                    <NavLink exact className="nav-link" activeClassName="active-tab" to={Routes.ICare}>
+                                        <span>i-CARE</span>
+                                    </NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink exact className="nav-link" activeClassName="active-tab" to={Routes.Contact}>

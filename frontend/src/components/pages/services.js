@@ -8,6 +8,8 @@ import {getWebsitePages} from "../../actions/frontend";
 import "./services.css";
 import "./aboutus/aboutus.css"
 import "./styles/fullLandingImage.css";
+import "./styles/hoverStyles.css";
+import "./styles/generalStyle.css";
 import smoothscroll from "smoothscroll-polyfill";
 import {Time_Out} from "../../actions/constants";
 import {MOUSE_ENTER, MOUSE_CLICK, AUTO} from "../../actions/types";
@@ -71,9 +73,9 @@ class Services extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="container-fluid section2" id="section2">
+                            <div className="container-fluid section2 " id="section2">
                                 <div id={`subsection1`} className="subsection1">
-                                    <div className="subsection-text">
+                                    <div className="subsection-text justified-text">
                                         <h2>{data.services.section_1_title}</h2>
                                         <p>{data.services.section_1_words}</p>
                                     </div>
@@ -84,7 +86,7 @@ class Services extends Component {
                                 </div>
                                 <div className="subsection-divider"><span>{data.services.section_1_2_divider}</span></div>
                                 <div className="subsection-divider-line"></div>
-                                <div id={`subsection2`} className="subsection2">
+                                <div id={`subsection2`} className="subsection2 justified-text">
                                     <div className="subsection-row">
                                         <div className="subsection-text">
                                             <h2>{data.services.section_2_text_1_title}</h2>

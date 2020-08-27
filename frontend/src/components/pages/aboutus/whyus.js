@@ -77,8 +77,8 @@ class WhyUs extends Component {
                                 </div>
                                 <div className="content-section" id="content-section">
                                     <div className="content-section-row first-row subsection-text">
-                                        <div className="head-box-container flex-wrap-normal subsection-text">
-                                            <div className={"right-container"}>
+                                        <div className="head-box-container flex-wrap-normal subsection-text justified-text">
+                                            <div className={"right-container "}>
                                                 <h2 >{data.whyus.section_1_title}</h2>
                                                 <p>{data.whyus.section_1_words}</p>
                                             </div>

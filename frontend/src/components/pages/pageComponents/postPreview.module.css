@@ -1,0 +1,56 @@
+.postOverAllContainer{
+    width: 100vw;
+    max-width: 300px;
+    min-height: 450px;
+    height: auto;
+    margin-left:auto;
+    margin-right:auto;
+    /*background-color: gainsboro;*/
+    text-overflow: ellipsis;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.postBackGroundContainer{
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    background-size: 100%;
+    /*border-radius: 5px;*/
+    transition: all 0.3s ease-in-out;
+}
+
+.textContentContainer{
+    padding: 0.5rem;
+}
+
+.subHeading{
+    font-weight: normal;
+    font-size: 1.4em;
+    color: #444444;
+    /*font-family: Georgia*/
+    /*text-shadow: 2px 2px 5px lightgrey;*/
+
+}
+.subText{
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+    font-size: 0.9em;
+    color: #626262;
+    letter-spacing: 1px;
+}
+
+@media screen and (max-width: 950px){
+    .postOverAllContainer{
+        max-width: 400px;
+    }
+    .postBackGroundContainer{
+        max-width: 400px;
+        height: 380px;
+    }
+}
+
+.postBackGroundContainer:hover{
+    background-size: 103%;
+}

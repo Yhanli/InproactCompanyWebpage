@@ -17,7 +17,7 @@ import {MOUSE_CLICK, AUTO} from "../../actions/types";
 import PostPreview from "./pageComponents/postPreview";
 
 
-class OurBrand extends Component {
+class InSight extends Component {
     state = {
         frontImageChanged:false,
         posts:[]
@@ -57,7 +57,7 @@ class OurBrand extends Component {
         }
     };
 
-    createPostList = (type,num=3) => {
+    createPostList = (type,num=20) => {
         return this.state.posts.filter(post => post.post_type === type).slice(0,num)
     };
 
@@ -72,16 +72,13 @@ class OurBrand extends Component {
             const data = content.websitePage;
             return (
                 <Fragment>
-
-                    <div className="main-containers" value={this.props.maincontent[0]? document.title = `${data.ourbrand.page_name} - ${this.props.maincontent[0].site_name}` : ''}>
+                    <div className="main-containers" value={this.props.maincontent[0]? document.title = `${data.insight.page_name} - ${this.props.maincontent[0].site_name}` : ''}>
                         <div className="section1">
                             <div className="front-image">
-                                <img src={data.ourbrand.cover_image}/>
+                                <img src={data.insight.cover_image}/>
                                 <div className="front-image-name">
                                     <p>
-                                        <span onMouseEnter={this.fadeInAnimate} className="front-image-header">IN-Hub</span>
-                                        <br/>
-                                        <a onClick={this.nextSlide(MOUSE_CLICK)}>{data.ourbrand.button_name}</a>
+                                        <a onClick={this.nextSlide(MOUSE_CLICK)}>{data.insight.button_name}</a>
                                     </p>
                                 </div>
                             </div>
@@ -91,57 +88,29 @@ class OurBrand extends Component {
                                 <div className={`${styles.headBoxContainer} flex-wrap-normal`}>
                                     <div className="row-max">
                                         <div className={`align-centre subsection-text`}>
-                                            <p>{data.ourbrand.paragraph}</p>
+                                            <p className={`quote_p`}>{data.insight.quote} <br/><span
+                                                className={`quote_by`}
+                                                style={{
+                                                whiteSpace: 'nowrap'
+                                            }}>{`-${data.insight.quote_by}`}</span></p>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div className="row-max">
+                                        <div className={`align-centre subsection-text justified-text`}>
+                                            <p>{data.insight.paragraph}</p>
+                                            <p>{data.insight.paragraph_2}</p>
                                         </div>
                                     </div>
                                     <div className="row-max">
                                         <div className={`align-centre subsection-text`}>
-                                            <h2>{data.ourbrand.thread_title_1}</h2>
+                                            <h2>{data.insight.thread_title}</h2>
                                         </div>
                                     </div>
 
                                     <div className="row-max">
                                         <div className={`${styles.headBoxContainer} flex-wrap-normal`}>
-                                            {this.createPostList(POSTTYPE.Featured,3).map(post => {
-                                                return <PostPreview key={post.id} post={post}/>;
-                                            })}
-                                        </div>
-                                    </div>
-
-                                    <div className="row-max">
-                                        <div className={`align-centre subsection-text`}>
-                                            <h2>{data.ourbrand.thread_title_2}</h2>
-                                        </div>
-                                    </div>
-
-                                    <div className="row-max">
-                                        <div className={`${styles.headBoxContainer} flex-wrap-normal`}>
-                                            {this.createPostList(POSTTYPE.Success,3).map(post => {
-                                                return <PostPreview key={post.id} post={post}/>;
-                                            })}
-                                        </div>
-                                    </div>
-
-                                    <div className="row-max">
-                                        <div className={`align-centre subsection-text`}>
-                                            <h2>{data.ourbrand.thread_title_3}</h2>
-                                        </div>
-                                    </div>
-                                    <div className="row-max">
-                                        <div className={`${styles.headBoxContainer} flex-wrap-normal`}>
-                                            {this.createPostList(POSTTYPE.Collaboration,3).map(post => {
-                                                return <PostPreview key={post.id} post={post}/>;
-                                            })}
-                                        </div>
-                                    </div>
-                                    <div className="row-max">
-                                        <div className={`align-centre subsection-text`}>
-                                            <h2>{data.ourbrand.thread_title_4}</h2>
-                                        </div>
-                                    </div>
-                                    <div className="row-max">
-                                        <div className={`${styles.headBoxContainer} flex-wrap-normal`}>
-                                            {this.createPostList(POSTTYPE.Share,3).map(post => {
+                                            {this.createPostList(POSTTYPE.Educational).map(post => {
                                                 return <PostPreview key={post.id} post={post}/>;
                                             })}
                                         </div>
@@ -166,4 +135,4 @@ const mapStateToProps = state=> {
     }
 };
 
-export default connect(mapStateToProps,{getWebsitePages})(OurBrand);
+export default connect(mapStateToProps,{getWebsitePages})(InSight);
