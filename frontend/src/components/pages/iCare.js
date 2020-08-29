@@ -30,7 +30,7 @@ class ICare extends Component {
         this.props.getWebsitePages();
         window.onload = setTimeout(
             this.nextSlide(AUTO),
-            Time_Out.timeToContent)
+            Time_Out.timeToContent);
         getPosts().then(res => {
             this.setState({posts:res.data});
             console.log(res.data)
@@ -76,9 +76,20 @@ class ICare extends Component {
                         <div className="section1">
                             <div className="front-image">
                                 <img src={data.icare.cover_image}/>
-                                <div className="front-image-name">
+                                <div className="front-image-name-no-frame"
+                                    style={{
+                                        left:"35%",
+                                        top:"60%"
+                                    }}
+                                >
                                     <p>
-                                        <a onClick={this.nextSlide(MOUSE_CLICK)}>{data.icare.button_name}</a>
+                                        <a className={`no-frame-title`}
+                                           onClick={this.nextSlide(MOUSE_CLICK)}
+                                           style={{
+                                               whiteSpace:"pre-wrap",
+                                               padding:'0'
+                                           }}>
+                                        {data.icare.button_name}</a>
                                     </p>
                                 </div>
                             </div>

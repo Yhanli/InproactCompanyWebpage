@@ -18,7 +18,7 @@ export const REST_API = {
 };
 
 export const Time_Out = {
-    timeToContent: 5000
+    timeToContent: 8000
 };
 
 export const FORMS = {

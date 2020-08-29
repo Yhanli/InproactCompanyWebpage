@@ -10,6 +10,7 @@ import styles from "./styles/layout-a.module.css";
 import "./styles/hoverStyles.css";
 // import "./styles/buttons.css";
 import "./styles/generalStyle.css";
+// import "./styles/specialfonts.css";
 import smoothscroll from "smoothscroll-polyfill";
 import {Time_Out,POSTTYPE} from "../../actions/constants";
 import {MOUSE_CLICK, AUTO} from "../../actions/types";
@@ -76,9 +77,15 @@ class InSight extends Component {
                         <div className="section1">
                             <div className="front-image">
                                 <img src={data.insight.cover_image}/>
-                                <div className="front-image-name">
+                                <div className="front-image-name-no-frame">
                                     <p>
-                                        <a onClick={this.nextSlide(MOUSE_CLICK)}>{data.insight.button_name}</a>
+                                        <a className={`no-frame-title`}
+                                           onClick={this.nextSlide(MOUSE_CLICK)} dangerouslySetInnerHTML={{__html:data.insight.button_name}}
+                                           style={{
+                                               fontFamily:"Cabin Sketch",
+                                               color:"white"
+                                           }}>
+                                        </a>
                                     </p>
                                 </div>
                             </div>

@@ -33,9 +33,9 @@
 
 .dropdown-menu {
     float: right;
-    width: 30%;
+    width: 50%;
     margin-top: 0;
-    background-color: rgba(255, 255, 255,0.9);
+    background-color: rgba(255, 255, 255,0.98);
     /*background-color: transparent;*/
 }
 
@@ -56,7 +56,8 @@
 }
 
 .nav-item {
-    margin-left: 5px;
+    margin-left: 0px;
+    padding-left: 10px;
 }
 
 .nav-item:hover {
@@ -104,7 +105,10 @@
     }
 
     .nav-link {
-        margin-left: 15px;
+        margin-left: 10px;
+    }
+    .nav-link span{
+        padding-left: 10px;
     }
 
     /*.logo {*/

@@ -117,7 +117,7 @@ class ICare(models.Model):
 
     cover_image = models.FileField(upload_to="sidepages/others", blank=True)
     page_name = models.CharField(max_length=100, default=None, blank=True, null=True)
-    button_name = models.CharField(max_length=100, default=None, blank=True, null=True)
+    button_name = models.TextField(blank=True, null=True)
 
     heading = models.TextField(blank=True)
     left_paragraph = models.TextField(blank=True)

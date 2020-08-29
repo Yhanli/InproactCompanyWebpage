@@ -1,0 +1,22 @@
+/*@import url(//db.onlinewebfonts.com/c/bab7a07342805457245178c4a874e2ee?family=Sketchnote+Square);*/
+
+/*@font-face {*/
+/*    font-family: "Sketchnote Square";*/
+/*    src: url("//db.onlinewebfonts.com/t/bab7a07342805457245178c4a874e2ee.eot");*/
+/*    !*src:*!*/
+/*    !*        url("//db.onlinewebfonts.com/t/bab7a07342805457245178c4a874e2ee.eot?#iefix") format("embedded-opentype"),*!*/
+/*    !*        url("//db.onlinewebfonts.com/t/bab7a07342805457245178c4a874e2ee.woff2") format("woff2"),*!*/
+/*    !*        url("//db.onlinewebfonts.com/t/bab7a07342805457245178c4a874e2ee.woff") format("woff"),*!*/
+/*    !*        url("//db.onlinewebfonts.com/t/bab7a07342805457245178c4a874e2ee.ttf") format("truetype"),*!*/
+/*    !*        url("//db.onlinewebfonts.com/t/bab7a07342805457245178c4a874e2ee.svg#Sketchnote Square") format("svg");*!*/
+/*}*/
+
+@font-face {
+    font-family: "Sketchnote Square";
+    src: url('/assets/SketchnoteSquare.eot');
+}
+
+@font-face {
+    font-family: "Cabin Sketch";
+    src: url('/assets/CabinSketch-Regular.ttf') format("truetype");
+}

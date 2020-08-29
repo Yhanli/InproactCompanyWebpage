@@ -124,7 +124,7 @@ class Navbar extends Component {
                                        data-toggle="dropdown" aria-haspopup="true" name="dropdown1"
                                        aria-expanded={`${this.state.dropdown ? 'true' : 'false' }`}
                                     >
-                                        About Us
+                                        <span>About Us</span>
                                     </a>
                                     <div className={`dropdown-menu ${this.state.dropdown ? 'show' : '' }`}
                                          aria-labelledby="navbarDropdown2" id="dropitems1">
