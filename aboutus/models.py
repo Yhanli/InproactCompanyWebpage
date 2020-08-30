@@ -28,8 +28,8 @@ class AboutUs(models.Model):
     light_background_image = models.FileField(upload_to="sidepages/aboutus", blank=True)
 
     class Meta:
-        verbose_name = "AboutUs"
-        verbose_name_plural = "AboutUs"
+        verbose_name = "About Us"
+        verbose_name_plural = "About Us"
 
 
 class Story(models.Model):

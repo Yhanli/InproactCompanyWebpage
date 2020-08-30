@@ -25,13 +25,16 @@ class OurBrandInline(nested_admin.NestedStackedInline):
     model = OurBrand
     classes = ["collapse"]
 
+
 class InSightInline(nested_admin.NestedStackedInline):
     model = InSight
     classes = ["collapse"]
 
+
 class ICareInline(nested_admin.NestedStackedInline):
     model = ICare
     classes = ["collapse"]
+
 
 class PageAdmin(nested_admin.NestedModelAdmin):
     inlines = [ContactInline, ServicesInline, OurBrandInline, InSightInline, ICareInline]

@@ -12,14 +12,16 @@ class Subscriber(models.Model):
     phone = models.CharField(max_length=250, blank=True)
     requested_contact = models.BooleanField(default=False)
     preferred_contact_method = models.CharField(
-        max_length=1,
+        max_length=3,
         choices=[('ph', "phone"), ('E', "email"), ],
         default='E'
     )
     source_subscribed = models.CharField(
-        max_length=1,
+        max_length=3,
         choices=[('Web', "Website footer"), ('Con', "Contact us"), ('Inv', "Invitation")],
         default='Web'
     )
+    contacted = models.BooleanField(default=False)
+    note_internal_use = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

@@ -14,14 +14,7 @@ class PostViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
     filter_backends = [filters.OrderingFilter]
     ordering_fields = ['created_at']
-
-    # def get_queryset(self):
-    #     queryset = Post.objects.all()
-    #     postType = self.request.query_params.get('post_type')
-    #
-    #     if postType:
-    #         queryset = queryset.filter(post_type=postType)
-    #     return queryset.order_by('created_at')
+    http_method_names = ['get']
 
     def retrieve(self, request, pk=None):
         queryset = Post.objects.all()
@@ -32,11 +25,12 @@ class PostViewSet(viewsets.ModelViewSet):
     def list(self, request):
         queryset = Post.objects.all()
         postType = self.request.query_params.get('post_type')
-
+        queryset = queryset.filter(active=True)
         if postType:
             queryset = queryset.filter(post_type=postType)
         queryset = queryset.order_by('-created_at')
         serializer = self.get_serializer(queryset, many=True)
+
         # for item in serializer.data:
         #     print(item['id'])
         return Response(serializer.data)
