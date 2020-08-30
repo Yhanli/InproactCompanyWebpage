@@ -4,6 +4,11 @@
     justify-content: center;
 }
 
+@media screen and (max-width: 768px){
+    .form-body .half-form{
+        width: 100%;
+    }
+}
 
 .half-form{
     width: 48%;
