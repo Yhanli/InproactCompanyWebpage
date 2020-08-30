@@ -2,13 +2,14 @@ import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
-import {getAboutUs, getLandingContent} from "../../actions/frontend";
+import {getLandingContent} from "../../actions/frontend";
+import {nextSlide} from "../../actions/generalActions";
 
 import "./main.css";
 import "./aboutus/aboutus.css";
 import "./services.css"
 
-import {Routes, Time_Out} from './../../actions/constants'
+import {Routes, SECTION_NAME, Time_Out} from './../../actions/constants'
 import smoothscroll from "smoothscroll-polyfill";
 import {MOUSE_ENTER, MOUSE_CLICK, AUTO} from "../../actions/types";
 
@@ -26,9 +27,6 @@ class Main extends Component {
 
     componentDidMount(){
         window.addEventListener("scroll", this.handleScroll);
-        window.onload = setTimeout(
-            this.nextSlide(AUTO),
-            Time_Out.timeToContent)
     }
 
     componentWillUnmount(){
@@ -38,7 +36,6 @@ class Main extends Component {
     handleScroll = () => {
         const currentScrollPos = window.pageYOffset + window.outerHeight - 200;
         this.setState({currentScrollPos});
-        // console.log(`${this.state.currentScrollPos}  ${this.state.previousScrollPos}`);
         const all_fade_items = document.querySelectorAll(".fade-in-allowed");
         all_fade_items.forEach((section, index) => {
             if (this.state.currentScrollPos > section.offsetTop){
@@ -61,22 +58,12 @@ class Main extends Component {
             arrow_element.classList.remove('no-show');
             this.setState({arrowShow:!this.state.arrowShow});
         }
-
     };
 
-    nextSlide = (actionType) => ()=> {
-        const element = document.getElementById("section2");
-        smoothscroll.polyfill();
-        if ((this.state.moveToContent && actionType === MOUSE_ENTER) ||
-            actionType === MOUSE_CLICK ||
-            (window.pageYOffset === 0 && actionType === AUTO)){
-            window.scroll({
-                top:element.offsetTop,
-                behavior: "smooth",
-            });
-            if (actionType === MOUSE_ENTER || actionType === AUTO){
-                this.setState({moveToContent:false});
-            }
+    mouseEnterNextSlide = () => {
+        if (this.state.moveToContent){
+            setTimeout(nextSlide(SECTION_NAME.FirstContent), 1);
+            this.setState({moveToContent: false});
         }
     };
 
@@ -93,12 +80,12 @@ class Main extends Component {
                                         <img src={data.cover_image}/>
                                     </div>
                                     <div>
-                                        <a onMouseEnter={this.nextSlide(MOUSE_ENTER)} onClick={this.nextSlide(MOUSE_CLICK)}><img className="arrow-down-centre" src={data.arrowdown_image}/></a>
+                                        <a onMouseEnter={this.mouseEnterNextSlide}
+                                           onClick={nextSlide(SECTION_NAME.FirstContent, MOUSE_CLICK)}>
+                                            <img className="arrow-down-centre" src={data.arrowdown_image}/></a>
                                     </div>
                                 </div>
-
-
-                                <div className="main-section2" id="section2">
+                                <div className="main-section2" id={SECTION_NAME.FirstContent}>
                                     <div className="main-subsection1 fade-in-allowed" id="section1">
                                         <div className="subsection-inner1">
                                             <div className="subsection-content left-content">

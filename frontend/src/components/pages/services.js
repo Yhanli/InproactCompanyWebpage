@@ -1,18 +1,16 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 
 import {getWebsitePages} from "../../actions/frontend";
+import {nextSlide} from "../../actions/generalActions";
 
 import "./services.css";
 import "./aboutus/aboutus.css"
 import "./styles/fullLandingImage.css";
 import "./styles/hoverStyles.css";
 import "./styles/generalStyle.css";
-import smoothscroll from "smoothscroll-polyfill";
-import {Time_Out} from "../../actions/constants";
-import {MOUSE_ENTER, MOUSE_CLICK, AUTO} from "../../actions/types";
+import {SECTION_NAME} from "../../actions/constants";
 
 class Services extends Component {
     state = {
@@ -24,21 +22,8 @@ class Services extends Component {
     };
     componentDidMount() {
         this.props.getWebsitePages();
-        window.onload = setTimeout(
-            this.nextSlide(AUTO),
-            Time_Out.timeToContent)
     }
 
-
-    nextSlide = (actionType=AUTO) => () => {
-        if (window.pageYOffset !== 0 && actionType === AUTO) return;
-        const element = document.getElementById("section2");
-        smoothscroll.polyfill();
-        window.scroll({
-            top:element.offsetTop,
-            behavior: "smooth"
-        })
-    };
     fadeInAnimate = () => {
         if (!this.state.frontImageChanged){
             const element = document.querySelector(".front-image-header");
@@ -54,9 +39,6 @@ class Services extends Component {
         if (this.props.websitePage.loading || content.websitePage.services == undefined){
             return (<Fragment/>)
         }else{
-            window.onload = setTimeout(
-                this.nextSlide,
-                Time_Out.timeToContent)
             const data = content.websitePage;
             return (
                     <Fragment>
@@ -68,12 +50,12 @@ class Services extends Component {
                                         <p>
                                             <span onMouseEnter={this.fadeInAnimate} className="front-image-header">Our Service</span>
                                             <br/>
-                                            <a onClick={this.nextSlide(MOUSE_CLICK)}>{data.services.button_name}</a>
+                                            <a onClick={nextSlide(SECTION_NAME.FirstContent)}>{data.services.button_name}</a>
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            <div className="container-fluid section2 " id="section2">
+                            <div className="container-fluid section2 " id={SECTION_NAME.FirstContent}>
                                 <div id={`subsection1`} className="subsection1">
                                     <div className="subsection-text justified-text">
                                         <h2>{data.services.section_1_title}</h2>

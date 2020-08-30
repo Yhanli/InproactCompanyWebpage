@@ -41,7 +41,7 @@ class Navbar extends Component {
             document.getElementById("myBtn").click()
             this.setState({dropdown:false});
         }
-        if (currentScrollPos > 50){
+        if (currentScrollPos > 500){
             this.setState({
                 prevScrollpos: currentScrollPos,
                 visible
@@ -52,9 +52,6 @@ class Navbar extends Component {
     componentDidMount() {
         window.addEventListener("scroll", this.handleScroll);
         this.props.getLandingContent();
-        // const favicon = document.getElementById("favicon");
-        // favicon.href = "http://inproact.theia.nz/wp-content/uploads/2018/03/favicon.ico";
-        // console.log(this.props.maincontent)
     }
 
 

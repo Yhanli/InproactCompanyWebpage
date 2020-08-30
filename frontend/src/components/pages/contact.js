@@ -3,15 +3,14 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
 import {getWebsitePages} from "../../actions/frontend";
-import smoothscroll from 'smoothscroll-polyfill'
+import {nextSlide} from "../../actions/generalActions";
+
 import "./styles/fullLandingImage.css";
 import "./services.css";
-import "./contact.css";
+import cStyle from "./contact.module.css";
 import "./styles/hoverStyles.css";
-// import "./styles/buttons.css";
 import "./styles/generalStyle.css";
-import {Routes, Time_Out, FORMS} from "../../actions/constants";
-import {AUTO, MOUSE_CLICK} from "../../actions/types";
+import {FORMS, PAGE_NAME, SECTION_NAME} from "../../actions/constants";
 
 import ContactForm from "./pageComponents/contactForm";
 import BusinessContactForm from "./pageComponents/businessContactForm";
@@ -23,47 +22,18 @@ class Contact extends Component {
         frontImageChanged:false,
         formNum:FORMS.Contact,
     };
+
     static propTypes = {
         maincontent: PropTypes.array.isRequired,
         websitePage: PropTypes.object.isRequired
     };
+
     componentDidMount() {
         this.props.getWebsitePages();
-        window.onload = setTimeout(
-            this.nextSlide(AUTO),
-            Time_Out.timeToContent)
     }
 
-    nextSlide = (actionType=AUTO) => () => {
-        if (window.pageYOffset !== 0 && actionType === AUTO) return;
-        const element = document.getElementById("content-section");
-        smoothscroll.polyfill();
-        window.scroll({
-            top:element.offsetTop,
-            behavior: "smooth"
-        })
-    };
-
-    stringToHtml = (stringItem) => () => {
-        var parser = new DOMParser();
-        var doc = parser.parseFromString(stringItem, 'text/html');
-        return doc.body;
-    };
-
-    fadeInAnimate = () => {
-        if (!this.state.frontIamageChanged){
-            const element = document.querySelector(".front-image-header");
-            element.className = 'h1-fade-in-perm';
-            this.setState({
-                frontImageChanged:true
-            });
-        }
-    };
-
     onChange = e => {
-
         this.setState({[e.target.name]: e.target.value});
-        console.log(this.state)
     };
     onSubmit = e => {
         e.preventDefault();
@@ -87,23 +57,23 @@ class Contact extends Component {
             const data = content.websitePage;
             return (
                 <Fragment>
-                    <div className="main-containers" value={this.props.maincontent[0]? document.title = `Contact Us - ${this.props.maincontent[0].site_name}` : ''}>
+                    <div className="main-containers" value={this.props.maincontent[0]? document.title = `${PAGE_NAME.Contact} - ${this.props.maincontent[0].site_name}` : ''}>
                         <div className="section1">
                             <div className="front-image">
                                 <img src={data.contact.cover_image}/>
                                 <div className="front-image-name">
                                     <p>
-                                        <span onClick={this.nextSlide(MOUSE_CLICK)} className="front-image-header">{data.contact.button_name}</span>
+                                        <span onClick={nextSlide(SECTION_NAME.FirstContent)} className="front-image-header">{data.contact.button_name}</span>
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div className="content-section" id="content-section">
+                        <div className={`${cStyle.contentSection}`} id={SECTION_NAME.FirstContent}>
 
-                            <div className="content-section-row first-row">
-                                <div className="head-box-container flex-wrap-normal">
-                                    <div className="row-max"><div className="content-main-heading"><h2>Get In Touch</h2></div></div>
-                                    <div className="row-max"><div className="content-main-subtext align-centre">
+                            <div className={`${cStyle.contentSectionRow} first-row`}>
+                                <div className={`${cStyle.headBoxContainer} flex-wrap-normal`}>
+                                    <div className="row-max"><div className={`${cStyle.contentMainHeading}`}><h2>Get In Touch</h2></div></div>
+                                    <div className="row-max"><div className={`${cStyle.contentMainSubtext} align-centre`}>
                                         <p>Feel free to fill in your details below along with a brief message. We will get back to you as soon as we can.</p></div></div>
                                     <div className="row-max">
                                         <span className={`form-select 
@@ -112,25 +82,20 @@ class Contact extends Component {
                                         <span className={`form-select 
                                             ${this.state.formNum===FORMS.Individual?"active":""}
                                         `} id={FORMS.Individual} onClick={this.swithForm}>Individual Service</span>
-                                        {/*<span className={`form-select */}
-                                        {/*    ${this.state.formNum===FORMS.Individual?"active":""}*/}
-                                        {/*`} id={FORMS.Individual} onClick={this.swithForm}>Contact</span>*/}
                                     </div>
 
                                 </div>
-                                <div className="head-box-container">
+                                <div className={`${cStyle.headBoxContainer}`}>
                                     {/*initial Contact Form*/}
                                     <div className={this.state.formNum!==FORMS.Contact?"hide-display":""}><ContactForm /></div>
                                     <div className={this.state.formNum!==FORMS.Business?"hide-display":""}><BusinessContactForm /></div>
                                     <div className={this.state.formNum!==FORMS.Individual?"hide-display":""}><IndividualContactForm /></div>
-
                                 </div>
-
                             </div>
                             <div className="line-90p align-centre top-margin-2 bot-margin-2"></div>
-                            <div className="content-section-row first-row subsection-text">
-                                <div className="head-box-container flex-wrap-reverse subsection-text">
-                                    <div className={"rightleft-container"} style={{
+                            <div className={`${cStyle.contentSectionRow} first-row subsection-text`}>
+                                <div className={`${cStyle.headBoxContainer} flex-wrap-reverse subsection-text`}>
+                                    <div className={`left-container`} style={{
                                         width:"550px",
                                         height:"350px",
                                         maxWidth:"95vw",

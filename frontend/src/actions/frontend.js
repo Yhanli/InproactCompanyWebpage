@@ -1,10 +1,11 @@
 import axios from 'axios';
-import {CREATE_MESSAGE, GET_ABOUTUS, GET_MAINPAGE, ERROR_MESSAGE} from "./types";
+import {CREATE_MESSAGE, GET_ABOUTUS, GET_MAINPAGE, ERROR_MESSAGE, AUTO} from "./types";
 import {REST_API} from "./constants";
 import {
     GET_WEBSITEPAGES_REQUEST,
     GET_WEBSITEPAGES_SUCCESS,
 } from "./types";
+import smoothscroll from "smoothscroll-polyfill";
 
 
 export const getLandingContent = () => (dispatch,getState) => {
@@ -74,3 +75,4 @@ export const getPosts = () => {
     return axios.get(REST_API.Posts)
 
 };
+

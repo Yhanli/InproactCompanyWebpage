@@ -3,11 +3,10 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
 import {getAboutUs} from "../../../actions/frontend";
-import smoothscroll from 'smoothscroll-polyfill'
+import {nextSlide} from "../../../actions/generalActions";
 import "./aboutus.css";
 import "./../services.css"
-import {Time_Out} from "../../../actions/constants";
-import {AUTO, MOUSE_CLICK} from "../../../actions/types";
+import {SECTION_NAME} from "../../../actions/constants";
 
 class AboutUs extends Component {
     state = {
@@ -20,20 +19,7 @@ class AboutUs extends Component {
 
     componentDidMount(){
         this.props.getAboutUs();
-        window.onload = setTimeout(
-            this.nextSlide(AUTO),
-            Time_Out.timeToContent)
     }
-
-    nextSlide = (actionType=AUTO) => () => {
-        if (window.pageYOffset !== 0 && actionType === AUTO) return;
-        const element = document.getElementById("content-section");
-        smoothscroll.polyfill();
-        window.scroll({
-            top:element.offsetTop,
-            behavior: "smooth"
-        })
-    };
 
     fadeInAnimate = () => {
         if (!this.state.frontImageChanged){
@@ -59,13 +45,13 @@ class AboutUs extends Component {
                                                 <p>
                                                     <span onMouseEnter={this.fadeInAnimate} className="front-image-header">ABOUT US</span>
                                                     <br/>
-                                                    <a onClick={this.nextSlide(MOUSE_CLICK)}>{data.button_name}</a>
+                                                    <a onClick={nextSlide(SECTION_NAME.FirstContent)}>{data.button_name}</a>
                                                 </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="content-section" id="content-section" style={{
+                                    <div className="content-section" id={SECTION_NAME.FirstContent} style={{
                                         backgroundImage: `url(${data.light_background_image})`,
                                         height: '100%',
                                         backgroundPosition: 'center',

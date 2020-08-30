@@ -9,8 +9,9 @@ import "../styles/fullLandingImage.css";
 import "./../services.css";
 import "../styles/hoverStyles.css";
 import "../styles/generalStyle.css";
-import {Routes, Time_Out} from "../../../actions/constants";
+import {Routes, SECTION_NAME, Time_Out} from "../../../actions/constants";
 import {AUTO, MOUSE_CLICK} from "../../../actions/types";
+import {nextSlide} from "../../../actions/generalActions";
 
 class WhyUs extends Component {
 
@@ -25,19 +26,7 @@ class WhyUs extends Component {
 
     componentDidMount(){
         this.props.getAboutUs();
-        window.onload = setTimeout(
-            this.nextSlide(AUTO),
-            Time_Out.timeToContent)
     }
-    nextSlide = (actionType=AUTO) => () => {
-        if (window.pageYOffset !== 0 && actionType === AUTO) return;
-        const element = document.getElementById("content-section");
-        smoothscroll.polyfill();
-        window.scroll({
-            top:element.offsetTop,
-            behavior: "smooth"
-        })
-    };
 
     expandExtra = () => {
         const expand_element = document.getElementById("expand_content");
@@ -60,7 +49,6 @@ class WhyUs extends Component {
     render() {
         return (
             <Fragment>
-                {/*{console.log(this.props.aboutus)}*/}
                 {this.props.aboutus.slice(0).map(data=>{
                     return(
                         <Fragment key={data.id}>
@@ -70,12 +58,12 @@ class WhyUs extends Component {
                                         <img src={data.whyus.cover_image}/>
                                         <div className="front-image-name">
                                             <p>
-                                                <a onClick={this.nextSlide(MOUSE_CLICK)}>{data.whyus.button_name}</a>
+                                                <a onClick={nextSlide(SECTION_NAME.FirstContent)}>{data.whyus.button_name}</a>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="content-section" id="content-section">
+                                <div className="content-section" id={SECTION_NAME.FirstContent}>
                                     <div className="content-section-row first-row subsection-text">
                                         <div className="head-box-container flex-wrap-normal subsection-text justified-text">
                                             <div className={"right-container "}>

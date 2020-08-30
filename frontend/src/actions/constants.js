@@ -18,7 +18,8 @@ export const REST_API = {
 };
 
 export const Time_Out = {
-    timeToContent: 0
+    timeToContent: 5000,
+    setScroll: 2000
 };
 
 export const FORMS = {
@@ -35,4 +36,21 @@ export const POSTTYPE = {
     Educational:"Edu",
     Business:"Bus",
     Other:"Oth"
+};
+
+export const PAGE_NAME = {
+    Contact:"Contact Us",
+    ICare: "I-Care",
+    InSight: "In-Sights",
+    OurBrand: "In-Hub",
+    WhyUs: "About Us(Why Us)",
+    Team: "About Us(Team)",
+    Story: "About Us(Story)",
+    AboutUs: "About Us",
+};
+
+export const SECTION_NAME = {
+    FrontImage:"FRONT_IMAGE",
+    FirstContent:"FIRST_CONTENT",
+
 };

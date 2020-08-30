@@ -2,14 +2,13 @@ import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
-import {getAboutUs,getLandingContent} from "../../../actions/frontend";
-import smoothscroll from 'smoothscroll-polyfill'
+import {getAboutUs} from "../../../actions/frontend";
+import {nextSlide} from "../../../actions/generalActions";
 import "./aboutus.css";
 import "./../services.css"
 import "./../styles/hoverStyles.css";
 import "./../styles/generalStyle.css";
-import {Time_Out} from "../../../actions/constants";
-import {AUTO, MOUSE_CLICK} from "../../../actions/types";
+import {SECTION_NAME} from "../../../actions/constants";
 
 
 class Story extends Component {
@@ -21,25 +20,11 @@ class Story extends Component {
 
     componentDidMount(){
         this.props.getAboutUs();
-        window.onload = setTimeout(
-            this.nextSlide(AUTO),
-            Time_Out.timeToContent)
     }
-
-    nextSlide = (actionType=AUTO) => () => {
-        if (window.pageYOffset !== 0 && actionType === AUTO) return;
-        const element = document.getElementById("content-section-flex");
-        smoothscroll.polyfill();
-        window.scroll({
-            top:element.offsetTop,
-            behavior: "smooth"
-        })
-    };
 
     render() {
         return (
             <Fragment>
-                {/*{console.log(this.props.aboutus)}*/}
                 {this.props.aboutus.slice(0).map(data=>{
                     return(
                         <Fragment key={data.id}>
@@ -49,13 +34,13 @@ class Story extends Component {
                                         <img src={data.story.cover_image}/>
                                         <div className="front-image-name">
                                             <p>
-                                            <a onClick={this.nextSlide(MOUSE_CLICK)}>{data.story.button_name}</a>
+                                            <a onClick={nextSlide(SECTION_NAME.FirstContent)}>{data.story.button_name}</a>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="content-section-flex" id="content-section-flex">
+                                    <div className="content-section-flex" id={SECTION_NAME.FirstContent}>
                                         <div className="subsection-flex">
                                             <div className="subsection-head subsection-text">
                                                 <h2>{data.story.main_section_heading}</h2>

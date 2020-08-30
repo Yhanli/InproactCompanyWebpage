@@ -3,16 +3,14 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
 import {getWebsitePages, getPosts} from "../../actions/frontend";
+import {nextSlide, createPostList} from "../../actions/generalActions";
 
 import "./styles/fullLandingImage.css";
 import './services.css';
 import styles from "./styles/layout-a.module.css";
 import "./styles/hoverStyles.css";
-// import "./styles/buttons.css";
 import "./styles/generalStyle.css";
-import smoothscroll from "smoothscroll-polyfill";
-import {Time_Out,POSTTYPE} from "../../actions/constants";
-import {MOUSE_CLICK, AUTO} from "../../actions/types";
+import {POSTTYPE, SECTION_NAME} from "../../actions/constants";
 
 import PostPreview from "./pageComponents/postPreview";
 
@@ -28,25 +26,11 @@ class OurBrand extends Component {
     };
     componentDidMount() {
         this.props.getWebsitePages();
-        window.onload = setTimeout(
-            this.nextSlide(AUTO),
-            Time_Out.timeToContent)
         getPosts().then(res => {
             this.setState({posts:res.data});
-            console.log(res.data)
         })
     }
 
-
-    nextSlide = (actionType=AUTO) => () => {
-        if (window.pageYOffset !== 0 && actionType === AUTO) return;
-        const element = document.getElementById("content-section");
-        smoothscroll.polyfill();
-        window.scroll({
-            top:element.offsetTop,
-            behavior: "smooth"
-        })
-    };
     fadeInAnimate = () => {
         if (!this.state.frontImageChanged){
             const element = document.querySelector(".front-image-header");
@@ -57,18 +41,11 @@ class OurBrand extends Component {
         }
     };
 
-    createPostList = (type,num=3) => {
-        return this.state.posts.filter(post => post.post_type === type).slice(0,num)
-    };
-
     render() {
         const content = this.props.websitePage;
-        if (this.props.websitePage.loading || content.websitePage.services == undefined){
+        if (this.props.websitePage.loading || content.websitePage.ourbrand === undefined){
             return (<Fragment/>)
         }else{
-            window.onload = setTimeout(
-                this.nextSlide,
-                Time_Out.timeToContent)
             const data = content.websitePage;
             return (
                 <Fragment>
@@ -81,12 +58,12 @@ class OurBrand extends Component {
                                     <p>
                                         <span onMouseEnter={this.fadeInAnimate} className="front-image-header">IN-Hub</span>
                                         <br/>
-                                        <a onClick={this.nextSlide(MOUSE_CLICK)}>{data.ourbrand.button_name}</a>
+                                        <a onClick={nextSlide(SECTION_NAME.FirstContent)}>{data.ourbrand.button_name}</a>
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div className={`${styles.contentSection}`} id="content-section">
+                        <div className={`${styles.contentSection}`} id={SECTION_NAME.FirstContent}>
                             <div className={`${styles.contentSectionRow} first-row top-margin-2`}>
                                 <div className={`${styles.headBoxContainer} flex-wrap-normal`}>
                                     <div className="row-max">
@@ -102,7 +79,7 @@ class OurBrand extends Component {
 
                                     <div className="row-max">
                                         <div className={`${styles.headBoxContainer} flex-wrap-normal`}>
-                                            {this.createPostList(POSTTYPE.Featured,3).map(post => {
+                                            {createPostList(POSTTYPE.Featured, this.state.posts, 3).map(post => {
                                                 return <PostPreview key={post.id} post={post}/>;
                                             })}
                                         </div>
@@ -116,7 +93,7 @@ class OurBrand extends Component {
 
                                     <div className="row-max">
                                         <div className={`${styles.headBoxContainer} flex-wrap-normal`}>
-                                            {this.createPostList(POSTTYPE.Success,3).map(post => {
+                                            {createPostList(POSTTYPE.Success, this.state.posts, 3).map(post => {
                                                 return <PostPreview key={post.id} post={post}/>;
                                             })}
                                         </div>
@@ -129,7 +106,7 @@ class OurBrand extends Component {
                                     </div>
                                     <div className="row-max">
                                         <div className={`${styles.headBoxContainer} flex-wrap-normal`}>
-                                            {this.createPostList(POSTTYPE.Collaboration,3).map(post => {
+                                            {createPostList(POSTTYPE.Collaboration,this.state.posts,3).map(post => {
                                                 return <PostPreview key={post.id} post={post}/>;
                                             })}
                                         </div>
@@ -141,7 +118,7 @@ class OurBrand extends Component {
                                     </div>
                                     <div className="row-max">
                                         <div className={`${styles.headBoxContainer} flex-wrap-normal`}>
-                                            {this.createPostList(POSTTYPE.Share,3).map(post => {
+                                            {createPostList(POSTTYPE.Share,this.state.posts,3).map(post => {
                                                 return <PostPreview key={post.id} post={post}/>;
                                             })}
                                         </div>
