@@ -37,7 +37,6 @@ class Contact extends Component {
     };
     onSubmit = e => {
         e.preventDefault();
-        console.log(this.state)
     };
 
     swithForm = e =>{
@@ -46,7 +45,6 @@ class Contact extends Component {
             return
         }
         this.setState({formNum: e.target.id});
-        console.log(e.target.id)
     };
 
     render() {
@@ -95,7 +93,7 @@ class Contact extends Component {
                             <div className="line-90p align-centre top-margin-2 bot-margin-2"></div>
                             <div className={`${cStyle.contentSectionRow} first-row subsection-text`}>
                                 <div className={`${cStyle.headBoxContainer} flex-wrap-reverse subsection-text`}>
-                                    <div className={`left-container`} style={{
+                                    <div className={`${cStyle.leftContainer}`} style={{
                                         width:"550px",
                                         height:"350px",
                                         maxWidth:"95vw",
@@ -108,7 +106,7 @@ class Contact extends Component {
                                             tabIndex="0"
                                         />
                                     </div>
-                                    <div className={"right-container top-margin-2"}>
+                                    <div className={`${cStyle.rightContainer} top-margin-2`}>
                                         <h2 className="subheading">Other Ways To Contact Us</h2>
 
                                         {data.contact.phone_primary? <p className="focused-text">
