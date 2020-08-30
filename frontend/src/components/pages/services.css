@@ -45,6 +45,7 @@
     display: grid;
     grid-template-columns: 0.9fr 0.1fr;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 6rem;
 }
 
@@ -117,6 +118,7 @@
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(240px,auto));
     align-items: center;
+    justify-content: space-between;
 }
 
 .subsection2 .subsection-row{

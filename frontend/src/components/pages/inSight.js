@@ -44,7 +44,11 @@ class InSight extends Component {
                             <div className="front-image">
                                 <img src={data.insight.cover_image}/>
                                 <div className="front-image-name-no-frame">
+                                    <div style={{
+                                        height:"3rem",
+                                    }}></div>
                                     <p>
+
                                         <a className={`no-frame-title`}
                                            onClick={nextSlide(SECTION_NAME.FirstContent)} dangerouslySetInnerHTML={{__html:data.insight.button_name}}
                                            style={{

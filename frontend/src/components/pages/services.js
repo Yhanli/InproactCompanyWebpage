@@ -91,7 +91,7 @@ class Services extends Component {
                                                 <p>{data.services.section_2_text_3_paragraph}</p>
                                             </div>
                                         </div>
-                                        <div className="subsection-img">
+                                        <div className="subsection-img text-center">
                                             <img src={data.services.section_2_picture}
                                                  className="inspire-photo" alt="inspire"/>
                                         </div>

@@ -29,6 +29,7 @@
     .front-image-name {
         padding: 6vh 11vh;
     }
+
 }
 @media screen and (max-aspect-ratio: 17/15){
     .section1 .front-image img{
@@ -45,6 +46,10 @@
         height: auto;
         overflow: hidden;
     }
+}
+@media screen and (max-width: 768px){
+    .front-image .front-image-name{
+        top: 60%;}
 }
 
 @media screen and (min-width: 1300px){
