@@ -21,13 +21,21 @@
 
 .modal-bg-content{
     position: fixed;
-    top: 47%;
+    top: 50%;
     left: 50%;
     z-index: 4;
     opacity: 0;
     visibility: hidden;
     transition: visibility 0s, opacity 0.5s;
     transform: translateY(-50%) translateX(-50%);
+
+    width: 85vw;
+    height: auto;
+    max-width: 1000px;
+    max-height: 80vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 20px;
 }
 
 .modal-active-content{
@@ -36,15 +44,11 @@
 }
 
 .modal-content{
-    width: 90vw;
+    width: 100%;
     height: auto;
-    max-width: 1000px;
-    max-height: 90vh;
-    overflow-y: auto;
     border-radius: 20px;
     background-color: white;
-
-    padding: 2rem 2rem;
+    padding: 2rem 1rem;
 }
 .modal-image{
     max-width: 100%;
@@ -71,4 +75,19 @@
     width: 20px;
     height: 3px;
     background-color: black;
+}
+
+.main-stop-scroll{
+    position: static;
+    height: auto!important;
+    overflow-y: hidden!important;
+}
+
+@media screen and (max-width:768px ){
+    .modal-content .subsection-text h2{
+        font-size: 1.7rem;
+    }
+    .modal-content .subsection-text p{
+        font-size: 0.8rem;
+    }
 }

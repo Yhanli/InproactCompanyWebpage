@@ -5,6 +5,7 @@
         text-justify:inter-word!important;
     }
 
+
 }
 
 
@@ -120,7 +121,7 @@
     padding-right: 1rem;
     padding-bottom: 1em;
     font-weight: normal;
-    font-size: 2em;
+    font-size: 2rem;
     color: #8bc53f;
     font-family: Georgia
     /*text-shadow: 2px 2px 5px lightgrey;*/
@@ -128,7 +129,7 @@
 }
 .subsection-text p{
     font-family: "Poppins", Helvetica, Arial, sans-serif;
-    font-size: 1em;
+    font-size: 1rem;
     white-space: pre-wrap;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -153,8 +154,8 @@
 }
 
 .justified-text{
-    text-align: justify!important;
-    text-justify:inter-word!important;
+    text-align: justify;
+    text-justify: inter-character;
 }
 
 .hide-display{

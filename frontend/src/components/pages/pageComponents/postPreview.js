@@ -21,13 +21,20 @@ class PostPreview extends Component {
     showModalAction = () =>{
         const element = document.getElementById(`post-modal-${this.props.post.id}`);
         const element_content = document.getElementById(`post-modal-${this.props.post.id}-content`);
+        const main_html = document.body
 
         if (!this.state.showModal) {
             element_content.classList.add("modal-active-content");
-            element.classList.add("modal-active");}
+            element.classList.add("modal-active");
+            main_html.classList.add('main-stop-scroll');
+            // console.log(main_html.classList)
+        }
+
         else {
             element_content.classList.remove("modal-active-content");
-            element.classList.remove("modal-active");}
+            element.classList.remove("modal-active");
+            main_html.classList.remove('main-stop-scroll');
+        }
 
         this.setState({showModal: !this.state.showModal});
 
@@ -53,7 +60,7 @@ class PostPreview extends Component {
                         </div>
                         <div className={`subsection-text top-space-2 justified-text`}>
                             <h2 className={`text-center`}>{post.title}</h2>
-                            <p>{post.content}</p>
+                            <p className={`justified-text`}>{post.content}</p>
                             <div className={`gold-divider-sm-md bot-margin-2 top-margin-2`}/>
                             <p style={{
                                 color: "black"
