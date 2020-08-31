@@ -3,7 +3,7 @@
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(240px,auto));
     align-items: center;
-
+    z-index: -1;
 }
 .main-section{
     /*background-color: #88c540;*/

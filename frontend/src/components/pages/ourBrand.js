@@ -13,13 +13,17 @@ import "./styles/generalStyle.css";
 import {POSTTYPE, SECTION_NAME} from "../../actions/constants";
 
 import PostPreview from "./pageComponents/postPreview";
+import PostModal from "./pageComponents/postModal";
 
 
 class OurBrand extends Component {
-    state = {
-        frontImageChanged:false,
-        posts:[]
-    };
+    constructor(props){
+        super(props);
+        this.state = {
+            frontImageChanged:false,
+            posts:[],
+        };
+    }
     static propTypes = {
         maincontent: PropTypes.array.isRequired,
         websitePage: PropTypes.object.isRequired

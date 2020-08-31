@@ -11,6 +11,12 @@
 .text-left-align{
     text-align: left;
 }
+.text-right-align{
+    text-align: right;
+}
+.text-italic{
+    font-style: italic;
+}
 
 .text-grey-bg{
     background-color: #f6f6f6;
