@@ -60,7 +60,7 @@ class PostPreview extends Component {
                         </div>
                         <div className={`subsection-text top-space-2 justified-text`}>
                             <h2 className={`text-center`}>{post.title}</h2>
-                            <p className={`justified-text`}>{post.content}</p>
+                            <p className={``}>{post.content}</p>
                             <div className={`gold-divider-sm-md bot-margin-2 top-margin-2`}/>
                             <p style={{
                                 color: "black"

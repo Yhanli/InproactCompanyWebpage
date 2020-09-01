@@ -71,7 +71,7 @@ class OurBrand extends Component {
                             <div className={`${styles.contentSectionRow} first-row top-margin-2`}>
                                 <div className={`${styles.headBoxContainer} flex-wrap-normal`}>
                                     <div className="row-max">
-                                        <div className={`align-centre subsection-text`}>
+                                        <div className={`subsection-text justified-text`}>
                                             <p>{data.ourbrand.paragraph}</p>
                                         </div>
                                     </div>

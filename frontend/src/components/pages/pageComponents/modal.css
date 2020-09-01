@@ -21,7 +21,7 @@
 
 .modal-bg-content{
     position: fixed;
-    top: 50%;
+    top: 46%;
     left: 50%;
     z-index: 4;
     opacity: 0;
@@ -83,11 +83,12 @@
     overflow-y: hidden!important;
 }
 
-@media screen and (max-width:768px ){
+@media screen and (max-width:760px ){
     .modal-content .subsection-text h2{
         font-size: 1.7rem;
     }
     .modal-content .subsection-text p{
         font-size: 0.8rem;
+        text-align: justify!important;
     }
 }
