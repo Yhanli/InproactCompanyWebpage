@@ -19,7 +19,6 @@
     overflow: hidden;
     background-size: 100%;
     /*border-radius: 5px;*/
-    transition: all 0.3s ease-in-out;
 }
 
 .textContentContainer{
@@ -51,6 +50,12 @@
     }
 }
 
-.postBackGroundContainer:hover{
-    background-size: 103%;
+
+.postPreviewImage:hover{
+    height: 105%;
+}
+
+.postPreviewImage{
+    height: 115%;
+    transition: all 0.3s ease-in-out;
 }

@@ -75,11 +75,10 @@ class PostPreview extends Component {
                     onClick={this.showModalAction}
                 >
                     <div className={`${pStyle.postBackGroundContainer}`} style={{
-                        backgroundImage: `url(${post.cover_image})`,
-                        backgroundSize: 'cover'
+                        // backgroundImage: `url(${post.cover_image})`,
+                        // backgroundSize: 'cover'
                     }}>
-                        <div className={`${pStyle.postBackGroundContainer}`} >
-                        </div>
+                        <img className={`${pStyle.postPreviewImage}`} src={post.cover_image}/>
                     </div>
                     <div className={`${pStyle.textContentContainer} text-left-align`}>
                         <h2 className={`${pStyle.subHeading}`}>{post.title}</h2>
