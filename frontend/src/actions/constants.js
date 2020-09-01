@@ -8,7 +8,8 @@ export const Routes = {
     Contact:"/contact",
     OurBrand:"/ourbrand",
     InSight:"/insight",
-    ICare:"/icare"
+    ICare:"/icare",
+    SiteMap:"/sitemap"
 };
 
 export const REST_API = {

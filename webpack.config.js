@@ -47,6 +47,17 @@ module.exports = {
                     'css-loader'
                 ],
                 exclude: /\.module\.css$/
+            },
+            {
+                test: /\.(png|svg|jpg|gif|pdf|xml)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]'
+                        }
+                    }
+                ]
             }
             // {
             //     loader: 'css-loader',

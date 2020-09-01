@@ -34,7 +34,7 @@ const Contact = lazy(()=> import("./pages/contact"));
 const OurBrand = lazy(()=> import("./pages/ourBrand"));
 const InSight = lazy(()=> import("./pages/inSight"));
 const ICare = lazy(()=> import("./pages/iCare"));
-
+import SiteMap from "./sitemap.xml";
 
 const alertOptions = {
     timeout: 5000,
@@ -74,9 +74,9 @@ class App extends Component {
                                     <Route exact path={Routes.InSight} component={InSight}/>
                                     <Route exact path={Routes.ICare} component={ICare}/>
 
-
                                 <Route path="*" component={NotFoundPage} />
                             </Switch>
+                                {/*<a href={SiteMap}  target = "_blank">Download Pdf</a>*/}
                             <Footer />
                             </Suspense>
 
