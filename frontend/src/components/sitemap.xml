@@ -1,24 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-
-<url>
-  <loc>https://inproact.site/</loc>
-  <loc>https://inproact.site/aboutus</loc>
-  <loc>https://inproact.site/story</loc>
-  <loc>https://inproact.site/team</loc>
-  <loc>https://inproact.site/whyus</loc>
-  <loc>https://inproact.site/services</loc>
-  <loc>https://inproact.site/ourbrand</loc>
-  <loc>https://inproact.site/insight</loc>
-  <loc>https://inproact.site/icare</loc>
-  <loc>https://inproact.site/contact</loc>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.inproact.site/</loc>
+  </url>
+  <url>
+    <loc>https://www.inproact.site/aboutus</loc>
+  </url>
+  <url>
+    <loc>https://www.inproact.site/contact</loc>
+  </url>
+  <url>
+    <loc>https://www.inproact.site/icare</loc>
+  </url>
+  <url>
+    <loc>https://www.inproact.site/insight</loc>
+  </url>
+  <url>
+    <loc>https://www.inproact.site/ourbrand</loc>
+  </url>
+  <url>
+    <loc>https://www.inproact.site/services</loc>
+  </url>
+  <url>
+    <loc>https://www.inproact.site/story</loc>
+  </url>
+  <url>
+    <loc>https://www.inproact.site/team</loc>
+  </url>
+  <url>
+    <loc>https://www.inproact.site/whyus</loc>
+  </url>
 </urlset>

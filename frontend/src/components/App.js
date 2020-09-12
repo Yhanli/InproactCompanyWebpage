@@ -42,6 +42,7 @@ const alertOptions = {
 };
 
 class App extends Component {
+
     render () {
         return (
         <Provider store={store}>
@@ -49,18 +50,22 @@ class App extends Component {
                 <BrowserRouter>
 
                     <Fragment>
+
                         <div className='container'>
                             <Navbar/>
                             <Alerts />
-                            <Suspense fallback={<div
-                                style={{
-                                    position: "absolute",
-                                    top:'50%',
-                                    left:"50%",
-                                    transform: "translate(-50%, -50%)",
-                                    color: "#a27b43"
-                                }}
-                            ><h1>Loading…</h1></div>}>
+                            <Suspense fallback={
+                                <div
+                                    style={{
+                                        position: "fixed",
+                                        top:'50%',
+                                        left:"50%",
+                                        zIndex: "100",
+                                        transform: "translate(-50%, -50%)",
+                                        color: "#a27b43"
+                                    }}
+                                ><h1>Loading…</h1></div>
+                            }>
                             <Switch>
                                 <Route exact path={Routes.Home} component={Main}/>
 

@@ -22,6 +22,7 @@ class OurBrand extends Component {
         this.state = {
             frontImageChanged:false,
             posts:[],
+            isLoading:true
         };
     }
     static propTypes = {
@@ -32,7 +33,10 @@ class OurBrand extends Component {
         this.props.getWebsitePages();
         getPosts().then(res => {
             this.setState({posts:res.data});
-        })
+        });
+        // this.timeout = setTimeout(()=>
+        //     this.setState({isLoading:false})
+        // , 500)
     }
 
     fadeInAnimate = () => {
@@ -53,7 +57,6 @@ class OurBrand extends Component {
             const data = content.websitePage;
             return (
                 <Fragment>
-
                     <div className="main-containers" value={this.props.maincontent[0]? document.title = `${data.ourbrand.page_name} - ${this.props.maincontent[0].site_name}` : ''}>
                         <div className="section1">
                             <div className="front-image">
