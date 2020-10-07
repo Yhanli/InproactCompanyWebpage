@@ -11,7 +11,7 @@
     overflow: hidden;
     padding-top: 20px;
     box-sizing: border-box;
-    background-color: rgba(236, 236, 236,0.2);
+    background-color: rgba(172, 172, 172, 0.1);
     grid-template-rows: 2fr 0.1fr;
 }
 
