@@ -1,0 +1,7 @@
+FROM node:15.13-alpine
+
+ENV PROJECT_DIR /app
+
+COPY . ${PROJECT_DIR}
+WORKDIR ${PROJECT_DIR}
+RUN npm ci

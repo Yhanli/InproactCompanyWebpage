@@ -1,0 +1,46 @@
+version: "3"
+
+services: 
+  frontend:
+    build: 
+      context: .
+      dockerfile: ./node.Dockerfile
+    working_dir: /app
+    command: sh -c "
+      npm run build"
+    
+    volumes:
+      - frontend_file:/app/frontend/
+
+  backend:
+    build: 
+      context: .
+      dockerfile: ./django.Dockerfile
+    working_dir: /app
+    volumes: 
+      - ./InproactSite/settings.py:/app/InproactSite/settings.py:ro
+      - frontend_file:/app/frontend/
+    command: sh -c "
+      python manage.py migrate --noinput -v 0
+      && python manage.py collectstatic --noinput --force-color -v 0
+      && gunicorn --workers 5 --bind 0.0.0.0:8088 InproactSite.wsgi:application"
+    ports: 
+      - "8088:8088"
+    expose: 
+      - 8088
+    depends_on: 
+      - frontend
+  
+  nginx:
+    image: nginx:1.19.0-alpine
+    ports: 
+      - 80:80
+    volumes: 
+      - ./nginx/site.conf:/etc/nginx/conf.d/default.conf:ro
+      - frontend_file:/app/frontend/
+    depends_on: 
+      - frontend
+      - backend
+
+volumes: 
+  frontend_file:
