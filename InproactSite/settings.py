@@ -26,7 +26,7 @@ SECRET_KEY = '+e3757ui*609t!mi1t6j5#&69c5iceqdeg#_ygdttq@jl=s@!n'
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-
+# ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -136,8 +136,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/frontend/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'frontend/static/'),)
-STATIC_ROOT = os.path.join(BASE_DIR, 'frontend/static_root/')
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'frontend/static_root/'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'frontend/static/')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media_root/'

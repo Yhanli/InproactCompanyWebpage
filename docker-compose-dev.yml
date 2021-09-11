@@ -23,10 +23,10 @@ services:
             - media_file:/app/media_root/
         working_dir: /app
         command: sh -c "
-            sleep 10
-            && python manage.py migrate --noinput -v 0
-            && python manage.py collectstatic --noinput --force-color -v 0
-            && gunicorn --workers 5 --bind 0.0.0.0:8088 InproactSite.wsgi:application"
+            sleep 2
+            && python manage.py migrate --noinput
+            && python manage.py collectstatic --noinput --force-color
+            && python manage.py runserver 0.0.0.0:8088"
         ports:
             - "8088:8088"
         expose:
