@@ -29,15 +29,15 @@ services:
             && python manage.py runserver 0.0.0.0:8088"
         ports:
             - "8088:8088"
-        expose:
-            - 8088
         depends_on:
             - frontend
 
     nginx:
-        image: nginx:1.19.0-alpine
+        build:
+            context: .
+            dockerfile: nginx.Dockerfile
         ports:
-            - 80:80
+            - 8082:80
         volumes:
             - ./nginx/site.conf:/etc/nginx/conf.d/default.conf:ro
             - frontend_file:/app/frontend/

@@ -20,17 +20,19 @@ from django.conf.urls import url, re_path
 from django.conf.urls.static import static, serve
 from frontend import views
 
-urlpatterns = [
-
-    path('admin/', admin.site.urls),
-    path('admin', admin.site.urls),
-    path('', include('frontend.urls')),
-    path('', include('aboutus.urls')),
-    path('', include('website.urls')),
-    path('', include('websitePages.urls')),
-    path('', include('subscriber.urls')),
-    path('', include('post.urls')),
-    path('', include('query.urls')),
-    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
-
-]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + [url(r'^.*$', views.index)]
+urlpatterns = (
+    [
+        path("admin/", admin.site.urls),
+        path("admin", admin.site.urls),
+        path("", include("frontend.urls")),
+        path("", include("aboutus.urls")),
+        path("", include("website.urls")),
+        path("", include("websitePages.urls")),
+        path("", include("subscriber.urls")),
+        path("", include("post.urls")),
+        path("", include("query.urls")),
+        re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
+    ]
+    + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    + [url(r"^.*$", views.index)]
+)
