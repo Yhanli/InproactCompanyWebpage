@@ -27,7 +27,7 @@ services:
         ports:
             - "8088:8088"
         depends_on:
-            - frontend
+            - inpro_frontend
 
     inpro_nginx:
         build:
@@ -40,6 +40,6 @@ services:
             - ./frontend/static:/app/frontend/static
             - ./media_root:/app/media_root/
         depends_on:
-            - frontend
-            - backend
+            - inpro_frontend
+            - inpro_backend
 
