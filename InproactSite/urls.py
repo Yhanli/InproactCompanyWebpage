@@ -23,7 +23,6 @@ from frontend import views
 urlpatterns = (
     [
         path("admin/", admin.site.urls),
-        path("admin", admin.site.urls),
         path("", include("frontend.urls")),
         path("", include("aboutus.urls")),
         path("", include("website.urls")),

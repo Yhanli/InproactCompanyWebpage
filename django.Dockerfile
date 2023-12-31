@@ -1,11 +1,10 @@
-FROM python:3.8.12-alpine
-RUN apk add --no-cache --virtual .compile_ gcc g++
-RUN apk add --update --no-cache musl-dev python3-dev libffi-dev openssl-dev jpeg-dev zlib-dev mariadb-connector-c-dev
+FROM python:3.11
 
-ENV PROJECT_DIR /app
+RUN apt update && apt upgrade -y
+COPY ./requirements.txt /tmp/
+WORKDIR /tmp
+RUN pip install --upgrade pip && \
+    pip install -r /tmp/requirements.txt 
 
-COPY . ${PROJECT_DIR}
-WORKDIR /${PROJECT_DIR}
-RUN pip install -r requirements.txt
-
-RUN apk del .compile_
+RUN apt remove gcc-12 libicu-dev git libicu72 g++-12 libperl5.36 cpp-12 libstdc++-12-dev -y  && \
+    apt autoremove -y
